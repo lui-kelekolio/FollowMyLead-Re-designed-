@@ -432,7 +432,7 @@ exports.seed = function(knex) {
           size: 'Medium', 
           activity_requirements: '30min walk',
           good_with_other_dogs: true,
-          special_requirements: "Don't letLeo near food...",
+          special_requirements: "Don't let Leo near food...",
           photo: 'https://images.pexels.com/photos/257519/pexels-photo-257519.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
           vet_name: 'Ngaio Vetenerian',
           vet_contact: 02222222222,
