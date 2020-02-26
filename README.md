@@ -79,7 +79,6 @@ The idea is to allow dog lovers to find a compatable dog via a list of profiles 
 
 ## Views (Client Side)
 
-|----------------|----------------------------------------------------------------------------------------|
 | name           | purpose                                                                                |
 |----------------|----------------------------------------------------------------------------------------|
 | Home           | Default page displaying login, register and blurb                                      |
@@ -101,6 +100,7 @@ The idea is to allow dog lovers to find a compatable dog via a list of profiles 
 
 ## Stretch
 
+| Name.          | Purpose                                                                                |
 |----------------|----------------------------------------------------------------------------------------|
 | Feedback View  | Will display upon click a link that will be sent after confirmation of walk            |
 |----------------|----------------------------------------------------------------------------------------|
@@ -114,8 +114,9 @@ The idea is to allow dog lovers to find a compatable dog via a list of profiles 
 
 ## API (Client - Server)
 
-Method	Endpoint	Protected	Usage	Response
+	Endpoint	Protected	Usage	Response
 
+| Type | Endpoint                 |  Usage reponse                                                            |
 |------|--------------------------|---------------------------------------------------------------------------|
 | Post | /api/auth/login          | (Yes)	Log In a User	The Users JWT Token                                   |
 |------|--------------------------|---------------------------------------------------------------------------|
@@ -141,6 +142,7 @@ Method	Endpoint	Protected	Usage	Response
 
 ### dogs
 
+| col_name               | variable type                        |
 |------------------------|--------------------------------------|
 | id                     | increments.                          |
 |------------------------|--------------------------------------|
@@ -174,6 +176,7 @@ Method	Endpoint	Protected	Usage	Response
 
 ### walkers
 
+| col_name               |                                      |
 |------------------------|--------------------------------------|
 | id                     | increments.                          |
 |------------------------|--------------------------------------|
@@ -197,6 +200,7 @@ Method	Endpoint	Protected	Usage	Response
 
 ### owners
 
+| col_name               | variable type                        |
 |------------------------|--------------------------------------|
 | id                     | increments.                          |
 |------------------------|--------------------------------------|
@@ -221,6 +225,7 @@ Method	Endpoint	Protected	Usage	Response
 
 ### dog_feedback_table
 
+| col_name               | variable type                        |
 |------------------------|--------------------------------------|
 | id                     | increments.                          |
 |------------------------|--------------------------------------|
@@ -233,6 +238,7 @@ Method	Endpoint	Protected	Usage	Response
 
 ### walker_feedback_table
 
+| col_name               | variable type                        |
 |------------------------|--------------------------------------|
 | id                     | increments.                          |
 |------------------------|--------------------------------------|
