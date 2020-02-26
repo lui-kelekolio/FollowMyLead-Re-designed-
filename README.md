@@ -276,7 +276,22 @@ The idea is to allow dog lovers to find a compatable dog via a list of profiles 
 
 * Master - deployment (MVP)
 * Dev - which will take finished features prior to completion
-* featureBranches - this will be individuals 
+* homeBranch includes header and footer
+* authBranch
+* LoginBranch
+* registerBranch general registration, owner registration, walker registration
+* walkerBranch walker profile with edit, delete profile buttons as well as view doglist button
+* ownerBranch - edit/delete addDog/deleteDog/editDog button as well as a view my dog which will render your selected dog profile
+* dogRegisterBranch which is a form and submit of the details in the seeds
+* DogListBranch will display a list of dogs and will render a dog component
+* dogBranch
+* retrieveDogDataBranch
+* retrieveDogFeedbackBranch
+* retrieveOwnerDataBranch
+* retrieveWalkerDataBranch
+* retrieveWalkerFeedback
+* serverAPIBranch
+
 
 
 
