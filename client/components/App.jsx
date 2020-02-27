@@ -7,6 +7,7 @@ import Home from './Home'
 import Login from './Login'
 import DogList from './DogList'
 import DogProfile from './DogProfile'
+import Register from './Register'
 import RegisterOwner from './RegisterOwner'
 import RegisterWalker from './RegisterWalker'
 
