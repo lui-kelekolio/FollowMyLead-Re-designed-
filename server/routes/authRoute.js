@@ -1,10 +1,6 @@
 const express = require('express')
 const { applyAuthRoutes } = require('authenticare/server')
-const {
-  userExists,
-  getOwner,
-  getWalker,
-  createWalker } = require('../db/users')
+const { userExists, getOwner, getWalker, createWalker } = require('../db/users')
 
 const router = express.Router()
 
@@ -18,6 +14,7 @@ applyAuthRoutes(router, {
   createOwner,
   createWalker
 })
+
 
 
 
