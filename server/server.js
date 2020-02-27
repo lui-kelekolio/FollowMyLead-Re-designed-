@@ -11,10 +11,10 @@ const authRoute = require('./routes/authRoute')
 server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
 
-server.use('/api/walkers', walkerRoute)
+server.use('/api/walker', walkerRoute)
 // Lui and Izzy code
 server.use('/api/dogs', dogRoute)
 // server.use('/api/v1/walker', walkerRoute)
 // server.use('/api/Owner', ownerRoute)
-server.use('/api/v1', authRoute)
+server.use('/api/', authRoute)
 module.exports = server
