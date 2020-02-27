@@ -6,6 +6,7 @@ import Footer from './Footer'
 import Home from './Home'
 import Login from './Login'
 import Register from './Register'
+import DogList from './DogList'
 
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
     <Route exact path="/" component={Home}/>
     <Route path="/register" component={Register}/>
     <Route path="/login" component={Login}/>
+    <Route path="/doglist" component={DogList}/>
     <Footer />
     </React.Fragment>
     </Router>
