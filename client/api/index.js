@@ -9,4 +9,5 @@ export function getDogs () {
     })
 }
 
+
 //Lui and Izzy code end

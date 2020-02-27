@@ -4,22 +4,28 @@ class Login extends React.Component{
     constructor() {
         super()
 
-        this.state ={}
+        this.state ={
+            username:'',
+            password:''
+        }
     }
-
-
-
-handleClick(){
-    
-}
-
-
 
 
 render(){
     return(
         <div>
-            <h1>Login page route is working!</h1>
+           <form>
+               <h1>Login Form </h1>
+               <hr />
+               <label> Username: 
+               <input type = 'text' placeholder = 'username' />
+               </label>
+               <label> Password: 
+               <input type = 'text' placeholder = 'password'/>
+               </label>
+               <br />
+               <input type= "submit" value= "Submit" />
+           </form>
         </div>
     )
 }

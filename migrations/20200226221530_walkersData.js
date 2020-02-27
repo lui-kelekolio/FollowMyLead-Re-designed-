@@ -8,8 +8,8 @@ exports.up = function(knex) {
     table.string('blurb')
     table.string('location')
     table.string('email')
-    table.string('hash')
     table.string('photo')
+    table.integer('user_id')
   })
 };
 

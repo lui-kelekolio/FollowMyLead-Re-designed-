@@ -13,7 +13,6 @@ exports.seed = function(knex) {
           photo: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
           location: 'Ngaio', 
           email: 'SteveSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 2, 
@@ -23,7 +22,6 @@ exports.seed = function(knex) {
           photo: 'https://images.pexels.com/photos/874158/pexels-photo-874158.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
           location: 'Ngaio', 
           email: 'JohnSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 3, 
@@ -33,7 +31,6 @@ exports.seed = function(knex) {
           photo: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260', 
           location: 'Ngaio', 
           email: 'EmmaHughes@gmail.com', 
-          hash: '', 
         },
         {
           id: 4, 
@@ -43,7 +40,6 @@ exports.seed = function(knex) {
           photo: 'https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
           location: 'Ngaio', 
           email: 'SophiaDay@gmail.com', 
-          hash: '', 
         },
         {
           id: 5, 
@@ -53,7 +49,6 @@ exports.seed = function(knex) {
           photo: 'https://images.pexels.com/photos/1121796/pexels-photo-1121796.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
           location: 'Ngaio', 
           email: 'DanielAllen@gmail.com', 
-          hash: '', 
         },
         {
           id: 6, 
@@ -63,7 +58,6 @@ exports.seed = function(knex) {
           photo: 'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
           location: 'Ngaio', 
           email: 'StefanButt@gmail.com', 
-          hash: '', 
         },
         {
           id: 7, 
@@ -73,7 +67,6 @@ exports.seed = function(knex) {
           photo: 'https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
           location: 'Ngaio', 
           email: 'CHristopherPenlington@gmail.com', 
-          hash: '', 
         },
         {
           id: 8, 
@@ -83,7 +76,6 @@ exports.seed = function(knex) {
           photo: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
           location: 'Ngaio', 
           email: 'SarahMcMillan@gmail.com', 
-          hash: '', 
         },
         {
           id: 9, 
@@ -93,7 +85,6 @@ exports.seed = function(knex) {
           photo: 'https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
           location: 'Ngaio', 
           email: 'HollyJane@gmail.com', 
-          hash: '', 
         },
         {
           id: 10, 
@@ -103,7 +94,6 @@ exports.seed = function(knex) {
           photo: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
           location: 'Ngaio', 
           email: 'NathanSteel@gmail.com', 
-          hash: '', 
         },
         {
           id: 11, 
@@ -113,7 +103,6 @@ exports.seed = function(knex) {
           photo: 'https://images.pexels.com/photos/936229/pexels-photo-936229.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
           location: 'Ngaio', 
           email: 'KevinJamesSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 12, 
@@ -123,7 +112,6 @@ exports.seed = function(knex) {
           photo: 'https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
           location: 'Ngaio', 
           email: 'JoannaWaller@gmail.com', 
-          hash: '', 
         },
         {
           id: 13, 
@@ -133,7 +121,6 @@ exports.seed = function(knex) {
           photo: 'https://images.pexels.com/photos/1036620/pexels-photo-1036620.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
           location: 'Ngaio', 
           email: 'JessicaBell@gmail.com', 
-          hash: '', 
         },
         {
           id: 14, 
@@ -143,7 +130,6 @@ exports.seed = function(knex) {
           photo: 'https://images.pexels.com/photos/756453/pexels-photo-756453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
           location: 'Ngaio', 
           email: 'SteveSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 15, 
@@ -153,7 +139,6 @@ exports.seed = function(knex) {
           photo: 'https://images.pexels.com/photos/709790/pexels-photo-709790.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 
           location: 'Ngaio', 
           email: 'SteveSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 16, 
@@ -163,7 +148,6 @@ exports.seed = function(knex) {
           photo: 'placeHolder', 
           location: 'Ngaio', 
           email: 'SteveSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 17, 
@@ -173,7 +157,6 @@ exports.seed = function(knex) {
           photo: 'placeHolder', 
           location: 'Ngaio', 
           email: 'SteveSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 18, 
@@ -183,7 +166,6 @@ exports.seed = function(knex) {
           photo: 'placeHolder', 
           location: 'Ngaio', 
           email: 'SteveSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 19, 
@@ -193,7 +175,6 @@ exports.seed = function(knex) {
           photo: 'placeHolder', 
           location: 'Ngaio', 
           email: 'SteveSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 20, 
@@ -203,7 +184,6 @@ exports.seed = function(knex) {
           photo: 'placeHolder', 
           location: 'Ngaio', 
           email: 'SteveSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 21, 
@@ -213,7 +193,6 @@ exports.seed = function(knex) {
           photo: 'placeHolder', 
           location: 'Ngaio', 
           email: 'SteveSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 22, 
@@ -223,7 +202,6 @@ exports.seed = function(knex) {
           photo: 'placeHolder', 
           location: 'Ngaio', 
           email: 'SteveSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 23, 
@@ -233,7 +211,6 @@ exports.seed = function(knex) {
           photo: 'placeHolder', 
           location: 'Ngaio', 
           email: 'SteveSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 24, 
@@ -243,7 +220,6 @@ exports.seed = function(knex) {
           photo: 'placeHolder', 
           location: 'Ngaio', 
           email: 'SteveSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 25, 
@@ -253,7 +229,6 @@ exports.seed = function(knex) {
           photo: 'placeHolder', 
           location: 'Ngaio', 
           email: 'SteveSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 26, 
@@ -263,7 +238,6 @@ exports.seed = function(knex) {
           photo: 'placeHolder', 
           location: 'Ngaio', 
           email: 'SteveSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 27, 
@@ -273,7 +247,6 @@ exports.seed = function(knex) {
           photo: 'placeHolder', 
           location: 'Ngaio', 
           email: 'SteveSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 28, 
@@ -283,7 +256,6 @@ exports.seed = function(knex) {
           photo: 'placeHolder', 
           location: 'Ngaio', 
           email: 'SteveSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 29, 
@@ -293,7 +265,6 @@ exports.seed = function(knex) {
           photo: 'placeHolder', 
           location: 'Ngaio', 
           email: 'SteveSmith@gmail.com', 
-          hash: '', 
         },
         {
           id: 30, 
@@ -303,7 +274,6 @@ exports.seed = function(knex) {
           photo: 'placeHolder', 
           location: 'Ngaio', 
           email: 'SteveSmith@gmail.com', 
-          hash: '', 
         },
       ]);
     });

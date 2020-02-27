@@ -4,6 +4,7 @@ const connection = require('./connection')
 
 function getDog (db = connection) {
     return db('dog_table')
+    .select('photo')
 }
 
 module.exports = {getDog}

@@ -1,14 +1,45 @@
+
 import React from 'react'
-import getDogs from '../Api/index'
+import {getDogs} from '../api/index'
 
-const DogList = ({dogs})
+class DogList extends React.Component {
+    
+constructor(props) {
+    super(props)
+    this.state = {
+        name: '',
+        dogList: []
+        }
+    }
 
 
-return(
-    <section>
-        <h4>{dogs.name}</h4>
-    </section>
-)
+    componentDidMount() {
 
+        getDogs()
+        .then(dogs => {
+          
+            this.setState({
+                dogList: dogs
+            })
+        })
+
+        console.log(this.state.dogList)
+     
+    }
+
+    render() {
+    return (
+        <div className='doglist'>
+            {this.state.dogList.map(dog => {
+                console.log(dog.name)
+                return <img className='dogphoto' src={dog.photo} />
+            })}
+
+        {/* {this.state.dogList.map(dog => {
+            return <h1>{dog.name}</h1>
+        })} */}
+        </div>
+    )}
+}
 
 export default DogList
