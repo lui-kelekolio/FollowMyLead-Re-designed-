@@ -14,6 +14,8 @@ function getOwner(id, db = connection) {
     .first()
 }
 
+
+//Add auth shit
 function addOwner(first_name, last_name, photo, location, email, db=connection){
     return db('owner_table')
     .insert({
