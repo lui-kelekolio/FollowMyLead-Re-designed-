@@ -7,11 +7,14 @@ const walkerRoute = require('./routes/walkerRoute')
 const ownerRoute = require('./routes/ownerRoute')
 
 
+
 server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
-server.use()
+
 server.use('/api/walker', walkerRoute)
 server.use('/api/owner/:id', ownerRoute)
+
+
 
 
 
