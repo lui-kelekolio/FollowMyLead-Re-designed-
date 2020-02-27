@@ -1,12 +1,12 @@
 import React from 'react'
-import {getDogs} from '../Api/index'
+import {getDogs} from '../Api/dogApi'
 
 class DogList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             name:[],
-            dogList: []
+            photo: []
         }
     }
 
@@ -17,7 +17,7 @@ class DogList extends React.Component {
 
             this.setState({
                 name: dogs,
-                dogList: dogs
+                photo: dogs
             })
         })
 
@@ -27,7 +27,7 @@ class DogList extends React.Component {
     render() {
         return(
         <div className='doglist'>
-            {this.state.dogList.map(dog => {
+            {this.state.photo.map(dog => {
                 console.log(dog.photo)
                 return <img className='dogphoto' src={dog.photo} />
             })}

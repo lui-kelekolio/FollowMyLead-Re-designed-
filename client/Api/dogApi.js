@@ -9,5 +9,12 @@ export function getDogs () {
     })
 }
 
+export function getDog () {
+    return request.get('/api/dogs/:id')
+    .then(res => {
+        return res.body
+    })
+}
+
 
 //Lui and Izzy code end
