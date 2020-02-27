@@ -1,5 +1,7 @@
 import React from 'react'
-import {getDogs} from '../Api/dogApi'
+
+import {getDogs} from '../api/dogApi'
+
 
 class DogList extends React.Component {
     constructor(props) {
