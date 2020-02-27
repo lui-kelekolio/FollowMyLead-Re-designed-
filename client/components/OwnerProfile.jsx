@@ -1,10 +1,12 @@
 import React from 'react'
 
 
+
 const OwnerProfile = (props) => {
+  console.log(props)
   return (
     <div>
-      <h1>{PaymentResponse.match.params.id}</h1>
+      <h1>{props.first_name}</h1>
     </div>
   
   )

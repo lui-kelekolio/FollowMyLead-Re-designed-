@@ -11,7 +11,6 @@ router.get('/', (req,res) =>{
 
 router.post('/', (req, res) =>{
     let owner = req.body
-    console.log(req.body)
 
     db.addOwner(owner.first_name, owner.last_name, owner.photo, owner.location, owner.email)
     .then(id => {
@@ -20,13 +19,13 @@ router.post('/', (req, res) =>{
 
 })
 
-router.get('/owner/:id', (req,res) => {
+router.get('/:id', (req,res) => {
     db.getOwner(req.params.id)
     .then(owner => {
-        console.log(owner)
+        res.json(owner)
     })
 
-    return owner.id == req.params.id 
+    
 })
 
 
