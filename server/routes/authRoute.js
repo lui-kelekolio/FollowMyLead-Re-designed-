@@ -4,7 +4,7 @@ const {
   userExists,
   getOwner,
   getWalker,
-  createUser } = require('../db/users')
+  createWalker } = require('../db/users')
 
 const router = express.Router()
 

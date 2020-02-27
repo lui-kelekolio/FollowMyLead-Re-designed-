@@ -2,8 +2,9 @@ const { generateHash } = require('authenticare/server')
 
 const connection = require('./connection')
 
-function getWalker (db = connection) {
-    return db('walker_table')
+function createWalker ({email, password}, db = connection) {
+    return generateHash(password)
+    .then (hash => db('walker_table').insert({email, hash}))
 }
 
-module.exports = {getWalker}
+module.exports = {createWalker}
