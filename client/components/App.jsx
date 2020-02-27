@@ -8,6 +8,7 @@ import Login from './Login'
 import DogList from './DogList'
 import RegisterOwner from './RegisterOwner'
 import RegisterWalker from './RegisterWalker'
+import WalkerProfile from './WalkerProfile'
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
     <Route path="/register/walker" component={RegisterWalker}/>
     <Route path="/login" component={Login}/>
     <Route path="/doglist" component={DogList}/>
+    <Route path = "/walker" component ={WalkerProfile}/>
     <Footer />
     </React.Fragment>
     </Router>
