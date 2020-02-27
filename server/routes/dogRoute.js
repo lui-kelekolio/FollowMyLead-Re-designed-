@@ -8,12 +8,9 @@ router.use(express.json())
 
 router.get('/', (req, res) => {
     dogData.getDog()
-        .then(dog =>{
-            console.log(dog)
-
-            return res.json(dog)
-
-        }) 
+        .then(dogs => {
+           
+           return res.json(dogs)})
 })
 
 module.exports = router 
