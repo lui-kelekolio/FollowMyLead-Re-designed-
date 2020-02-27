@@ -1,8 +1,9 @@
 import React from "react"
+import { addOwner } from '../api/ownersApi'
 
 class RegisterOwner extends React.Component{
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.state = {
             first_name: '',
@@ -13,32 +14,44 @@ class RegisterOwner extends React.Component{
         }
     }
 
+    handleChange = (e) => {
+        this.setState({
+          [e.target.name]: e.target.value
+        })
+      }
+    
+      handleSubmit = (e) => {
+        e.preventDefault()
+        addOwner(this.state)
+    
+      }
+
 
 
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}> 
                     <h1>Owner form</h1>
                     <hr />
-                    <label> First name:
-                        <input type = 'text' placeholder = 'First name'/>
+                    <label> First Name:
+                        <input type='text' name='first_name' onChange={this.handleChange} />
                     </label>
                     <br />
-                    <label> Last name:
-                        <input type = 'text' placeholder = 'Last name'/>
+                    <label> Last Name:
+                    <input type='text' name='last_name' onChange={this.handleChange} />
                     </label>
                     <br />
-                    <label> Location
-                        <input type = 'text' placeholder = 'Location'/>
+                    <label> Location:
+                    <input type='text' name='location' onChange={this.handleChange} />
                     </label>
                     <br />
                     <label> email:
-                        <input type = 'text' placeholder = 'email'/>
+                    <input type='text' name='email' onChange={this.handleChange} />
                     </label>
                     <br />
                     <label> Photo:
-                        <input type = 'text' placeholder = 'Photo'/>
+                    <input type='text' name='photo' onChange={this.handleChange} />
                     </label>
                     <br />
                     <input type= "submit" value= "Submit" />
