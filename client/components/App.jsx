@@ -5,8 +5,13 @@ import Header from './Header'
 import Footer from './Footer'
 import Home from './Home'
 import Login from './Login'
+<<<<<<< HEAD
+import Register from './Register'
+import DogList from './DogList'
+=======
 import RegisterOwner from './RegisterOwner'
 import RegisterWalker from './RegisterWalker'
+>>>>>>> dev
 
 
 const App = () => {
@@ -18,6 +23,7 @@ const App = () => {
     <Route path="/register/owner" component={RegisterOwner}/>
     <Route path="/register/walker" component={RegisterWalker}/>
     <Route path="/login" component={Login}/>
+    <Route path="/doglist" component={DogList}/>
     <Footer />
     </React.Fragment>
     </Router>
