@@ -1,6 +1,6 @@
 
 import React from 'react'
-import {getDogs} from '../Api/index'
+import {getDogs} from '../api/index'
 
 class DogList extends React.Component {
     

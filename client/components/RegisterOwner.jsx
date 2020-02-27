@@ -1,5 +1,5 @@
 import React from "react"
-import { addOwner } from '../Api/Owners'
+import { addOwner } from '../api/owners'
 
 class RegisterOwner extends React.Component{
     constructor(props) {
