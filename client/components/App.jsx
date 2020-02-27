@@ -8,6 +8,7 @@ import Login from './Login'
 import DogList from './DogList'
 import RegisterOwner from './RegisterOwner'
 import RegisterWalker from './RegisterWalker'
+import OwnerProfile from './OwnerProfile'
 
 
 const App = () => {
@@ -17,7 +18,7 @@ const App = () => {
     <Header />
     <Route exact path="/" component={Home}/>
     <Route path="/register/owner" component={RegisterOwner}/>
-    <Route path="/register/owner/:id" component={OwnerProfile}/>
+    <Route path="/owner/:id" component={OwnerProfile}/>
     <Route path="/register/walker" component={RegisterWalker}/>
     <Route path="/login" component={Login}/>
     <Route path="/doglist" component={DogList}/>

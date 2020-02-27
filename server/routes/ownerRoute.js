@@ -3,7 +3,7 @@ const router = express.Router()
 const db = require('../db/ownerData')
 
 router.get('/', (req,res) =>{
-    db.getOwner()
+    db.getOwners()
     .then(owners => {
         res.json(owners)
     })
@@ -18,8 +18,15 @@ router.post('/', (req, res) =>{
         res.json({})
     })
 
+})
 
+router.get('/owner/:id', (req,res) => {
+    db.getOwner(req.params.id)
+    .then(owner => {
+        console.log(owner)
+    })
 
+    return owner.id == req.params.id 
 })
 
 

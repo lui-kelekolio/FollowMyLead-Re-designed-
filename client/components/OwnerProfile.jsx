@@ -1,10 +1,13 @@
-const React = require('react')
+import React from 'react'
 
 
-function OwnerProfile () {
+const OwnerProfile = (props) => {
   return (
+    <div>
+      <h1>{PaymentResponse.match.params.id}</h1>
+    </div>
   
   )
 }
 
-module.exports = OwnerProfile
+export default OwnerProfile
