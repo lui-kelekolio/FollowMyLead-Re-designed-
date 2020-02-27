@@ -7,6 +7,7 @@ class DogList extends React.Component {
 constructor(props) {
     super(props)
     this.state = {
+        name: '',
         dogList: []
         }
     }
@@ -30,9 +31,13 @@ constructor(props) {
     return (
         <div className='doglist'>
             {this.state.dogList.map(dog => {
-                
-                return <img src={dog.photo} />
+                console.log(dog.name)
+                return <img className='dogphoto' src={dog.photo} />
             })}
+
+        {/* {this.state.dogList.map(dog => {
+            return <h1>{dog.name}</h1>
+        })} */}
         </div>
     )}
 }
