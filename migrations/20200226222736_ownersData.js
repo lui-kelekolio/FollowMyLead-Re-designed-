@@ -8,7 +8,6 @@ exports.up = function(knex) {
     table.string('photo');
     table.string('location');
     table.string('email');
-    table.string('hash');
   });
 };
 

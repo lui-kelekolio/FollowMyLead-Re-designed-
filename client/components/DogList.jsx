@@ -1,40 +1,44 @@
-
 import React from 'react'
-import {getDogs} from '../api/index'
+
+import {getDogs} from '../api/dogApi'
+
 
 class DogList extends React.Component {
-    
-constructor(props) {
-    super(props)
-    this.state = {
-        dogList: []
+    constructor(props) {
+        super(props)
+        this.state = {
+            name:[],
+            photo: []
         }
     }
-
 
     componentDidMount() {
 
         getDogs()
         .then(dogs => {
-          
+
             this.setState({
-                dogList: dogs
+                name: dogs,
+                photo: dogs
             })
         })
 
-        console.log(this.state.dogList)
-     
+        console.log(this.state.dogs)
     }
 
     render() {
-    return (
+        return(
         <div className='doglist'>
-            {this.state.dogList.map(dog => {
-                
-                return <img src={dog.photo} />
+            {this.state.photo.map(dog => {
+                console.log(dog.photo)
+                return <img className='dogphoto' src={dog.photo} />
+            })}
+
+            {this.state.name.map(dog => {
+                return <p>{dog.name}</p>
             })}
         </div>
-    )}
+         )}
 }
 
 export default DogList

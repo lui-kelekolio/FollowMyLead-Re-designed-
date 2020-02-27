@@ -1,10 +1,16 @@
 import React from "react"
+import { register, isAuthenticated } from 'authenticare/client'
 
-class RegisterWalker extends React.Component{
+import { addWalker } from '../api/walkerApi'
+
+
+class RegisterWalker extends React.Component {
     constructor() {
         super()
 
         this.state = {
+            username: '',
+            password: '',
             first_name: '',
             last_name: '',
             blurb: '',
@@ -14,39 +20,77 @@ class RegisterWalker extends React.Component{
         }
     }
 
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        register({
+            username: this.state.username,
+            password: this.state.password
+        }, {
+            baseUrl: process.env.BASE_API_URL
+        })
+            .then((token) => {
+                if (isAuthenticated()) {
+                    console.log("all good")
+                    addWalker({
+                        first_name: this.state.first_name,
+                        last_name: this.state.last_name,
+                        blurb: this.state.blurb,
+                        location: this.state.location,
+                        email: this.state.email,
+                        photo: this.state.photo,
+                    })
+                }
+            })
+    }
+
 
 
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <h1>Walker form</h1>
-                    <hr/>
+                    <br />
+                    <label> User Name:
+                        <input type='text' placeholder='user name' name='username' onChange={this.handleChange} />
+                    </label>
+                    <br />
+                    <label> Password:
+                        <input type="text" placeholder='password' name='password' onChange={this.handleChange} />
+                    </label>
+                    <br />
                     <label> First name:
-                        <input type = 'text' placeholder = 'First name'/>
+                        <input type='text' placeholder='First name' name='first_name' onChange={this.handleChange} />
                     </label>
                     <br />
                     <label> Last name:
-                        <input type = 'text' placeholder = 'Last name'/>
+                        <input type='text' placeholder='Last name' name='last_name' onChange={this.handleChange} />
                     </label>
                     <br />
                     <label> Blurb:
-                        <input type = 'text' placeholder = 'Blurb'/>
+                        <input type='text' placeholder='Blurb' name='blurb' onChange={this.handleChange} />
                     </label>
                     <br />
                     <label> Location
-                        <input type = 'text' placeholder = 'Location'/>
+                        <input type='text' placeholder='Location' name='location' onChange={this.handleChange} />
                     </label>
                     <br />
                     <label> email:
-                        <input type = 'text' placeholder = 'email'/>
+                        <input type='text' placeholder='email' name='email' onChange={this.handleChange} />
                     </label>
                     <br />
                     <label> Photo:
-                        <input type = 'text' placeholder = 'Photo'/>
+                        <input type='text' placeholder='Photo' name='photo' onChange={this.handleChange} />
                     </label>
                     <br />
-                    <input type= "submit" value= "Submit" />
+                    <input type="submit" value="Submit" />
                 </form>
             </div>
         )

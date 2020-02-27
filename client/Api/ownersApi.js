@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-const apiOwnerUrl = '/api/v1/owner'
+const apiOwnerUrl = '/api/owner'
 
 
 export function addOwner(owner) {
