@@ -6,7 +6,7 @@ const router = express.Router()
 
 router.use(express.json())
 
-router.get('/', (req, res) => {
+router.get('/:id', (req, res) => {
     walkerData.getWalker()
         .then(walker =>{
             console.log(walker)
