@@ -4,8 +4,8 @@ import { register, isAuthenticated } from 'authenticare/client'
 import { addOwner } from '../api/ownerApi'
 
 class RegisterOwner extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.state = {
             first_name: '',
