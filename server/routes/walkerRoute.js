@@ -6,14 +6,23 @@ const router = express.Router()
 
 router.use(express.json())
 
-router.get('/:id', (req, res) => {
-    walkerData.getWalker()
-        .then(walker =>{
-            console.log(walker)
-
+router.get('/', (req, res) => {
+    walkerData.getWalkers()
+        .then(walker => {
             return res.json(walker)
+        })
+})
 
-        }) 
+router.get('/:id', (req, res) => {
+    console.log(walkerData.getWalker(req.params))
+    walkerData.getWalker(req.params)
+        .then(response => {
+            return response
+        })
+    // .then(walker => {
+    //     console.log(walker)
+    //     return res.json(walker)
+    // })
 })
 
 module.exports = router 

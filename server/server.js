@@ -11,7 +11,7 @@ const authRoute = require('./routes/authRoute')
 server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
 
-server.use('/api/walker', walkerRoute)
+server.use('/api/walkers', walkerRoute)
 // Lui and Izzy code
 server.use('/api/dogs', dogRoute)
 // server.use('/api/v1/walker', walkerRoute)

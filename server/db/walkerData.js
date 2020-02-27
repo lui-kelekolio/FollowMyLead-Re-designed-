@@ -6,6 +6,8 @@ module.exports = {
     userExists,
     addWalker,
     getUserByName,
+    getWalkers,
+    getWalker,
 }
 
 function createUser(user, db = connection) {
@@ -45,5 +47,16 @@ function getUserByName(username, db = connection) {
     return db('walker_table')
         .select()
         .where('username', username)
+        .first()
+}
+
+function getWalkers(db = connection) {
+    return db('walker_table')
+}
+
+function getWalker(id, db = connection) {
+    return getWalkers()
+        .select()
+        .where('id', id)
         .first()
 }
