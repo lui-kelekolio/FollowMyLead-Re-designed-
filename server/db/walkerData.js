@@ -6,6 +6,8 @@ module.exports = {
     userExists,
     addWalker,
     getUserByName,
+    getWalkers,
+    getWalker,
 }
 
 function createUser(user, db = connection) {
@@ -18,13 +20,13 @@ function createUser(user, db = connection) {
         })
         .then(() => generateHash(user.password))
         .then(passwordHash => {
-            return db('walker_table').insert({ username: user.username, hash: passwordHash })
-        })
+            return db('user_table').insert({ username: user.username, hash: passwordHash })
+        })            //user_table
 }
 
 function userExists(username, db = connection) {
     console.log(username + " here111")
-    return db('walker_table')
+    return db('user_table')
         .count('id as n')
         .where('username', username)
         .then(count => {
@@ -32,18 +34,27 @@ function userExists(username, db = connection) {
         })
 }
 
-async function addWalker(walker) {
-    return db('walker_table')
-        .insert(walker)
-        .then(() => db)
-        .then(getUsereByName(username))
-
-}
-
 function getUserByName(username, db = connection) {
     console.log(username + " here2122")
-    return db('walker_table')
+    return db('user_table')
         .select()
         .where('username', username)
+        .first()
+}
+
+function addWalker(walker, db = connection) {
+    console.log('walker: ', walker)
+    return db('walker_table')
+        .insert(walker).debug()
+}
+
+function getWalkers(db = connection) {
+    return db('walker_table')
+}
+
+function getWalker(id, db = connection) {
+    return db('walker_table')
+        .select()
+        .where({ id: 'id' })
         .first()
 }

@@ -16,5 +16,5 @@ server.use('/api/walker', walkerRoute)
 server.use('/api/dogs', dogRoute)
 // server.use('/api/v1/walker', walkerRoute)
 // server.use('/api/Owner', ownerRoute)
-server.use('/api/v1', authRoute)
+server.use('/api/', authRoute)
 module.exports = server
