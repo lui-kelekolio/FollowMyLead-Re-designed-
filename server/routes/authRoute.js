@@ -1,6 +1,6 @@
 const express = require('express')
 const { applyAuthRoutes } = require('authenticare/server')
-const { userExists, getOwner, getWalker, createWalker } = require('../db/users')
+const { userExists, getUserByName, createUser } = require('../db/walkerData')
 
 const router = express.Router()
 
@@ -9,14 +9,8 @@ const router = express.Router()
 // db functions that need to use auth. Subject to change.
 applyAuthRoutes(router, {
   userExists,
-  getOwner,
-  getWalker,
-  createOwner,
-  createWalker
+  getUserByName,
+  createUser
 })
-
-
-
-
 
 module.exports = router

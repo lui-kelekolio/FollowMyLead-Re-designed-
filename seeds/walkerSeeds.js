@@ -8,6 +8,7 @@ exports.seed = function(knex) {
         {
           id: 1, 
           feedback_id: 1, 
+          username: 'bof', 
           first_name: 'Mary', 
           last_name: 'Wells', 
           blurb: 'Loves long walks on the beach', 
@@ -19,6 +20,7 @@ exports.seed = function(knex) {
         {
           id: 2, 
           feedback_id: 1, 
+          username: 'user123', 
           first_name: 'James', 
           last_name: 'Jenkins', 
           blurb: 'Dog lover', 
@@ -30,6 +32,7 @@ exports.seed = function(knex) {
         {
           id: 3, 
           feedback_id: 1, 
+          username: 'jenny', 
           first_name: 'Jennifer', 
           last_name: 'Soo', 
           blurb: 'Happiest when strolling the hills with mans best friend', 
@@ -41,6 +44,7 @@ exports.seed = function(knex) {
         {
           id: 4, 
           feedback_id: 1, 
+          username: 'bobbity', 
           first_name: 'Robert', 
           last_name: 'Wellington', 
           blurb: 'Friendly guy who is a sucker for big dogs', 
@@ -52,6 +56,7 @@ exports.seed = function(knex) {
         {
           id: 5, 
           feedback_id: 1, 
+          username: 'liz', 
           first_name: 'Elizabeth', 
           last_name: 'Paul', 
           blurb: 'Super active, enjoys long walks', 
@@ -63,6 +68,7 @@ exports.seed = function(knex) {
         {
           id: 6, 
           feedback_id: 1, 
+          username: 'mikeyboy', 
           first_name: 'Michael', 
           last_name: 'Matthews', 
           blurb: 'Senior who loves the companion of a furry friend', 
@@ -74,6 +80,7 @@ exports.seed = function(knex) {
         {
           id: 7, 
           feedback_id: 1, 
+          username: 'babz', 
           first_name: 'Barb', 
           last_name: 'Thomas', 
           blurb: 'Loves long walks on the beach', 
@@ -85,6 +92,7 @@ exports.seed = function(knex) {
         {
           id: 8, 
           feedback_id: 1, 
+          username: 'suz', 
           first_name: 'Susan', 
           last_name: 'Go', 
           blurb: 'Lover of any dog, any size', 
@@ -96,6 +104,7 @@ exports.seed = function(knex) {
         {
           id: 9, 
           feedback_id: 1, 
+          username: 'daveyjoneslocker', 
           first_name: 'David', 
           last_name: 'Williams', 
           blurb: 'Big dogs, small, dogs, medium dogs', 
@@ -107,6 +116,7 @@ exports.seed = function(knex) {
         {
           id: 10, 
           feedback_id: 1, 
+          username: 'tobefrankwithyou', 
           first_name: 'Frank', 
           last_name: 'Burrows', 
           blurb: 'Not a cat person', 
@@ -118,6 +128,7 @@ exports.seed = function(knex) {
         {
           id: 11, 
           feedback_id: 1, 
+          username: 'specialj', 
           first_name: 'Jono', 
           last_name: 'Clark', 
           blurb: 'Dogs best friend', 
@@ -129,6 +140,7 @@ exports.seed = function(knex) {
         {
           id: 12, 
           feedback_id: 1, 
+          username: 'specialk', 
           first_name: 'Karen', 
           last_name: 'Franco', 
           blurb: 'Puppies make me smile', 
@@ -140,6 +152,7 @@ exports.seed = function(knex) {
         {
           id: 13, 
           feedback_id: 1, 
+          username: 'joebo', 
           first_name: 'Joseph', 
           last_name: 'Step', 
           blurb: 'Enjoys running along side fast dogs', 
@@ -151,6 +164,7 @@ exports.seed = function(knex) {
         {
           id: 14, 
           feedback_id: 1, 
+          username: 'sezzy', 
           first_name: 'Sarah', 
           last_name: 'Don', 
           blurb: 'Loves long walks on the beach', 
@@ -162,6 +176,7 @@ exports.seed = function(knex) {
         {
           id: 15, 
           feedback_id: 1, 
+          username: 'nancydrew', 
           first_name: 'Nancy', 
           last_name: 'Noels', 
           blurb: 'Loves long walks on the beach', 
@@ -173,6 +188,7 @@ exports.seed = function(knex) {
         {
           id: 16, 
           feedback_id: 1, 
+          username: 'stalk', 
           first_name: 'Jack', 
           last_name: 'Bean', 
           blurb: 'Loves long walks on the beach', 
@@ -184,6 +200,7 @@ exports.seed = function(knex) {
         {
           id: 17, 
           feedback_id: 1, 
+          username: 'lol', 
           first_name: 'Ash', 
           last_name: 'Lee', 
           blurb: 'Loves long walks on the beach', 
@@ -195,6 +212,7 @@ exports.seed = function(knex) {
         {
           id: 18, 
           feedback_id: 1, 
+          username: 'toppgun', 
           first_name: 'Jim', 
           last_name: 'Tim', 
           blurb: 'Loves long walks on the beach', 
@@ -206,6 +224,7 @@ exports.seed = function(knex) {
         {
           id: 19, 
           feedback_id: 1, 
+          username: 'frida', 
           first_name: 'Frida', 
           last_name: 'Robuck', 
           blurb: 'Loves long walks on the beach', 
@@ -217,6 +236,7 @@ exports.seed = function(knex) {
         {
           id: 20, 
           feedback_id: 1, 
+          username: 'joe', 
           first_name: 'Joe', 
           last_name: 'Dirr', 
           blurb: 'Loves long walks on the beach', 
@@ -228,6 +248,7 @@ exports.seed = function(knex) {
         {
           id: 21, 
           feedback_id: 1, 
+          username: 'sammi', 
           first_name: 'Sammi', 
           last_name: 'Loft', 
           blurb: 'Loves long walks on the beach', 
@@ -239,6 +260,7 @@ exports.seed = function(knex) {
         {
           id: 22, 
           feedback_id: 1, 
+          username: 'eric', 
           first_name: 'Eric', 
           last_name: 'Legg', 
           blurb: 'Loves long walks on the beach', 
@@ -250,6 +272,7 @@ exports.seed = function(knex) {
         {
           id: 23, 
           feedback_id: 1, 
+          username: 'ela', 
           first_name: 'Pam', 
           last_name: 'Coop', 
           blurb: 'Loves long walks on the beach', 
@@ -261,6 +284,7 @@ exports.seed = function(knex) {
         {
           id: 24, 
           feedback_id: 1, 
+          username: 'wellwellnick', 
           first_name: 'Nick', 
           last_name: 'Wells', 
           blurb: 'Loves long walks on the beach', 
@@ -272,6 +296,7 @@ exports.seed = function(knex) {
         {
           id: 25, 
           feedback_id: 1, 
+          username: 'bradanna', 
           first_name: 'Anna', 
           last_name: 'Brad', 
           blurb: 'Loves long walks on the beach', 
@@ -283,6 +308,7 @@ exports.seed = function(knex) {
         {
           id: 26, 
           feedback_id: 1, 
+          username: 'justintime', 
           first_name: 'Justin', 
           last_name: 'Lake', 
           blurb: 'Loves long walks on the beach', 
@@ -293,7 +319,8 @@ exports.seed = function(knex) {
         },
         {
           id: 27, 
-          feedback_id: 1, 
+          feedback_id: 1,
+          username: 'had-little-lamb',  
           first_name: 'Mary', 
           last_name: 'Wells', 
           blurb: 'Loves long walks on the beach', 
@@ -305,6 +332,7 @@ exports.seed = function(knex) {
         {
           id: 28, 
           feedback_id: 1, 
+          username: 'what?', 
           first_name: 'Nicky', 
           last_name: 'Wombat', 
           blurb: 'Loves long walks on the beach', 
@@ -316,6 +344,7 @@ exports.seed = function(knex) {
         {
           id: 29, 
           feedback_id: 1, 
+          username: 'usernamesarehard', 
           first_name: 'Gary', 
           last_name: 'Bouy', 
           blurb: 'Loves long walks on the beach', 
@@ -327,6 +356,7 @@ exports.seed = function(knex) {
         {
           id: 30, 
           feedback_id: 1, 
+          username: 'auth-is-hard', 
           first_name: 'Ruth', 
           last_name: 'Struth', 
           blurb: 'Loves long walks on the beach', 
