@@ -1,5 +1,5 @@
 import React from 'react'
-import {HashRouter as Router, Route, Link} from 'react-router-dom'
+import {HashRouter as Router, Route} from 'react-router-dom'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -17,6 +17,7 @@ const App = () => {
     <Header />
     <Route exact path="/" component={Home}/>
     <Route path="/register/owner" component={RegisterOwner}/>
+    <Route path="/register/owner/:id" component={OwnerProfile}/>
     <Route path="/register/walker" component={RegisterWalker}/>
     <Route path="/login" component={Login}/>
     <Route path="/doglist" component={DogList}/>
