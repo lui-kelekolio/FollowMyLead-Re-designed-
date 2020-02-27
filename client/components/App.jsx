@@ -1,8 +1,26 @@
 import React from 'react'
+import {HashRouter as Router, Route, Link} from 'react-router-dom'
+
+import Header from './Header'
+import Footer from './Footer'
+import Home from './Home'
+import Login from './Login'
+import Register from './Register'
+import DogList from './DogList'
+
 
 const App = () => {
   return (
-    <h1>Follow my Lead development has begun!</h1>
+    <Router>
+    <React.Fragment>
+    <Header />
+    <Route exact path="/" component={Home}/>
+    <Route path="/register" component={Register}/>
+    <Route path="/login" component={Login}/>
+    <Route path="/doglist" component={DogList}/>
+    <Footer />
+    </React.Fragment>
+    </Router>
   )
 }
 
