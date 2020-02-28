@@ -16,7 +16,7 @@ function getOwner(id, db = connection) {
 
 
 //Add auth shit
-function addOwner(first_name, last_name, photo, location, email, db=connection){
+function addOwner(owner, db=connection){
     return db('owner_table')
         .insert({
             first_name: first_name,
@@ -34,6 +34,8 @@ function updateOwner(id, owner, db = connection) {
     return db('owner_table')
         .where('id', id)
         .update(owner)
+    .insert(owner).debug()
+
 }
 
 
