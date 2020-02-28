@@ -1,5 +1,6 @@
 import React from 'react'
 import { getDogs } from '../api/dogApi'
+import {Link} from 'react-router-dom'
 
 class DogList extends React.Component {
 
@@ -31,9 +32,9 @@ class DogList extends React.Component {
             <div>
                 {this.state.dogList.map(dog => {
                     return (
-                        <div>
-                            <img src={dog.photo} />
-                            <h1>{dog.name}</h1>
+                        <div className='doglist'>
+                            <img className='dogphoto' src={dog.photo} />
+                           <Link to = {`/dog/${dog.id}`} >{dog.name}</Link>
                         </div>
                     )
                 })}
