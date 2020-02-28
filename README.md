@@ -42,15 +42,14 @@ The idea is to allow dog lovers to find a compatable dog via a list of profiles 
 * I want to register for the App
 * I want to be able to sign in to the App with my login and password
 * I want to be able to review, edit and delete my profile upon registration and for future purposes(eg update photo or contact details)
-* I want to be able to view dogs in my area that I can potentially take for a walk
-* I want to be selective in my preference of dog with filters, eg size, energy levels (not a grandma to a doberman)
+* I want to be able to view a list of dogs I can potentially take for a walk
 * I want to be able to view puppy details and previous feedback on the puppy's profile page
 * I want to be able to notify the owner that I am interested in their pet by click of a button.
 * I want to be informed if I am accepted or declined from walking an owners dog
-* I want to be able to leave feedback on the pup on the puppy profile page
 
 ### Stretch Walker:
 
+* I want to be able to leave feedback on the pup on the puppy profile page
 * I want to be able to leave feedback on the pup after the walk has finished via a link.
 * I want to be contactable via IM within the App
 * I want to be abe to use geolocational tech to find walkers in my area at any given time. 
@@ -67,10 +66,10 @@ The idea is to allow dog lovers to find a compatable dog via a list of profiles 
 * I want to be able to receive an email from a potential walker which will include a link to their profile
 * I want to be able to accept or decline a walker by click of a button
 * I want to be able to send a confirmation of acceptance or rejection (acceptance will open a line of communication via email)
-* I want to be able to leave feedback on the walker profile page
 
 ### Stretch Owner:
 
+* I want to be able to leave feedback on the walker profile page
 * I want to be able to leave feedback on the walker after the walk has finished via a link.
 * I want to be notified by app notification when a walker has chosen my dog which will display on my profile.
 * I want to be able to contact walkers that have chosen my dog via IM.
@@ -221,6 +220,17 @@ The idea is to allow dog lovers to find a compatable dog via a list of profiles 
 | photo                  | string                               |
 |------------------------|--------------------------------------|
 
+
+### user_table
+
+| col_name               | variable type                        |
+|------------------------|--------------------------------------|
+| id                     | increments.                          |
+|------------------------|--------------------------------------|
+| username.              | string	                        |
+|------------------------|--------------------------------------|
+| password               | string	                        |
+|------------------------|--------------------------------------|
 
 
 ### dog_feedback_table
