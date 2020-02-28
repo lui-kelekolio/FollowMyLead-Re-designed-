@@ -13,3 +13,8 @@ export function addOwner(owner) {
         })
 }
 
+export function getOwner(id) {
+    return request
+    .get(URL + id)
+    .then(response => response.body)
+}

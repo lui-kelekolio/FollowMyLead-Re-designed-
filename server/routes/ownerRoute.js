@@ -50,7 +50,6 @@ router.post('/', (req, res) => {
         .then(id => {
             res.json({})
         })
-
 })
 
 router.get('/:id', (req, res) => {
@@ -58,8 +57,16 @@ router.get('/:id', (req, res) => {
         .then(owner => {
             res.json(owner)
         })
+})
 
+router.put('/:id', (req, res) => {
+    let id = req.params.id
+    let owner = req.body
 
+    db.updateOwner(id, owner)
+    .then(response => {
+        res.json({})
+    })
 })
 
 
