@@ -15,6 +15,7 @@ import OwnerProfile from './OwnerProfile'
 
 
 import WalkerProfile from './WalkerProfile'
+import WalkerProfileEdit from './WalkerProfileEdit'
 
 
 
@@ -31,6 +32,7 @@ const App = () => {
     <Route path="/doglist" component={DogList}/>
     <Route path = "/walker/:id" component ={WalkerProfile}/>
     <Route path="/dog/:id" component={DogProfile}/>
+    <Route path ="/walkerEdit/" component = {WalkerProfileEdit}/>
     <Footer />
     </React.Fragment>
     </Router>

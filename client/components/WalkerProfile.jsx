@@ -1,6 +1,6 @@
 import React from "react"
 import { getWalker } from '../Api/walkerApi'
-
+import {Link} from 'react-router-dom'
 
 class WalkerProfile extends React.Component {
     constructor(){
@@ -27,7 +27,10 @@ render() {
     return(
         <div>
             <br />
-            <button>Edit</button> <button>Delete</button>
+          
+            <button><Link to = './walkerEdit/'>Edit</Link></button> 
+
+            <button>Delete</button>
              <h1>{this.state.walker.first_name} {this.state.walker.last_name} </h1>
             <h2>email:{this.state.walker.email}</h2>
             <h3>Location: {this.state.walker.location}</h3>
