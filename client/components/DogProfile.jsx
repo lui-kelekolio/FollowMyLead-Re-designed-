@@ -1,5 +1,7 @@
 import React from 'react'
 import { getDog } from '../api/dogApi'
+import {Link} from 'react-router-dom'
+// import {}
 
 
 class DogProfile extends React.Component {
@@ -57,6 +59,8 @@ class DogProfile extends React.Component {
                 <h2>{this.state.special_requirements}</h2>
                 <h2>{this.state.vet_name}</h2>
                 <h2>{this.state.vet_contact}</h2>
+
+                <Link to = {`/owner/${owner.id}`}><button>push here</button></Link>
             </div>
         )
     }
