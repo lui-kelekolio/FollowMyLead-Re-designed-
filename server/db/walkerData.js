@@ -59,3 +59,4 @@ function getWalker(id, db = connection) {
     .where({ id: id })
     .first()
 }
+
