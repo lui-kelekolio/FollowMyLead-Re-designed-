@@ -15,6 +15,7 @@ import OwnerProfile from './OwnerProfile'
 
 
 import WalkerProfile from './WalkerProfile'
+import EditOwnerProfile from './EditOwnerProfile'
 import WalkerProfileEdit from './WalkerProfileEdit'
 
 
@@ -27,6 +28,7 @@ const App = () => {
     <Route exact path="/" component={Home}/>
     <Route path="/register/owner" component={RegisterOwner}/>
     <Route path="/owner/:id" component={OwnerProfile}/>
+    <Route path="/owner/:id/edit" component={EditOwnerProfile}/>
     <Route path="/register/walker" component={RegisterWalker}/>
     <Route path="/login" component={Login}/>
     <Route path="/doglist" component={DogList}/>
