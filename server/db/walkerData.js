@@ -72,7 +72,4 @@ function editWalker(id, first_name, last_name, blurb, photo, location, email, db
             })
     .then()
 }
-//         .select()
-//         .where('id', id )
-//         .first()
-// }
+

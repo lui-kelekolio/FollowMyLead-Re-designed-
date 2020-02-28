@@ -34,12 +34,6 @@ export function getUserDetails(id) {
     })
 }
 
-
-// export function getWalkers() {
-//   return request.get(URL) 
-//       .then(res => res.body)
-// }
-
 export function getWalker(walkerId) {
   return request.get(URL + walkerId)
     .then(res => res.body)
