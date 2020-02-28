@@ -2,7 +2,8 @@ const connection = require('./connection')
 const { generateHash } = require('authenticare/server')
 
 module.exports = {
-    createUser
+    createUser,
+    getUserDetails
 }
 
 function createUser(user, db = connection) {
@@ -27,5 +28,26 @@ function userExists(username, db = connection) {
         .then(count => {
             return count[0].n > 0
         })
+}
+
+function getUserDetails(id, db = connection) {
+    return db('walker_table')
+    .where('user_id', id)
+    .first()
+    .then(walker => {
+        return db('owner_table')
+        .where('user_id', id)
+        .first()
+        .then( owner => {
+            return db('user_table') 
+            .where('id', id)
+            .first()
+            .then(user => {
+                user.walker = walker
+                user.owner = owner
+                return user
+            })
+        })
+    })
 }
 
