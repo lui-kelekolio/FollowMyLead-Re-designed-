@@ -3,6 +3,7 @@ import { getEncodedToken } from 'authenticare/client'
 
 const URL = '/api/owner/'
 
+
 export function addOwner(owner) {
     return request.post(URL)
         .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
@@ -18,3 +19,4 @@ export function getOwner(id) {
     .get(URL + id)
     .then(response => response.body)
 }
+

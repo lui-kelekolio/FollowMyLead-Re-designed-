@@ -39,6 +39,7 @@ class EditOwnerProfile extends React.Component {
         <h1>Owner Profile Page</h1>
         <br/>
         <h2>First Name: {this.state.first_name}</h2>
+        <input type='text' name='first_name' placeholder='First name' />
         <h2>Last Name: {this.state.last_name}</h2>
         <h2>Photo: {this.state.photo}</h2>
         <h2>Location: {this.state.location}</h2>

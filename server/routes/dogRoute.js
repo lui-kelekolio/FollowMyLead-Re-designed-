@@ -21,4 +21,28 @@ router.get('/:id', (req, res) => {
 
 })
 
+router.post('/register/dog', (req, res) => {
+    let dog = req.body
+
+    db.addDog(dog)
+        .then(id => {
+            res.json({ id: id[0] })
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).json({})
+        })
+})
+
+router.put('/:id', (req, res) => {
+    let id = req.params.id
+    let dog = req.body
+
+    db.updateDog(id, dog)
+    .then(response => {
+        res.json({})
+    })
+})
+
+
 module.exports = router 
