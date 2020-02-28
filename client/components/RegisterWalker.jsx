@@ -1,6 +1,8 @@
 import React from "react"
 import { register, isAuthenticated } from 'authenticare/client'
 
+import { addWalker } from '../api/walkerApi'
+
 
 class RegisterWalker extends React.Component {
     constructor() {
@@ -26,22 +28,23 @@ class RegisterWalker extends React.Component {
     }
 
     handleSubmit = (e) => {
-        e.preventDefault
+        e.preventDefault()
         register({
             username: this.state.username,
             password: this.state.password
         }, {
-            baseUrl: porocess.env.BASE_API_URL
+            baseUrl: process.env.BASE_API_URL
         })
             .then((token) => {
                 if (isAuthenticated()) {
+                    console.log("all good")
                     addWalker({
                         first_name: this.state.first_name,
                         last_name: this.state.last_name,
                         blurb: this.state.blurb,
                         location: this.state.location,
                         email: this.state.email,
-                        photo: this.state.photo
+                        photo: this.state.photo,
                     })
                 }
             })
@@ -52,7 +55,7 @@ class RegisterWalker extends React.Component {
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <h1>Walker form</h1>
                     <br />
                     <label> User Name:

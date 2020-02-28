@@ -1,3 +1,4 @@
+const Dotenv = require('dotenv-webpack')
 const path = require('path')
 
 module.exports = {
@@ -17,6 +18,9 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
+  plugins: [
+    new Dotenv()
+  ],
   devtool: 'source-map',
   devServer: {
     contentBase: './server/public'
