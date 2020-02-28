@@ -25,7 +25,6 @@ function createUser(user, db = connection) {
 }
 
 function userExists(username, db = connection) {
-    console.log(username + " here111")
     return db('user_table')
         .count('id as n')
         .where('username', username)
@@ -35,7 +34,6 @@ function userExists(username, db = connection) {
 }
 
 function getUserByName(username, db = connection) {
-    console.log(username + " here2122")
     return db('user_table')
         .select()
         .where('username', username)
@@ -55,6 +53,6 @@ function getWalkers(db = connection) {
 function getWalker(id, db = connection) {
     return db('walker_table')
         .select()
-        .where({ id: 'id' })
+        .where('id', id )
         .first()
 }

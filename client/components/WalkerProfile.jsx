@@ -14,8 +14,8 @@ class WalkerProfile extends React.Component {
 
 
 componentDidMount() {
-    getWalker()
-    .then(walkerInfo =>{
+    getWalkers()
+    .then(walkers =>{
         this.setState({
             walker:walkerInfo
         })
