@@ -1,6 +1,7 @@
 import React from 'react'
 import { getDog } from '../api/dogApi'
 
+
 class DogProfile extends React.Component {
 
     constructor(props) {
@@ -45,10 +46,9 @@ class DogProfile extends React.Component {
 
     render() {
         return (
-            <div className='doglist'>
+            <div className='dogprofiledisplay'>
                 <h2>{this.state.name}</h2>
                 <img className='dogprofilephoto' src={this.state.photo} />
-                <h2>{this.state.feedback_id}</h2>
                 <h2>{this.state.breed}</h2>
                 <h2>{this.state.sex}</h2>
                 <h2>{this.state.size}</h2>

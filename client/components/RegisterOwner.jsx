@@ -35,7 +35,6 @@ class RegisterOwner extends React.Component {
         })
             .then((token) => {
                 if (isAuthenticated()) {
-                    console.log("all good")
                     
                     addOwner({
                         first_name: this.state.first_name,
@@ -45,6 +44,7 @@ class RegisterOwner extends React.Component {
                         email: this.state.email,
                         photo: this.state.photo,
                     })
+                    this.props.history.push('/')
                 }
             })
     }
@@ -54,7 +54,15 @@ class RegisterOwner extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <h1>Owner form</h1>
-                    <hr />
+                    <br />
+                    <label> Username:
+                        <input type='text' name='username' onChange={this.handleChange} placeholder='Username' />
+                    </label>
+                    <br />
+                    <label> Password:
+                        <input type='text' name='password' onChange={this.handleChange} placeholder='Password' />
+                    </label>
+                    <br />
                     <label> First name:
                         <input type='text' name='first_name' onChange={this.handleChange} placeholder='First name' />
                     </label>
@@ -73,14 +81,6 @@ class RegisterOwner extends React.Component {
                     <br />
                     <label> Photo:
                         <input type='text' name='photo' onChange={this.handleChange} placeholder='Photo' />
-                    </label>
-                    <br />
-                    <label> Username:
-                        <input type='text' name='username' onChange={this.handleChange} placeholder='Username' />
-                    </label>
-                    <br />
-                    <label> Password:
-                        <input type='text' name='password' onChange={this.handleChange} placeholder='Password' />
                     </label>
                     <br />
                     <input type="submit" value="Submit" />

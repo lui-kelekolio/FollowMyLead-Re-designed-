@@ -33,7 +33,6 @@ class Login extends React.Component {
                         console.log(user)
                         if(user.walker) this.props.history.push('/walker/' + user.walker.id)
                         if(user.owner) this.props.history.push('/owner/' + user.owner.id)
-
                     })
                 }
             })

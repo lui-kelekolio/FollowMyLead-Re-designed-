@@ -10,7 +10,6 @@ router.get('/', (req, res) => {
         })
 })
 
-
 router.post('/', getTokenDecoder(), (req, res) => {
     
     const owner = req.body
@@ -26,7 +25,6 @@ router.post('/', getTokenDecoder(), (req, res) => {
 
 })
 
-
 router.get('/', (req, res) => {
     db.getOwners()
         .then(owners => {
@@ -37,9 +35,13 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     let owner = req.body
 
-    db.addOwner(owner.first_name, owner.last_name, owner.photo, owner.location, owner.email)
+    db.addOwner(owner)
         .then(id => {
-            res.json({})
+            res.json({ id: id[0] })
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).json({})
         })
 })
 
