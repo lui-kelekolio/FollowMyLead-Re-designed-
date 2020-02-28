@@ -12,3 +12,9 @@ export function addOwner(owner) {
             console.log(res.body)
         })
 }
+
+export function getOwner(id) {
+    return request
+    .get(URL + id)
+    .then(response => response.body)
+}

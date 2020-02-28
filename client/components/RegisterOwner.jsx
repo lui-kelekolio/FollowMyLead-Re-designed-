@@ -12,7 +12,9 @@ class RegisterOwner extends React.Component {
             last_name: '',
             location: '',
             email: '',
-            photo: ''
+            photo: '',
+            username: '',
+            password: ''
         }
     }
 
@@ -34,6 +36,7 @@ class RegisterOwner extends React.Component {
             .then((token) => {
                 if (isAuthenticated()) {
                     console.log("all good")
+                    
                     addOwner({
                         first_name: this.state.first_name,
                         last_name: this.state.last_name,
@@ -53,23 +56,31 @@ class RegisterOwner extends React.Component {
                     <h1>Owner form</h1>
                     <hr />
                     <label> First name:
-                        <input type='text' onChange={this.handleChange} placeholder='First name' />
+                        <input type='text' name='first_name' onChange={this.handleChange} placeholder='First name' />
                     </label>
                     <br />
                     <label> Last name:
-                        <input type='text' onChange={this.handleChange} placeholder='Last name' />
+                        <input type='text' name='last_name' onChange={this.handleChange} placeholder='Last name' />
                     </label>
                     <br />
                     <label> Location
-                        <input type='text' onChange={this.handleChange} placeholder='Location' />
+                        <input type='text' name='location' onChange={this.handleChange} placeholder='Location' />
                     </label>
                     <br />
                     <label> email:
-                        <input type='text' onChange={this.handleChange} placeholder='email' />
+                        <input type='text' name='email' onChange={this.handleChange} placeholder='email' />
                     </label>
                     <br />
                     <label> Photo:
-                        <input type='text' onChange={this.handleChange} placeholder='Photo' />
+                        <input type='text' name='photo' onChange={this.handleChange} placeholder='Photo' />
+                    </label>
+                    <br />
+                    <label> Username:
+                        <input type='text' name='username' onChange={this.handleChange} placeholder='Username' />
+                    </label>
+                    <br />
+                    <label> Password:
+                        <input type='text' name='password' onChange={this.handleChange} placeholder='Password' />
                     </label>
                     <br />
                     <input type="submit" value="Submit" />

@@ -8,15 +8,16 @@ const router = express.Router()
 router.get('/', (req, res) => {
     walkerData.getWalkers()
         .then(walker => {
-            return res.json(walker)
+            res.json(walker)
         })
 })
 
 router.get('/:id', (req, res) => {
+    console.log(req.params.id)
     walkerData.getWalker(req.params.id)
-    .then(walker => {
-        res.json(walker)
-    })
+        .then(response => {
+            res.json(response)
+        })
 })
 
 router.post('/', getTokenDecoder(), (req, res) => {

@@ -1,9 +1,9 @@
 import React from "react"
-import { getWalker } from '../Api/walkerApi'
+import { getWalker } from '../api/walkerApi'
 import {Link} from 'react-router-dom'
 
 class WalkerProfile extends React.Component {
-    constructor(){
+    constructor() {
         super()
 
         this.state = {
@@ -12,35 +12,38 @@ class WalkerProfile extends React.Component {
     }
 
 
-componentDidMount() {
-    getWalker(this.props.match.params.id)
-    .then(walkerInfo =>{
-        this.setState({
-            walker:walkerInfo
-        })
-    })
+
+    componentDidMount() {
+        getWalker(this.props.match.params.id)
+            .then(walkerInfo => {
+                this.setState({
+                    walker: walkerInfo
+                })
+            })
+    }
+
+
+    render() {
+
+        return (
+            <div>
+                <h1>Walker Profile Page</h1>
+                <br />
+                <br />
+                {this.state.walker && (
+                    <>
+                        <h1>{this.state.walker.first_name} {this.state.walker.last_name} </h1>
+                        <h2>email:{this.state.walker.email}</h2>
+                        <h3>Location: {this.state.walker.location}</h3>
+                        <p>{this.state.walker.blurb}</p>
+                        <img src={this.state.walker.photo} />
+                    </>
+                )} 
+            </div>
+        )
+
+    }
 }
 
 
-render() {
- 
-    return(
-        <div>
-            <br />
-          
-            <button><Link to = './walkerEdit/'>Edit</Link></button> 
-
-            <button>Delete</button>
-             <h1>{this.state.walker.first_name} {this.state.walker.last_name} </h1>
-            <h2>email:{this.state.walker.email}</h2>
-            <h3>Location: {this.state.walker.location}</h3>
-            <p>{this.state.walker.blurb}</p>
-            <img src = {this.state.walker.photo}/>     
-        </div>
-    )
-}
-
-
-
-}
 export default WalkerProfile
