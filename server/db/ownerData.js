@@ -34,7 +34,7 @@ function updateOwner(id, owner, db = connection) {
     return db('owner_table')
         .where('id', id)
         .update(owner)
-    .insert(owner).debug()
+    // .insert(owner).debug()
 
 }
 

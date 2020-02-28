@@ -1,7 +1,7 @@
 import request from 'superagent'
 import { getEncodedToken } from 'authenticare/client'
 
-const URL = '/api/owner'
+const URL = '/api/owner/'
 
 export function addOwner(owner) {
     return request.post(URL)
