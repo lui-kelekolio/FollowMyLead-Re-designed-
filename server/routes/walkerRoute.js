@@ -1,32 +1,27 @@
 const express = require('express')
 const { getTokenDecoder } = require('authenticare/server')
-
-const walkerData = require('../db/walkerData')
-
+const db = require('../db/walkerData')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    walkerData.getWalkers()
+    db.getWalkers()
         .then(walker => {
-            return res.json(walker)
+            res.json(walker)
         })
 })
 
-// router.get('/:id', (req, res) => {
-//     console.log(walkerData.getWalker(req.params))
-//     walkerData.getWalker(req.params)
-//         .then(response => {
-//             console.log(response)
-//             return response
-//         })
-// })
+router.get('/:id', (req, res) => {
+    console.log(req.params.id)
+    db.getWalker(req.params.id)
+        .then(response => {
+            res.json(response)
+        })
+})
 
 router.post('/', getTokenDecoder(), (req, res) => {
-    console.log('resBody: ', req.body)
-    console.log(req.user)
     const walker = req.body
     walker.user_id = req.user.id
-    walkerData.addWalker(walker)
+    db.addWalker(walker)
         .then(id => {
             res.json({ id: id[0] })
         })
@@ -36,5 +31,8 @@ router.post('/', getTokenDecoder(), (req, res) => {
         })
 
 })
+
+
+router.post
 
 module.exports = router 
