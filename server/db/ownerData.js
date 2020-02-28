@@ -16,18 +16,10 @@ function getOwner(id, db = connection) {
 
 
 //Add auth shit
-function addOwner(first_name, last_name, photo, location, email, db=connection){
+function addOwner(owner, db=connection){
     return db('owner_table')
-    .insert({
-        first_name: first_name,
-        last_name: last_name,
-        photo: photo,
-        location: location,
-        email: email
-    })
-    .then(id => {
-        return id[0]
-    })
+    .insert(owner).debug()
+
 }
 
 
