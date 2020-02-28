@@ -5,20 +5,20 @@ const db = require('../db/dogData')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    db.getDog()
+    db.getDogs()
         .then(dogs => {
 
             return res.json(dogs)
         })
 })
 
-router.get('/:id', (req,res) => {
+router.get('/:id', (req, res) => {
     db.getDog(req.params.id)
-    .then(dog => {
-        res.json(dog)
-    })
+        .then(dog => {
+            res.json(dog)
+        })
 
-    
+
 })
 
 module.exports = router 
