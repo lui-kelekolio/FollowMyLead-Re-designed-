@@ -5,8 +5,8 @@ import { addWalker } from '../api/walkerApi'
 
 
 class RegisterWalker extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.state = {
             username: '',
@@ -45,6 +45,7 @@ class RegisterWalker extends React.Component {
                         email: this.state.email,
                         photo: this.state.photo,
                     })
+                    this.props.history.push('/')
                 }
             })
     }
