@@ -3,12 +3,12 @@ import request from 'superagent'
 const apiDogUrl = '/api/dogs/'
 
 
-export function getDogs () {
+export function getDogs() {
     return request.get(apiDogUrl)
-    .then(res => res.body)
+        .then(res => res.body)
 }
 
-export function getDog (id) {
+export function getDog(id) {
     return request.get(apiDogUrl + id)
-    .then(res => res.body)
+        .then(res => res.body)
 }
