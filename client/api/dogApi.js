@@ -1,20 +1,14 @@
 import request from 'superagent'
 
+const apiDogUrl = '/api/dogs/'
 
-//Lui and Izzy code start
+
 export function getDogs () {
-    return request.get('/api/dogs')
-    .then(res => {
-        return res.body
-    })
+    return request.get(apiDogUrl)
+    .then(res => res.body)
 }
 
-export function getDog () {
-    return request.get('/api/dogs/:id')
-    .then(res => {
-        return res.body
-    })
+export function getDog (id) {
+    return request.get(apiDogUrl + id)
+    .then(res => res.body)
 }
-
-
-//Lui and Izzy code end
