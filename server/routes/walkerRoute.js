@@ -32,7 +32,4 @@ router.post('/', getTokenDecoder(), (req, res) => {
 
 })
 
-
-router.post
-
 module.exports = router 
