@@ -21,7 +21,6 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', getTokenDecoder(), (req, res) => {
-
     const walker = req.body
     walker.user_id = req.user.id
     walkerData.addWalker(walker)
