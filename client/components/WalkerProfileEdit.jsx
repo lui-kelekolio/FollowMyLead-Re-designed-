@@ -1,5 +1,5 @@
 import React from "react"
-import { getWalker } from '../Api/walkerApi'
+import { getWalker } from '../api/walkerApi'
 
 
 class WalkerProfileEdit extends React.Component {
