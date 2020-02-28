@@ -28,7 +28,7 @@ export function getWalkers(URL) {
 export function getUserDetails(id) {
   return request.get('/api/user/' + id)
     .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
-    // .set({ 'Accept': 'application/json' })
+    .set({ 'Content-Type': 'application/json' })
     .then(res => {
       return res.body
     })
@@ -41,6 +41,6 @@ export function getUserDetails(id) {
 // }
 
 export function getWalker(walkerId) {
-  return request.get(URL + walkerId) 
-      .then(res => res.body)
+  return request.get(URL + walkerId)
+    .then(res => res.body)
 }

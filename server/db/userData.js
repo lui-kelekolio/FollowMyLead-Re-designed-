@@ -3,11 +3,13 @@ const { generateHash } = require('authenticare/server')
 
 module.exports = {
     createUser,
-    getUserDetails
+    getUserDetails,
+    userExists,
+    getUserByName,
 }
 
 function createUser(user, db = connection) {
-    console.log(user + "You are here")
+
     return userExists(user.username, db)
         .then(exists => {
             if (exists) {
@@ -20,8 +22,15 @@ function createUser(user, db = connection) {
         })            //user_table
 }
 
+function getUserByName(username, db = connection) {
+    return db('user_table')
+        .select()
+        .where('username', username)
+        .first()
+}
+
 function userExists(username, db = connection) {
-    console.log(username + " here111")
+
     return db('user_table')
         .count('id as n')
         .where('username', username)
