@@ -1,6 +1,7 @@
 const express = require('express')
 const { applyAuthRoutes } = require('authenticare/server')
-const { userExists, getUserByName, createUser } = require('../db/walkerData')
+const { createUser } = require('../db/userData')
+const { userExists, getUserByName} = require('../db/walkerData')
 
 const router = express.Router()
 
