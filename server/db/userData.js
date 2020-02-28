@@ -3,11 +3,7 @@ const { generateHash } = require('authenticare/server')
 
 module.exports = {
     createUser,
-    userExists,
-    addWalker,
-    getUserByName,
-    getWalkers,
-    getWalker,
+    getUserDetails
 }
 
 function createUser(user, db = connection) {
@@ -25,6 +21,7 @@ function createUser(user, db = connection) {
 }
 
 function userExists(username, db = connection) {
+    console.log(username + " here111")
     return db('user_table')
         .count('id as n')
         .where('username', username)
@@ -33,27 +30,24 @@ function userExists(username, db = connection) {
         })
 }
 
-function getUserByName(username, db = connection) {
-    return db('user_table')
-        .select()
-        .where('username', username)
+function getUserDetails(id, db = connection) {
+    return db('walker_table')
+    .where('user_id', id)
+    .first()
+    .then(walker => {
+        return db('owner_table')
+        .where('user_id', id)
         .first()
+        .then( owner => {
+            return db('user_table') 
+            .where('id', id)
+            .first()
+            .then(user => {
+                user.walker = walker
+                user.owner = owner
+                return user
+            })
+        })
+    })
 }
 
-function addWalker(walker, db = connection) {
-    console.log('walker: ', walker)
-    return db('walker_table')
-        .insert(walker).debug()
-}
-
-function getWalkers(db = connection) {
-    return db('walker_table')
-}
-
-function getWalker(id, db = connection) {
-    console.log('getWalker working')
-    return db('walker_table')
-        .select()
-        .where('id', id )
-        .first()
-}

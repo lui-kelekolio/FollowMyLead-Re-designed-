@@ -37,7 +37,6 @@ class RegisterWalker extends React.Component {
         })
             .then((token) => {
                 if (isAuthenticated()) {
-                    console.log("all good")
                     addWalker({
                         first_name: this.state.first_name,
                         last_name: this.state.last_name,

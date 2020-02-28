@@ -8,22 +8,19 @@ const router = express.Router()
 router.get('/', (req, res) => {
     walkerData.getWalkers()
         .then(walker => {
-            return res.json(walker)
+            res.json(walker)
         })
 })
 
-// router.get('/:id', (req, res) => {
-//     console.log(walkerData.getWalker(req.params))
-//     walkerData.getWalker(req.params)
-//         .then(response => {
-//             console.log(response)
-//             return response
-//         })
-// })
+router.get('/:id', (req, res) => {
+    console.log(req.params.id)
+    walkerData.getWalker(req.params.id)
+        .then(response => {
+            res.json(response)
+        })
+})
 
 router.post('/', getTokenDecoder(), (req, res) => {
-    console.log('resBody: ', req.body)
-    console.log(req.user)
     const walker = req.body
     walker.user_id = req.user.id
     walkerData.addWalker(walker)
