@@ -9,6 +9,8 @@ import DogList from './DogList'
 import DogProfile from './DogProfile'
 import RegisterOwner from './RegisterOwner'
 import RegisterWalker from './RegisterWalker'
+import RegisterDog from './RegisterDog'
+import DogProfileEdit from './DogProfileEdit'
 
 import OwnerProfile from './OwnerProfile'
 
@@ -30,11 +32,13 @@ const App = () => {
     <Route path="/owner/:id" component={OwnerProfile}/>
     <Route path="/owner/:id/edit" component={EditOwnerProfile}/>
     <Route path="/register/walker" component={RegisterWalker}/>
+    <Route path="/register/dog" component={RegisterDog}/>
     <Route path="/login" component={Login}/>
     <Route path="/doglist" component={DogList}/>
     <Route path = "/walker/:id" component ={WalkerProfile}/>
     <Route path="/dog/:id" component={DogProfile}/>
     <Route path ="/walkerEdit/" component = {WalkerProfileEdit}/>
+    <Route path ='/dogEdit/' component = {DogProfileEdit} />
     <Footer />
     </React.Fragment>
     </Router>

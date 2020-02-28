@@ -1,5 +1,6 @@
 import React from 'react'
 import { getDogs } from '../api/dogApi'
+import {getOwner} from '../api/ownerApi'
 import {Link} from 'react-router-dom'
 
 class DogList extends React.Component {
@@ -23,6 +24,7 @@ class DogList extends React.Component {
                 })
             })
 
+
         console.log(this.state.dogList)
 
     }
@@ -35,6 +37,7 @@ class DogList extends React.Component {
                         <div className='doglist'>
                            <Link to = {`/dog/${dog.id}`}><img className='dogphoto' src={dog.photo} /></Link>
                            <p>{dog.name}</p>
+                           
                         </div>
                     )
                 })}
