@@ -1,5 +1,5 @@
 import React from "react"
-import { signIn, isAuthenticated } from 'authenticare/client'
+import { signIn, isAuthenticated, getDecodedToken } from 'authenticare/client'
 import { getWalkers } from "../api/walkerApi"
 
 class Login extends React.Component {
@@ -19,6 +19,7 @@ class Login extends React.Component {
         })
     }
     handleSubmit = (e) => {
+        e.preventDefault()
         signIn({
             username: this.state.username,
             password: this.state.password
@@ -28,22 +29,23 @@ class Login extends React.Component {
             .then((token) => {
                 console.log(token + "This is the token :)")
                 if (isAuthenticated()) {
-                    
+                    this.props.history.push('/owner/' + getDecodedToken().id)
                 }
             })
+            .catch(err => console.log(err))
     }
 
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <h1>Login Form </h1>
                     <hr />
                     <label> Username:
-               <input type='text' placeholder='username' />
+               <input type='text' placeholder='username' name='username' onChange={this.handlChange} />
                     </label>
                     <label> Password:
-               <input type='text' placeholder='password' />
+               <input type='text' placeholder='password' name='password' onChange={this.handlChange} />
                     </label>
                     <br />
                     <input type="submit" value="Submit" />
