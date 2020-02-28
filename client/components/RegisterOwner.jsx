@@ -35,7 +35,6 @@ class RegisterOwner extends React.Component {
         })
             .then((token) => {
                 if (isAuthenticated()) {
-                    console.log("all good")
                     
                     addOwner({
                         first_name: this.state.first_name,
@@ -45,6 +44,7 @@ class RegisterOwner extends React.Component {
                         email: this.state.email,
                         photo: this.state.photo,
                     })
+                    this.props.history.push('/')
                 }
             })
     }
