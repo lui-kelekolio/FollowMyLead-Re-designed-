@@ -12,3 +12,10 @@ export function addWalker(walker) {
             console.log(res.body)
         })
 }
+
+export function getWalker(walker) {
+    return request.get('api/:id') 
+        .then(res => console.log(res.params.id))
+}
+
+//add getWalker api function? Talk to Rich

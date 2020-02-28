@@ -13,24 +13,25 @@ class WalkerProfile extends React.Component {
 
 
 
-componentDidMount() {
-    getWalker()
-    .then(walkerInfo =>{
-        this.setState({
-            walker:walkerInfo
-        })
-    })
-}
+// componentDidMount() {
+//     getWalker()
+//     .then(walkerInfo =>{
+//         this.setState({
+//             walker:walkerInfo
+//         })
+//     })
+// }
 
 
 render() {
     
     return(
         <div>
-          {this.state.walker.map(walker => {
+            <h1>test</h1>
+          {/* {this.state.walker.map(walker => {
               return <li key={walker.id} firstName = {walker.first_name}></li>
           })
-          }
+          } */}
         </div>
     )
 }

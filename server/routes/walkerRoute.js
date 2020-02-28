@@ -12,14 +12,14 @@ router.get('/', (req, res) => {
         })
 })
 
-// router.get('/:id', (req, res) => {
-//     console.log(walkerData.getWalker(req.params))
-//     walkerData.getWalker(req.params)
-//         .then(response => {
-//             console.log(response)
-//             return response
-//         })
-// })
+router.get('/:id', (req, res) => {
+    console.log(walkerData.getWalker(req.params))
+    walkerData.getWalker(req.params)
+        .then(response => {
+            console.log(response)
+            return response
+        })
+})
 
 router.post('/', getTokenDecoder(), (req, res) => {
     console.log('resBody: ', req.body)

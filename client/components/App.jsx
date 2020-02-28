@@ -6,8 +6,8 @@ import Footer from './Footer'
 import Home from './Home'
 import Login from './Login'
 import DogList from './DogList'
-import DogProfile from './DogProfile'
-import Register from './Register'
+// import DogProfile from './DogProfile'
+// import Register from './Register'
 import RegisterOwner from './RegisterOwner'
 import RegisterWalker from './RegisterWalker'
 import WalkerProfile from './WalkerProfile'
@@ -24,7 +24,7 @@ const App = () => {
     <Route path="/login" component={Login}/>
     <Route path="/doglist" component={DogList}/>
     <Route path = "/walker" component ={WalkerProfile}/>
-    <Route path="/dogprofile" component={DogProfile}/>
+    {/* <Route path="/dogprofile" component={DogProfile}/> */}
     <Footer />
     </React.Fragment>
     </Router>
@@ -32,3 +32,6 @@ const App = () => {
 }
 
 export default App
+
+
+//commented out DogProfile, as component got deleted in merge
