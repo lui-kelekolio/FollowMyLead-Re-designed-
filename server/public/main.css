@@ -19,21 +19,33 @@ body {
     text-align: center;
 }
 
-.dogphoto {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    padding: 2%
-}
-
-.dogprofilephoto {
+.doglist {
     height: 300px;
     width: 300px;
     border-radius: 50%;
-    padding: 2% 
+    padding: 1%;
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
 
 }
 
-.doglist {
+.dogprofilephoto {
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    padding: 2%;
+
+}
+
+.dogphoto {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+  
+}
+
+.dogprofiledisplay {
     text-align: center;
+
 }
