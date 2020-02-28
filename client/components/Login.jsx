@@ -1,6 +1,6 @@
 import React from "react"
 import { signIn, isAuthenticated, getDecodedToken } from 'authenticare/client'
-import { getWalkers } from "../api/walkerApi"
+import { getWalkers, getUserDetails } from "../api/walkerApi"
 
 class Login extends React.Component {
     constructor(props) {
@@ -29,7 +29,12 @@ class Login extends React.Component {
             .then((token) => {
                 console.log(token + "This is the token :)")
                 if (isAuthenticated()) {
-                    this.props.history.push('/owner/' + getDecodedToken().id)
+                    getUserDetails(getDecodedToken().id).then(user => {
+                        console.log(user)
+                        if(user.walker) this.props.history.push('/walker/' + user.walker.id)
+                        if(user.owner) this.props.history.push('/owner/' + user.owner.id)
+
+                    })
                 }
             })
             .catch(err => console.log(err))

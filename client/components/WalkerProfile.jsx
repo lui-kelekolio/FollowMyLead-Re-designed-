@@ -30,11 +30,15 @@ class WalkerProfile extends React.Component {
                 <h1>Walker Profile Page</h1>
                 <br />
                 <br />
-                <h1>{this.state.walker.first_name} {this.state.walker.last_name} </h1>
-                <h2>email:{this.state.walker.email}</h2>
-                <h3>Location: {this.state.walker.location}</h3>
-                <p>{this.state.walker.blurb}</p>
-                <img src={this.state.walker.photo} />
+                {this.state.walker && (
+                    <>
+                        <h1>{this.state.walker.first_name} {this.state.walker.last_name} </h1>
+                        <h2>email:{this.state.walker.email}</h2>
+                        <h3>Location: {this.state.walker.location}</h3>
+                        <p>{this.state.walker.blurb}</p>
+                        <img src={this.state.walker.photo} />
+                    </>
+                )} 
             </div>
         )
 
