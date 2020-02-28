@@ -13,17 +13,13 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-    console.log(walkerData.getWalker(req.params))
-    walkerData.getWalker(req.params)
-        .then(response => {
-            console.log(response)
-            return response
-        })
+    walkerData.getWalker(req.params.id)
+    .then(walker => {
+        res.json(walker)
+    })
 })
 
 router.post('/', getTokenDecoder(), (req, res) => {
-    console.log('resBody: ', req.body)
-    console.log(req.user)
     const walker = req.body
     walker.user_id = req.user.id
     walkerData.addWalker(walker)

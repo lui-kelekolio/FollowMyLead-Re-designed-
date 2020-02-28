@@ -1,7 +1,7 @@
 import request from 'superagent'
 import { getEncodedToken } from 'authenticare/client'
 
-const URL = '/api/walker'
+const URL = '/api/walker/'
 
 export function addWalker(walker) {
     return request.post(URL)
@@ -13,9 +13,13 @@ export function addWalker(walker) {
         })
 }
 
-export function getWalker(walker) {
-    return request.get('api/:id') 
-        .then(res => console.log(res.params.id))
+export function getWalkers() {
+    return request.get(URL) 
+        .then(res => res.body)
 }
 
-//add getWalker api function? Talk to Rich
+export function getWalker(walkerId) {
+    return request.get(URL + walkerId) 
+        .then(res => res.body)
+}
+
