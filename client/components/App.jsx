@@ -29,6 +29,7 @@ const App = () => {
     <Route path="/register/walker" component={RegisterWalker}/>
     <Route path="/login" component={Login}/>
     <Route path="/doglist" component={DogList}/>
+    <Route path = "/walker/:id" component ={WalkerProfile}/>
     <Route path = "/walker" component ={WalkerProfile}/>
     <Route path="/dog/:id" component={DogProfile}/>
     <Footer />
@@ -38,3 +39,6 @@ const App = () => {
 }
 
 export default App
+
+
+//commented out DogProfile, as component got deleted in merge

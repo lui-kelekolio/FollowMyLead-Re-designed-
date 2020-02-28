@@ -53,8 +53,9 @@ function getWalkers(db = connection) {
 }
 
 function getWalker(id, db = connection) {
+    console.log('getWalker working')
     return db('walker_table')
-        .select()
-        .where({ id: 'id' })
-        .first()
+    .select()
+    .where({ id: id })
+    .first()
 }
