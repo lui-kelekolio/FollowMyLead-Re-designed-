@@ -1,6 +1,6 @@
 import React from "react"
 import { getWalker } from '../api/walkerApi'
-
+import {Link} from 'react-router-dom'
 
 class WalkerProfile extends React.Component {
     constructor() {
