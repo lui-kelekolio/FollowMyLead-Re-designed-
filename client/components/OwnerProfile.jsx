@@ -1,5 +1,5 @@
 import React from 'react'
-import { getOwner } from '../api/ownersApi'
+import { getOwner } from '../api/ownerApi'
 
 
 
