@@ -38,7 +38,6 @@ const App = () => {
     <Route path = "/walker/:id" component ={WalkerProfile}/>
     <Route path="/dog/:id" component={DogProfile}/>
     <Route path ="/walkeredit/" component = {WalkerProfileEdit}/>
-    <Route path ="/walkerEdit/" component = {WalkerProfileEdit}/>
     <Route path ='/dogEdit/' component = {DogProfileEdit} />
     <Footer />
     </React.Fragment>

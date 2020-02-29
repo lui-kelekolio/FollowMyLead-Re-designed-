@@ -1,5 +1,5 @@
 import React from "react"
-import { editWalker } from '../api/walkerApi'
+// import { editWalker } from '../api/walkerApi'
 
 //Josh Sat 29/2
 

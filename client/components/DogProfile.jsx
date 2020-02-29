@@ -28,7 +28,7 @@ class DogProfile extends React.Component {
             walker_email: '',
 
         }
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
@@ -65,10 +65,13 @@ class DogProfile extends React.Component {
 
     }
 
-
+//Profile link button nto working - needs to pass props from dog page
     render() {
         return (
             <div className='dogprofiledisplay'>
+                <button><Link to ='/doglist'>Dog list</Link></button>
+                <br />
+                <button><Link to ={'/walker/' + this.state.walker_id}>Profile</Link></button>
                 <h2>{this.state.name}</h2>
                 <img className='dogprofilephoto' src={this.state.photo} />
                 <h2>{this.state.breed}</h2>
@@ -79,7 +82,6 @@ class DogProfile extends React.Component {
                 <h2>{this.state.special_requirements}</h2>
                 <h2>{this.state.vet_name}</h2>
                 <h2>{this.state.vet_contact}</h2>
-
                 <button className='walkDogButton' name='walkDog' onClick={this.handleClick}>I want to walk this dog</button>
 
             </div>

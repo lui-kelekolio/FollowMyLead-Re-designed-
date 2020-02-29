@@ -8,7 +8,7 @@ module.exports = {
     getUserByName,
     getWalkers,
     getWalker,
-    editWalker
+    // editWalker
 }
 
 // function createUser(user, db = connection) {
@@ -60,12 +60,12 @@ function getWalker(id, db = connection) {
 
 //Josh's code: writing a function to edit Walker profile details
 
-function editWalker(walker, db = connection) {
-    console.log(walker.id)
-    return db('walker_table')
-    .where({id: walker.id})
-    .upodate(walker)
-    .then(() => db)
-    .then(getWalkers)
-}
+// function editWalker(walker, db = connection) {
+//     console.log(walker.id)
+//     return db('walker_table')
+//     .where({id: walker.id})
+//     .upodate(walker)
+//     .then(() => db)
+//     .then(getWalkers)
+// }
 

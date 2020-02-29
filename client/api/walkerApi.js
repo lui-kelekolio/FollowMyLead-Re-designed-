@@ -47,3 +47,5 @@ export function editWalker (walker) {
     .then(res => res.body.walker)
     .catch(err => console.log(err))
 }
+
+//api ok
