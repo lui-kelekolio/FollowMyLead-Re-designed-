@@ -1,5 +1,6 @@
 import React from 'react'
 import { getDog } from '../api/dogApi'
+import { getOwner } from '../api/ownerApi'
 
 
 class DogProfile extends React.Component {
@@ -18,8 +19,14 @@ class DogProfile extends React.Component {
             good_with_other_dogs: '',
             special_requirements: '',
             vet_name: '',
-            vet_contact: ''
+            vet_contact: '',
+            owner_id: 0,
+            owner_name: '',
+            owner_email: '',
+            walker_id: 0,
+            walker_email: '',
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -38,9 +45,22 @@ class DogProfile extends React.Component {
                     good_with_other_dogs: dog.good_with_other_dogs,
                     special_requirements: dog.special_requirements,
                     vet_name: dog.vet_name,
-                    vet_contact: dog.vet_contact
+                    vet_contact: dog.vet_contact,
+                    owner_id: dog.owner_id,
                 })
             })
+    }
+
+    handleClick(e) {
+        e.preventDefault()
+        const owner = getOwner(owner_id)
+        this.setState({
+            owner_name: owner.name,
+            wakler_id: '',
+            walker_email: ''
+
+        })
+
     }
 
 
@@ -57,6 +77,7 @@ class DogProfile extends React.Component {
                 <h2>{this.state.special_requirements}</h2>
                 <h2>{this.state.vet_name}</h2>
                 <h2>{this.state.vet_contact}</h2>
+                <button className='walkDogButton' name='walkDog' onClick={this.handleClick}>I want to walk this dog</button>
             </div>
         )
     }
