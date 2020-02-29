@@ -33,7 +33,6 @@ router.post('/', getTokenDecoder(), (req, res) => {
 
 })
 
-<<<<<<< HEAD
 
 router.put('/', getTokenDecoder(), (req,res) =>{
     let newWalker = req.body
@@ -46,10 +45,4 @@ router.put('/', getTokenDecoder(), (req,res) =>{
     }
 })
 
-||||||| 1241e58
-
-router.post
-
-=======
->>>>>>> dev
 module.exports = router 
