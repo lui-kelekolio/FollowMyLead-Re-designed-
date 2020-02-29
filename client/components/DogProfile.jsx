@@ -28,7 +28,7 @@ class DogProfile extends React.Component {
             walker_email: '',
 
         }
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
@@ -60,7 +60,6 @@ class DogProfile extends React.Component {
             owner_name: owner.name,
             wakler_id: '',
             walker_email: ''
-
         })
 
     }
