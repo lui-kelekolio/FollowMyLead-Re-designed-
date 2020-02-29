@@ -1,6 +1,6 @@
 import React from 'react'
 import { getDogs } from '../api/dogApi'
-import {getOwner} from '../api/ownerApi'
+// import {getOwner} from '../api/ownerApi'
 import {Link} from 'react-router-dom'
 
 class DogList extends React.Component {
@@ -24,12 +24,9 @@ class DogList extends React.Component {
                 })
             })
 
-<<<<<<< HEAD
         console.log('dogList:', this.state.dogList)
-=======
 
         console.log(this.state.dogList)
->>>>>>> dev
 
     }
 
