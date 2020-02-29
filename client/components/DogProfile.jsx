@@ -28,7 +28,7 @@ class DogProfile extends React.Component {
             walker_email: '',
 
         }
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
