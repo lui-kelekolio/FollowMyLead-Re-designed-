@@ -32,7 +32,7 @@ const App = () => {
     <Route path="/doglist" component={DogList}/>
     <Route path = "/walker/:id" component ={WalkerProfile}/>
     <Route path="/dog/:id" component={DogProfile}/>
-    <Route path ="/walkerEdit/" component = {WalkerProfileEdit}/>
+    <Route path ="/walkeredit/" component = {WalkerProfileEdit}/>
     <Footer />
     </React.Fragment>
     </Router>

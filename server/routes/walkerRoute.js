@@ -3,6 +3,7 @@ const { getTokenDecoder } = require('authenticare/server')
 const db = require('../db/walkerData')
 const router = express.Router()
 
+
 router.get('/', (req, res) => {
     db.getWalkers()
         .then(walker => {
@@ -33,6 +34,15 @@ router.post('/', getTokenDecoder(), (req, res) => {
 })
 
 
-router.post
+router.put('/', getTokenDecoder(), (req,res) =>{
+    let newWalker = req.body
+    console.log('route yay')
+    try{
+        const walker = db.editWalker(newWalker)
+                res.json(walker)
+    } catch(err) {
+        res.status(500).send(err.message)
+    }
+})
 
 module.exports = router 

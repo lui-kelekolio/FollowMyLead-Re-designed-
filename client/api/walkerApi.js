@@ -38,3 +38,12 @@ export function getWalker(walkerId) {
   return request.get(URL + walkerId)
     .then(res => res.body)
 }
+
+export function editWalker (walker) {
+  return request.put('/api/walkeredit')
+    .set({ 'Accept': 'application/json' })
+    .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
+    .send(walker)
+    .then(res => res.body.walker)
+    .catch(err => console.log(err))
+}
