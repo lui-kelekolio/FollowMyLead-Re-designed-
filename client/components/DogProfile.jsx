@@ -1,6 +1,8 @@
 import React from 'react'
 import { getDog } from '../api/dogApi'
 import { getOwner } from '../api/ownerApi'
+import { getDecodedToken } from 'authenticare/client'
+import { getUserDetails } from '../api/walkerApi'
 import {Link} from 'react-router-dom'
 
 
@@ -24,7 +26,7 @@ class DogProfile extends React.Component {
             owner_id: 0,
             owner_name: '',
             owner_email: '',
-            walker_id: 0,
+            user_id: getDecodedToken().id,
             walker_email: '',
 
         }
@@ -33,9 +35,11 @@ class DogProfile extends React.Component {
 
     componentDidMount() {
 
+        console.log('walkerID=', this.state.walker_id)
+
         getDog(this.props.match.params.id)
             .then(dog => {
-
+                console.log('ownerID=', dog.owner_id)
                 this.setState({
                     photo: dog.photo,
                     name: dog.name,
@@ -53,15 +57,21 @@ class DogProfile extends React.Component {
             })
     }
 
+
+
     handleClick(e) {
         e.preventDefault()
-        const owner = getOwner(owner_id)
-        this.setState({
-            owner_name: owner.name,
-            wakler_id: '',
-            walker_email: ''
-
-        })
+        getOwner(this.state.owner_id)
+            .then(owner => {
+                console.log('ownerMail=', owner.email)
+                this.setState({
+                    owner_email: owner.email
+                })
+            })
+        getUserDetails(this.state.user_id)
+            .then(walker => {
+                console.log('walkerMail=', walker.walker.email)
+            })
 
     }
 
@@ -69,6 +79,7 @@ class DogProfile extends React.Component {
     render() {
         return (
             <div className='dogprofiledisplay'>
+                <button className='walkDogButton' name='walkDog' onClick={this.handleClick}>I want to walk this dog</button>
                 <h2>{this.state.name}</h2>
                 <img className='dogprofilephoto' src={this.state.photo} />
                 <h2>{this.state.breed}</h2>
