@@ -11,29 +11,6 @@ module.exports = {
     // editWalker
 }
 
-// function createUser(user, db = connection) {
-//     console.log(user + "You are here")
-//     return userExists(user.username, db)
-//         .then(exists => {
-//             if (exists) {
-//                 return Promise.reject(new Error('User exists'))
-//             }
-//         })
-//         .then(() => generateHash(user.password))
-//         .then(passwordHash => {
-//             return db('user_table').insert({ username: user.username, hash: passwordHash })
-//         })            //user_table
-// }
-
-// function userExists(username, db = connection) {
-//     return db('user_table')
-//         .count('id as n')
-//         .where('username', username)
-//         .then(count => {
-//             return count[0].n > 0
-//         })
-// }
-
 function getUserByName(username, db = connection) {
     return db('user_table')
         .select()
@@ -42,7 +19,7 @@ function getUserByName(username, db = connection) {
 }
 
 function addWalker(walker, db = connection) {
-    console.log('walker: ', walker)
+    console.log('line 22, walkerData, walker: ', walker)
     return db('walker_table')
         .insert(walker).debug()
 }
