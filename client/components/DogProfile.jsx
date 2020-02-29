@@ -41,12 +41,7 @@ class DogProfile extends React.Component {
 
     componentDidMount() {
         const walkerID = getUserDetails(this.state.user_id)
-        .then(user => {
-            console.log('walkerMail=', user.walker.email)
-            this.setState({
-                walker_id: user.walker.id
-            })
-        })
+            .then(user => user.walker.id)
 
         getDog(this.props.match.params.id)
             .then(dog => {
