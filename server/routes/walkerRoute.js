@@ -3,6 +3,7 @@ const { getTokenDecoder } = require('authenticare/server')
 const db = require('../db/walkerData')
 const router = express.Router()
 
+
 router.get('/', (req, res) => {
     db.getWalkers()
         .then(walkers => {
@@ -24,6 +25,19 @@ router.post('/', getTokenDecoder(), (req, res) => {
 
 })
 
+
+router.put('/', getTokenDecoder(), (req,res) =>{
+    let newWalker = req.body
+    console.log('route yay')
+    try{
+        const walker = db.editWalker(newWalker)
+                res.json(walker)
+    } catch(err) {
+        res.status(500).send(err.message)
+    }
+})
+
+//Unsure on this code? ask Rich
 router.get('/:id', (req, res) => {
     console.log('line 28, walkerRoute, req.params.id:', req.params.id)
     db.getWalker(req.params.id)

@@ -1,4 +1,5 @@
 import React from "react"
+// import { editWalker } from '../api/walkerApi'
 
 //Josh Sat 29/2
 
@@ -24,8 +25,19 @@ handleChange = e => {
 }
 
 handleSubmit = (e) => {
-
-
+    console.log('submitworking')
+    e.preventDefault()
+    this.setState({
+        first_name: this.state.first_name,
+        last_name: this.state.last_name,
+        email: this.state.email,
+        blurb: this.state.blurb,
+        location: this.state.location,
+        photo: this.state.photo
+    })
+    let walker = this.state
+    editWalker(walker)
+    console.log(this.state)
 }
 
 
@@ -37,27 +49,27 @@ handleSubmit = (e) => {
                 <form onSubmit = {this.handleSubmit}>
                     <br />
                     <label> First name:
-        <input type='text' placeholder='First name' onChange={this.handleChange} />
+        <input type='text' name='first_name' placeholder='First name' onChange={this.handleChange} />
                     </label>
                     <br />
                     <label> Last name:
-        <input type='text' placeholder='Last name' onChange={this.handleChange} />
+        <input type='text' name='last_name' placeholder='Last name' onChange={this.handleChange} />
                     </label>
                     <br />
                     <label> email:
-        <input type='text' placeholder='email' onChange={this.handleChange} />
-                    </label>
-                    <br />
-                    <label> Location:
-        <input type='text' placeholder='Location' onChange={this.handleChange} />
+        <input type='text' name='email' placeholder='email' onChange={this.handleChange} />
                     </label>
                     <br />
                     <label> Blurb:
-        <input type='text' placeholder='Blurb' onChange={this.handleChange} />
+        <input type='text' name='blurb' placeholder='Blurb' onChange={this.handleChange} />
+                    </label>
+                    <br />
+                    <label> Location:
+        <input type='text' name='location' placeholder='Location' onChange={this.handleChange} />
                     </label>
                     <br />
                     <label> Photo:
-        <input type='text' placeholder='Image URL' onChange={this.handleChange} />
+        <input type='text' name='photo' placeholder='Image URL' onChange={this.handleChange} />
                     </label>
                     <br />
                     <br />
