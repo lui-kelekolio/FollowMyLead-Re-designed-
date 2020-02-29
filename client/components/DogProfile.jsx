@@ -2,7 +2,9 @@ import React from 'react'
 import { getDog } from '../api/dogApi'
 import { getOwner } from '../api/ownerApi'
 import { getDecodedToken } from 'authenticare/client'
-import { getWalker, getUserDetails } from '../api/walkerApi'
+import { getUserDetails } from '../api/walkerApi'
+import {Link} from 'react-router-dom'
+
 
 class DogProfile extends React.Component {
 
@@ -26,6 +28,7 @@ class DogProfile extends React.Component {
             owner_email: '',
             user_id: getDecodedToken().id,
             walker_email: '',
+
         }
         this.handleClick = this.handleClick.bind(this);
     }
@@ -87,6 +90,8 @@ class DogProfile extends React.Component {
                 <h2>{this.state.special_requirements}</h2>
                 <h2>{this.state.vet_name}</h2>
                 <h2>{this.state.vet_contact}</h2>
+
+                <button className='walkDogButton' name='walkDog' onClick={this.handleClick}>I want to walk this dog</button>
 
             </div>
         )
