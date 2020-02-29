@@ -31,7 +31,8 @@ class DogProfile extends React.Component {
             user_id: getDecodedToken().id,
             walker_email: '',
             walk_the_dog: false,
-
+            request_sent: false,
+            walker_link: 'http://localhost:3000/#/walker/',
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleWalk = this.handleWalk.bind(this);
@@ -68,14 +69,17 @@ class DogProfile extends React.Component {
             .then(owner => {
                 console.log('ownerMail=', owner.email)
                 this.setState({
-                    owner_email: owner.email
+                    owner_email: owner.email,
+                    owner_name: owner.first_name
                 })
+                console.log('owner_name:', this.state.owner_name)
             })
         getUserDetails(this.state.user_id)
             .then(user => {
                 console.log('walkerMail=', user.walker.email)
                 this.setState({
-                    walker_email: user.walker.email
+                    walker_email: user.walker.email,
+                    walker_link: this.state.walker_link + user.walker.id
                 })
             })
         this.setState({ walk_the_dog: true })
@@ -83,13 +87,14 @@ class DogProfile extends React.Component {
 
     handleClick(e) {
         e.preventDefault()
-        console.log('owner_email: ', this.state.owner_email, 'walker_email: ', this.state.walker_email)
+        console.log('owner_email: ', this.state.owner_email, 'walker_link: ', this.state.walker_link)
 
+        console.log(this.state.request_sent)
         //code snippet for emailjs
         const template_params = {
             owner_email: this.state.owner_email,
             owner_name: this.state.owner_name,
-            walker_email: this.state.walker_email,
+            walker_link: this.state.walker_link,
         }
         const userID = 'user_Zf2pkHv28X6ZJ5OWbpWqp'
         const service_id = "default_service";
@@ -101,18 +106,24 @@ class DogProfile extends React.Component {
             }, function (error) {
                 console.log('FAILED...', error)
             })
+        this.setState({
+            request_sent: true,
+            walk_the_dog: false
+        })
+        console.log('request_sent:', this.state.request_sent)
     }
 
-//Profile link button nto working - needs to pass props from dog page
+    //Profile link button nto working - needs to pass props from dog page
     render() {
         return (
             <div className='dogprofiledisplay'>
                 <button className='sendMail' name='sendButton' onClick={this.handleClick}>Send request to the dog's owner</button>
                 <button className='walkDog' name='walkDogButton' onClick={this.handleWalk}>I would like to walk this dog</button>
                 {this.state.walk_the_dog && <p>You would like to walk this dog. Click the request button to contact the owner</p>}
-                <button><Link to ='/doglist'>Dog list</Link></button>
+                {this.state.request_sent && <p>Great, your request has been sent to this dog's owner. They should be in touch soon!</p>}
+                <button><Link to='/doglist'>Dog list</Link></button>
                 <br />
-                <button><Link to ={'/walker/' + this.state.walker_id}>Profile</Link></button>
+                <button><Link to={'/walker/' + this.state.walker_id}>Profile</Link></button>
                 <h2>{this.state.name}</h2>
                 <img className='dogprofilephoto' src={this.state.photo} />
                 <h2>{this.state.breed}</h2>
