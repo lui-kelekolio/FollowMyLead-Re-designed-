@@ -23,7 +23,7 @@ exports.seed = function(knex) {
         },
         {
           id: 2, 
-          owner_id: 1, 
+          owner_id: 2, 
           feedback_id: 1, 
           name: 'Bella', 
           breed: '', 
@@ -39,7 +39,7 @@ exports.seed = function(knex) {
         },
         {
           id: 3, 
-          owner_id: 1, 
+          owner_id: 3, 
           feedback_id: 1, 
           name: 'Charlie', 
           breed: '', 
@@ -55,7 +55,7 @@ exports.seed = function(knex) {
         },
         {
           id: 4, 
-          owner_id: 1, 
+          owner_id: 4, 
           feedback_id: 1, 
           name: 'Luna', 
           breed: '', 
@@ -71,7 +71,7 @@ exports.seed = function(knex) {
         },
         {
           id: 5, 
-          owner_id: 1, 
+          owner_id: 5, 
           feedback_id: 1, 
           name: 'Cooper', 
           breed: '', 
@@ -471,7 +471,7 @@ exports.seed = function(knex) {
         },
         {
           id: 30, 
-          owner_id: 1, 
+          owner_id: 30, 
           feedback_id: 1, 
           name: 'Jake', 
           breed: '', 
