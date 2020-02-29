@@ -31,6 +31,9 @@ class WalkerProfile extends React.Component {
                 <button><Link to ='/walkeredit'>Edit</Link></button>
                 <br />
                 <br />
+                <button><Link to ='/doglist'>Dog list</Link></button>
+                <br />
+                <br />
                 {this.state.walker && (
                     <>
                         <h1>{this.state.walker.first_name} {this.state.walker.last_name} </h1>
