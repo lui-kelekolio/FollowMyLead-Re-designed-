@@ -5,16 +5,8 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
     db.getWalkers()
-        .then(walker => {
-            res.json(walker)
-        })
-})
-
-router.get('/:id', (req, res) => {
-    console.log(req.params.id)
-    db.getWalker(req.params.id)
-        .then(response => {
-            res.json(response)
+        .then(walkers => {
+            res.json(walkers)
         })
 })
 
@@ -31,5 +23,14 @@ router.post('/', getTokenDecoder(), (req, res) => {
         })
 
 })
+
+router.get('/:id', (req, res) => {
+    console.log('line 28, walkerRoute, req.params.id:', req.params.id)
+    db.getWalker(req.params.id)
+        .then(walker => {
+            res.json(walker)
+        })
+})
+
 
 module.exports = router 

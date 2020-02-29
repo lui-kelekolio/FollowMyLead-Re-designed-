@@ -9,7 +9,7 @@ export function addOwner(owner) {
         .set({ 'Content-Type': 'application/json' })
         .send(owner)
         .then(res => {
-            console.log(res.body)
+            console.log('line12, ownerApi res.body:', res.body)
         })
 }
 

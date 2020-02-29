@@ -9,7 +9,7 @@ export function addWalker(walker) {
     .set({ 'Content-Type': 'application/json' })
     .send(walker)
     .then(res => {
-      console.log(res.body)
+      console.log('line 12, walkerApi, res.body:', res.body)
     })
 }
 
@@ -18,7 +18,7 @@ export function getWalkers(URL) {
     .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
     .set({ 'Accept': 'application/json' })
     .then(res => {
-      console.log(res.body + " this is the res.body")
+      console.log(res.body + " this is the res.body,line 21 walkerApi")
       console.log(res.body.walker + " this is the res.body after the res.body")
       return res.body.walker
     })
@@ -34,7 +34,8 @@ export function getUserDetails(id) {
     })
 }
 
-export function getWalker(walkerId) {
-  return request.get(URL + walkerId)
-    .then(res => res.body)
+export function getWalker(id) {
+  return request
+    .get(URL + id)
+    .then(response => response.body)
 }

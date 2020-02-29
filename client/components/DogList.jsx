@@ -23,7 +23,7 @@ class DogList extends React.Component {
                 })
             })
 
-        console.log(this.state.dogList)
+        console.log('dogList:', this.state.dogList)
 
     }
 
