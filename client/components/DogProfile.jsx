@@ -1,7 +1,7 @@
 import React from 'react'
 import { getDog } from '../api/dogApi'
 import { getOwner } from '../api/ownerApi'
-
+import { getDecodedToken } from 'authenticare/client'
 
 class DogProfile extends React.Component {
 
@@ -26,14 +26,16 @@ class DogProfile extends React.Component {
             walker_id: 0,
             walker_email: '',
         }
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
 
+        console.log(getDecodedToken())
+
         getDog(this.props.match.params.id)
             .then(dog => {
-
+                console.log('dog=', dog)
                 this.setState({
                     photo: dog.photo,
                     name: dog.name,
@@ -49,18 +51,19 @@ class DogProfile extends React.Component {
                     owner_id: dog.owner_id,
                 })
             })
+        console.log(this.state.owner_id)
+        getOwner(this.state.owner_id)
+            .then(owner => {
+
+                this.setState({
+                    owner_name: owner.name,
+                    owner_email: owner.email
+                })
+            })
     }
 
     handleClick(e) {
         e.preventDefault()
-        const owner = getOwner(owner_id)
-        this.setState({
-            owner_name: owner.name,
-            wakler_id: '',
-            walker_email: ''
-
-        })
-
     }
 
 
