@@ -5,13 +5,12 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
     db.getOwners()
-        .then(walker => {
-            return res.json(walker)
-        })
+    .then(owners => {
+        return res.json(owners)
+    })
 })
 
-router.post('/', getTokenDecoder(), (req, res) => {
-    
+router.post('/', getTokenDecoder(), (req, res) => {   
     const owner = req.body
     owner.user_id = req.user.id
     db.addOwner(owner)
@@ -25,25 +24,8 @@ router.post('/', getTokenDecoder(), (req, res) => {
 
 })
 
-router.get('/', (req, res) => {
-    db.getOwners()
-        .then(owners => {
-            res.json(owners)
-        })
-})
 
-router.post('/', (req, res) => {
-    let owner = req.body
 
-    db.addOwner(owner)
-        .then(id => {
-            res.json({ id: id[0] })
-        })
-        .catch(err => {
-            console.log(err)
-            res.status(500).json({})
-        })
-})
 
 router.get('/:id', (req, res) => {
     db.getOwner(req.params.id)
