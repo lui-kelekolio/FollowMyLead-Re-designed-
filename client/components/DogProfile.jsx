@@ -3,7 +3,7 @@ import { getDog } from '../api/dogApi'
 import { getOwner } from '../api/ownerApi'
 import { getDecodedToken } from 'authenticare/client'
 import { getUserDetails } from '../api/walkerApi'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { send } from 'emailjs-com'
 
 
