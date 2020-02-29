@@ -1,10 +1,13 @@
-import React from 'react';
+import React from "react"
+import Nav from './Nav'
 import { Link } from 'react-router-dom';
 import { logOff } from 'authenticare/client';
 
 import { IfAuthenticated, IfNotAuthenticated } from './Authenticated';
 
 function Header() {
+
+   
   return (
     <div className="header">
       <h1>Follow My Lead</h1>
