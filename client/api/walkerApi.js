@@ -39,3 +39,14 @@ export function getWalker(id) {
     .get(URL + id)
     .then(response => response.body)
 }
+
+export function editWalker (walker) {
+  return request.put('/api/walkeredit')
+    .set({ 'Accept': 'application/json' })
+    .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
+    .send(walker)
+    .then(res => res.body.walker)
+    .catch(err => console.log(err))
+}
+
+//api ok

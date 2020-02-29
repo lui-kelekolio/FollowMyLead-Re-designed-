@@ -101,16 +101,18 @@ class DogProfile extends React.Component {
             }, function (error) {
                 console.log('FAILED...', error)
             })
-
     }
 
-
+//Profile link button nto working - needs to pass props from dog page
     render() {
         return (
             <div className='dogprofiledisplay'>
                 <button className='sendMail' name='sendButton' onClick={this.handleClick}>Send request to the dog's owner</button>
                 <button className='walkDog' name='walkDogButton' onClick={this.handleWalk}>I would like to walk this dog</button>
                 {this.state.walk_the_dog && <p>You would like to walk this dog. Click the request button to contact the owner</p>}
+                <button><Link to ='/doglist'>Dog list</Link></button>
+                <br />
+                <button><Link to ={'/walker/' + this.state.walker_id}>Profile</Link></button>
                 <h2>{this.state.name}</h2>
                 <img className='dogprofilephoto' src={this.state.photo} />
                 <h2>{this.state.breed}</h2>
