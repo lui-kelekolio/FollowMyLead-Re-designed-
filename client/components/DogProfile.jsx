@@ -31,6 +31,7 @@ class DogProfile extends React.Component {
             user_id: getDecodedToken().id,
             walker_email: '',
             walk_the_dog: false,
+            walker_id: 0,
             request_sent: false,
             walker_link: 'http://localhost:3000/#/walker/',
         }
@@ -39,7 +40,13 @@ class DogProfile extends React.Component {
     }
 
     componentDidMount() {
-
+        const walkerID = getUserDetails(this.state.user_id)
+        .then(user => {
+            console.log('walkerMail=', user.walker.email)
+            this.setState({
+                walker_id: user.walker.id
+            })
+        })
 
         getDog(this.props.match.params.id)
             .then(dog => {
@@ -57,6 +64,7 @@ class DogProfile extends React.Component {
                     vet_name: dog.vet_name,
                     vet_contact: dog.vet_contact,
                     owner_id: dog.owner_id,
+                    walker_id: walkerID
                 })
             })
     }
