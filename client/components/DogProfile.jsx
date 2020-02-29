@@ -72,7 +72,6 @@ class DogProfile extends React.Component {
             .then(walker => {
                 console.log('walkerMail=', walker.walker.email)
             })
-
     }
 
 //Profile link button nto working - needs to pass props from dog page
