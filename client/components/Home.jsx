@@ -10,18 +10,25 @@ class Home extends React.Component{
     }
 
 
-
-
-
-
-
-
 render(){
     return(
-        <div className="button-container">
-            <button><Link className="button-basic" to = '/Register/Owner' >Register as an owner</Link></button>
-            <button><Link className="button-basic" to = '/Register/Walker' >Register as a Walker</Link></button>
-        </div>
+        <main>
+            <h1>Partnering People to Pooches!</h1>
+            <div className="register-buttons">
+
+                <div className="button">
+                <button><Link className="button-basic" to = '/Register/Owner' >Register as an owner</Link></button>
+                </div>
+
+                <div className="button">
+                <button><Link className="button-basic" to = '/Register/Walker' >Register as a Walker</Link></button>
+                </div>
+
+            </div>
+            
+            
+            
+        </main>
     )
 }
 

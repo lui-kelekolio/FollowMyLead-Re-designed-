@@ -56,5 +56,23 @@ body {
 .dogprofiledisplay {
     text-align: center;
     
+}
+
+.nav {
+    text-align: right;
+}
+
+.register-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
 
 }
