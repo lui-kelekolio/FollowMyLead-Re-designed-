@@ -128,11 +128,8 @@ The idea is to allow dog lovers to find a compatable dog via a list of profiles 
 ### dogs
 
 | col_name               | variable type                        |
-|------------------------|--------------------------------------|
 | id                     | increments.                          |
-|------------------------|--------------------------------------|
 | owner_id               | integer.                             |
-|------------------------|--------------------------------------|
 | feedback_id            | integer                              |
 |------------------------|--------------------------------------|
 | name                   | string                               |
