@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import { getDog } from '../api/dogApi'
 import { getOwner } from '../api/ownerApi'
 import { getDecodedToken } from 'authenticare/client'
@@ -59,6 +59,7 @@ class DogProfile extends React.Component {
                     vet_name: dog.vet_name,
                     vet_contact: dog.vet_contact,
                     owner_id: dog.owner_id,
+                  
                 })
             })
     }
