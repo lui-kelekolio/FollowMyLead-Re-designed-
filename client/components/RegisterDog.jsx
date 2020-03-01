@@ -57,7 +57,7 @@ class RegisterDog extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} autoComplete='off'>
                     <h1>Edit Dog Registration Form</h1>
                     <br />
                     <label> Name: </label>

@@ -6,13 +6,36 @@ html {
     background-color: whitesmoke;
   }
 
-.header {
-    /* height: 120px; */
-    width: 100%;
-    background:#999;
-    text-align: center;
-    padding: 20px;
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#5BC4F1
 }
+
+.nav li {
+    float: right;
+    display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav li:hover {
+    background-color: #111;
+
+}
+
+.logo {
+    height: 80px;
+    width: 80px;
+}
+
+
+
+
 
 .footer {
     position:fixed;
@@ -63,9 +86,7 @@ html {
     
 }
 
-.nav {
-    text-align: right;
-}
+
 
 .register-buttons {
     display: flex;

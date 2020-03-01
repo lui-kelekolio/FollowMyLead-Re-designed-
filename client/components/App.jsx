@@ -1,8 +1,9 @@
 import React from 'react'
 import { HashRouter as Router, Route } from 'react-router-dom'
 
-import Header from './Header'
+
 import Footer from './Footer'
+import Nav from './Nav'
 import Home from './Home'
 import Login from './Login'
 import DogList from './DogList'
@@ -13,12 +14,11 @@ import RegisterDog from './RegisterDog'
 import DogProfileEdit from './DogProfileEdit'
 
 import OwnerProfile from './OwnerProfile'
-
-
-
 import WalkerProfile from './WalkerProfile'
 import EditOwnerProfile from './EditOwnerProfile'
 import WalkerProfileEdit from './WalkerProfileEdit'
+import About from './About'
+import Contact from './Contact'
 
 
 
@@ -26,7 +26,7 @@ const App = () => {
   return (
     <Router>
     <React.Fragment>
-    <Header />
+    <Nav/>
     <Route exact path="/" component={Home}/>
     <Route path="/register/owner" component={RegisterOwner}/>
     <Route path="/owner/:id" component={OwnerProfile}/>
@@ -39,6 +39,8 @@ const App = () => {
     <Route path="/dog/:id" component={DogProfile}/>
     <Route path ="/walkeredit/" component = {WalkerProfileEdit}/>
     <Route path ='/dogEdit/' component = {DogProfileEdit} />
+    <Route path="/about" component={About}/>
+    <Route path="/contact" component={Contact}/>
     <Footer />
     </React.Fragment>
     </Router>

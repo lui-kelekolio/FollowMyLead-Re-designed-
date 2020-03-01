@@ -9,13 +9,32 @@ function Nav() {
 
     return (
         <div className="nav">
-            <button><Link className="button-basic" to='/' >Home</Link></button>
+            
+            
+            <ul>
+            <img className="logo"src="/images/Logo1.png" alt="logo"/>
+            <li><Link className="button-basic" to='/' >Home</Link></li>
             <IfNotAuthenticated>
-                <button><Link className="button-basic" to='/Login' >Login</Link></button>
+                
+                <li><Link className="button-basic" to='/Login' >Login</Link></li>
+                <li><Link className="button-basic" to='/About'>About</Link></li>
+                <li><Link className="button-basic" to='/Contact' >Contact</Link></li>
+                
+                
             </IfNotAuthenticated>
+            
             <IfAuthenticated>
-                <button><Link to='#' onClick={logOff}>Logout</Link></button>
+                <li><Link to='#' onClick={logOff}>Logout</Link></li>
+                
+                <li><Link className="nav-link" to='/' >My Profile</Link></li>
+                <li><Link className="nav-link" to='/doglist' >Doglist</Link></li>
+                <li><Link className="nav-link" to='/About'>About</Link></li>
+                <li><Link className="nav-link" to='/Contact' >Contact</Link></li>
+                
+                
             </IfAuthenticated>
+            </ul>
+            
             
             
         </div>
