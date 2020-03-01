@@ -55,8 +55,9 @@ class RegisterWalker extends React.Component {
     render() {
         return (
             <div>
+                 <h1>Walker form</h1>
                 <form className='form' onSubmit={this.handleSubmit}>
-                    <h1>Walker form</h1>
+                   
                     <br />
                     <label> User Name: </label>
                     <br />
@@ -69,7 +70,17 @@ class RegisterWalker extends React.Component {
                     <label> Password: </label>
                     <br />
                         <input className='input'
-                            type="text" 
+                            type="password" 
+                            id="pwd"
+                            name='password' 
+                            onChange={this.handleChange} />
+                    <br />
+
+                    <label> Confirm Password: </label>
+                    <br />
+                        <input className='input'
+                            type="password" 
+                            id="pwd"
                             name='password' 
                             onChange={this.handleChange} />
                     <br />
