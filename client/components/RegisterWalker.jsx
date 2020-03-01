@@ -59,6 +59,7 @@ class RegisterWalker extends React.Component {
                     <h1>Walker form</h1>
                     <br />
                     <label> User Name: </label>
+                    <br />
                         <input className='input'
                             type='text' 
                             name='username' 
@@ -66,6 +67,7 @@ class RegisterWalker extends React.Component {
                     <br />
 
                     <label> Password: </label>
+                    <br />
                         <input className='input'
                             type="text" 
                             name='password' 
@@ -73,6 +75,7 @@ class RegisterWalker extends React.Component {
                     <br />
 
                     <label> First name: </label>
+                    <br />
                         <input className='input'
                             type='text' 
                             name='first_name' 
@@ -80,6 +83,7 @@ class RegisterWalker extends React.Component {
                     <br />
 
                     <label> Last name: </label>
+                    <br />
                         <input className='input'
                             type='text' 
                             name='last_name' 
@@ -87,6 +91,7 @@ class RegisterWalker extends React.Component {
                     <br />
 
                     <label> Blurb: </label>
+                    <br />
                         <input className='input'
                             type='text' 
                             name='blurbgit ' 
@@ -94,6 +99,7 @@ class RegisterWalker extends React.Component {
                     <br />
 
                     <label> Location: </label>
+                    <br />
                         <select className='input'
                             type='text' 
                             name='location' 
@@ -267,6 +273,7 @@ class RegisterWalker extends React.Component {
                     <br />
 
                     <label> Email: </label>
+                    <br />
                         <input className='input'
                             type='text' 
                             name='email' 
@@ -274,12 +281,13 @@ class RegisterWalker extends React.Component {
                     <br />
 
                     <label> Photo: </label>
+                    <br />
                         <input className='input'
                             type='text' 
                             name='photo' 
                             onChange={this.handleChange} />
                     <br />
-
+                    <br />
                     <input className='submit'
                         type="submit" 
                         value="Submit" />

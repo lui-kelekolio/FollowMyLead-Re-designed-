@@ -15,7 +15,7 @@ html {
 }
 
 .footer {
-    position:fixed;
+    position:relative;
     left:0px;
     bottom:0px;
     height:30px;
@@ -101,7 +101,8 @@ html {
   }
   
   .input{
-    width: 50%;
+    width: 70%;
+    /* text-align: center; */
     background-color: white;
     color: black;
     font-size: x-large;
@@ -127,7 +128,8 @@ html {
 
 
   label {
-    font-size: x-large;
+    font-size: xx-large;
+    text-align: center    
   }
 
   .form {
@@ -138,6 +140,8 @@ html {
       background-color: #5BC4F1;
       color: white;
       border-radius: 10px;
+      padding-bottom: 2.5%;
+      padding-top: 2.5%;
   }
 
 

@@ -50,11 +50,12 @@ class RegisterOwner extends React.Component {
 
     render() {
         return (
-            <div className='form'>
-                <form onSubmit={this.handleSubmit}>
+            <div>
+                <form className='form' onSubmit={this.handleSubmit}>
                     <h1>Owner form</h1>
                     <br />
                     <label> Username: </label>
+                    <br />
                         <input className='input'
                             type='text' 
                             name='username' 
@@ -62,6 +63,7 @@ class RegisterOwner extends React.Component {
                     <br />
 
                     <label> Password: </label>
+                    <br />
                         <input className='input'
                             type='text' 
                             name='password' 
@@ -69,6 +71,7 @@ class RegisterOwner extends React.Component {
                     <br />
 
                     <label> First name: </label>
+                    <br />
                         <input className='input'
                             type='text' 
                             name='first_name' 
@@ -76,6 +79,7 @@ class RegisterOwner extends React.Component {
                     <br />
 
                     <label> Last name: </label>
+                    <br />
                         <input className='input'
                             type='text' 
                             name='last_name' 
@@ -83,6 +87,7 @@ class RegisterOwner extends React.Component {
                     <br />
 
                     <label> Location: </label>
+                    <br />
                         <select className='input'
                             type='text' 
                             name='location' 
@@ -256,6 +261,7 @@ class RegisterOwner extends React.Component {
                     <br />
 
                     <label> Email: </label>
+                    <br />
                         <input className='input'
                             type='text' 
                             name='email' 
@@ -263,12 +269,13 @@ class RegisterOwner extends React.Component {
                     <br />
 
                     <label> Photo: </label>
+                    <br />
                         <input className='input'
                             type='text' 
                             name='photo' 
                             onChange={this.handleChange} />
                     <br />
-
+                    <br />
                     <input className='submit'
                         type="submit" 
                         value="Submit" />

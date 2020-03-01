@@ -45,6 +45,7 @@ class RegisterDog extends React.Component {
                     <h1>Edit Dog Registration Form</h1>
                     <br />
                     <label> Name: </label>
+                    <br />
                         <input className='input'
                         type='text' 
                         name='Name' 
@@ -52,6 +53,7 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Photo: </label>
+                    <br />
                         <input className='input'
                             type='text' 
                             name='photo' 
@@ -60,6 +62,7 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Breed: </label>
+                    <br />
                         <input className='input'
                             type='text' 
                             name='Breed' 
@@ -67,6 +70,7 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Sex: </label>
+                    <br />
                         <select className='input'
                             type='text' 
                             name='Sex' 
@@ -84,6 +88,7 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Age: </label>
+                    <br />
                         <select className='input'
                             type='text' 
                             name='Age' 
@@ -107,6 +112,7 @@ class RegisterDog extends React.Component {
                     <br />
                     
                     <label> Size: </label>
+                    <br />
                         <select className='input'
                             type='text' 
                             name='Size' 
@@ -127,6 +133,7 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Activity Requirements: </label>
+                    <br />
                         <select className='input'
                             type='text' 
                             name='Activity Requirements' 
@@ -147,6 +154,7 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Good With Other Dogs: </label>
+                    <br />
                         <select className='input'
                             type='text' 
                             name='Good with other Dogs' 
@@ -164,6 +172,7 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Special Requirements: </label>
+                    <br />
                         <input className='input'
                             type='text' 
                             name='Special Requirements' 
@@ -171,6 +180,7 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Vet Practice: </label>
+                    <br />
                         <input className='input'
                             type='text'    
                             name='Vet Practice' 
@@ -178,12 +188,13 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Vet Contact: </label>
+                    <br />
                         <input className='input'
                             type='text' 
                             name='Vet contact' 
                             onChange={this.handleChange} />
                     <br />
-                    
+                    <br />
                     <input className='submit'
                         type="submit" 
                         value="Submit" />
