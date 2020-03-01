@@ -13,7 +13,10 @@ class Home extends React.Component{
 
 render(){
     return(
+        <>
+        
         <main>
+            
             
             <h1>Partnering People to Pooches!</h1>
             <p>Sometimes dog owners don't have time to walk their dogs and sometimes people who love dogs can't own one :(
@@ -36,6 +39,7 @@ It is our intent to provide a platform where dogs can get their regular excersis
             
             
         </main>
+        </>
     )
 }
 
