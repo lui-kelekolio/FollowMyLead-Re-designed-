@@ -40,8 +40,8 @@ class DogProfile extends React.Component {
     }
 
     componentDidMount() {
-        const walkerID = getUserDetails(this.state.user_id)
-            .then(user => { return user.walker.id })
+        getUserDetails(this.state.user_id)
+            .then(user => this.setState({ walker_id: user.walker.id }))
 
         getDog(this.props.match.params.id)
             .then(dog => {
@@ -59,7 +59,6 @@ class DogProfile extends React.Component {
                     vet_name: dog.vet_name,
                     vet_contact: dog.vet_contact,
                     owner_id: dog.owner_id,
-                    walker_id: walkerID
                 })
             })
     }
