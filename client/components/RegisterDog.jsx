@@ -35,6 +35,7 @@ class RegisterDog extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault()
         
+        
     }
 
     render() {
@@ -43,51 +44,149 @@ class RegisterDog extends React.Component {
                 <form onSubmit={this.handleSubmit} autoComplete='off'>
                     <h1>Edit Dog Registration Form</h1>
                     <br />
-                    <label> Name:
-                        <input type='text' name='Name' onChange={this.handleChange} placeholder='Name' />
-                    </label>
+                    <label> Name: </label>
+                        <input 
+                        type='text' 
+                        name='Name' 
+                        onChange={this.handleChange} />
                     <br />
-                    <label> Breed:
-                        <input type='text' name='Breed' onChange={this.handleChange} placeholder='Breed' />
-                    </label>
+
+                    <label> Photo: </label>
+                        <input 
+                            type='text' 
+                            name='photo' 
+                            onChange={this.handleChange} 
+                            placeholder='Upload File' />
                     <br />
-                    <label> Sex:
-                        <input type='text' name='Sex' onChange={this.handleChange} placeholder='Sex' />
-                    </label>
+
+                    <label> Breed: </label>
+                        <input 
+                            type='text' 
+                            name='Breed' 
+                            onChange={this.handleChange} />
                     <br />
-                    <label> Age:
-                        <input type='text' name='Age' onChange={this.handleChange} placeholder='Age' />
-                    </label>
+
+                    <label> Sex: </label>
+                        <select 
+                            type='text' 
+                            name='Sex' 
+                            onChange={this.handleChange} >
+                        <option 
+                            value='select'>select
+                        </option>
+                        <option 
+                            value='Male'>Male
+                        </option>
+                        <option 
+                            value='Female'>Female
+                        </option>
+                        </select>
                     <br />
-                    <label> Size:
-                        <input type='text' name='Size' onChange={this.handleChange} placeholder='Size' />
-                    </label>
+
+                    <label> Age: </label>
+                        <select 
+                            type='text' 
+                            name='Age' 
+                            onChange={this.handleChange} >
+                        <option 
+                            value='select'>select
+                        </option>
+                        <option 
+                            value='Puppy'>Puppy
+                        </option>
+                        <option 
+                            value='Adolescent'>Adolescent
+                        </option>
+                        <option 
+                            value='Adult'>Adult
+                        </option>
+                        <option 
+                            value='Senior'>Senior
+                        </option>
+                        </select>
                     <br />
-                    <label> Activity Requirements:
-                        <input type='text' name='Activity Requirements' onChange={this.handleChange} placeholder='Activity Requirements' />
-                    </label>
+                    
+                    <label> Size: </label>
+                        <select 
+                            type='text' 
+                            name='Size' 
+                            onChange={this.handleChange} >
+                        <option 
+                            value='select'>select
+                        </option>
+                        <option 
+                            value='small'>Small 9kg or less
+                        </option>
+                        <option 
+                            value='medium'>Medium 10-22kg
+                        </option>
+                        <option 
+                            value='large'>Large 22kg or more 
+                        </option>
+                        </select>
                     <br />
-                    <label> Good with other Dogs:
-                        <input type='text' name='Good with other Dogs' onChange={this.handleChange} placeholder='Good with other Dogs' />
-                    </label>
+
+                    <label> Activity Requirements: </label>
+                        <select 
+                            type='text' 
+                            name='Activity Requirements' 
+                            onChange={this.handleChange} >
+                        <option 
+                            value='select'>select
+                        </option>
+                        <option 
+                            value='30mins'>30-45 minutes
+                        </option>
+                        <option 
+                            value='45mins'>45-60 minutes
+                        </option>
+                        <option 
+                            value='60mins'>60-90 minutes
+                        </option>
+                        </select>
                     <br />
-                    <label> Special Requirements:
-                        <input type='text' name='Special Requirements' onChange={this.handleChange} placeholder='Special Requirements' />
-                    </label>
+
+                    <label> Good With Other Dogs: </label>
+                        <select 
+                            type='text' 
+                            name='Good with other Dogs' 
+                            onChange={this.handleChange} >
+                        <option 
+                            value='select'>select
+                        </option>
+                        <option 
+                            value='Yes'>Yes
+                        </option>
+                        <option 
+                            value='No'>No
+                        </option>
+                        </select>
                     <br />
-                    <label> Photo:
-                        <input type='text' name='photo' onChange={this.handleChange} placeholder='Photo' />
-                    </label>
+
+                    <label> Special Requirements: </label>
+                        <input 
+                            type='text' 
+                            name='Special Requirements' 
+                            onChange={this.handleChange} />
                     <br />
-                    <label> Vet Name:
-                        <input type='text' name='Vet Name' onChange={this.handleChange} placeholder='Vet Name' />
-                    </label>
+
+                    <label> Vet Practice: </label>
+                        <input 
+                            type='text'    
+                            name='Vet Practice' 
+                            onChange={this.handleChange} />
                     <br />
-                    <label> Vet contact:
-                        <input type='text' name='Vet contact' onChange={this.handleChange} placeholder='Vet contact' />
-                    </label>
+
+                    <label> Vet Contact: </label>
+                        <input 
+                            type='text' 
+                            name='Vet contact' 
+                            onChange={this.handleChange} />
                     <br />
-                    <input type="submit" value="Submit" />
+                    
+                    <input 
+                        type="submit" 
+                        value="Submit" />
                 </form>
             </div>
         )
