@@ -14,7 +14,7 @@ class RegisterOwner extends React.Component {
             email: '',
             photo: '',
             username: '',
-            password: ''
+            password: '',
         }
     }
 
@@ -35,7 +35,7 @@ class RegisterOwner extends React.Component {
         })
             .then((token) => {
                 if (isAuthenticated()) {
-                    
+
                     addOwner({
                         first_name: this.state.first_name,
                         last_name: this.state.last_name,
@@ -43,8 +43,7 @@ class RegisterOwner extends React.Component {
                         location: this.state.location,
                         email: this.state.email,
                         photo: this.state.photo,
-                    })
-                    this.props.history.push('/')
+                    }).then(() => this.props.history.push('/login'))
                 }
             })
     }
