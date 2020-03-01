@@ -174,7 +174,21 @@ html {
       color: white;
       border-radius: 10px;
       padding-bottom: 2.5%;
-      padding-top: 2.5%;
+      padding-top: 1.5%;
+  }
+
+  .logoform {
+    height:150px;
+    width:150px;
+    -webkit-transition: -webkit-transform .5s ease-in-out;
+    transition:         transform .5 ease-in-out;
+ 
+  }
+
+  .logoform:hover {
+      -webkit-transform: rotate(30deg);
+              transform: rotate(30deg);
+    }
   }
 
  h1 {
