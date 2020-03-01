@@ -1,8 +1,6 @@
 import React from "react"
 import { register, isAuthenticated } from 'authenticare/client'
-
 import { addWalker } from '../api/walkerApi'
-
 
 class RegisterWalker extends React.Component {
     constructor(props) {
@@ -16,7 +14,7 @@ class RegisterWalker extends React.Component {
             blurb: '',
             location: '',
             email: '',
-            photo: ''
+            photo: '',
         }
     }
 
@@ -44,13 +42,12 @@ class RegisterWalker extends React.Component {
                         location: this.state.location,
                         email: this.state.email,
                         photo: this.state.photo,
+                    }).then(() => {
+                        this.props.history.push('/login')
                     })
-                    this.props.history.push('/')
                 }
             })
     }
-
-
 
     render() {
         return (
@@ -280,7 +277,7 @@ class RegisterWalker extends React.Component {
                         <option
                             value='Woodridge'>Woodridge
                         </option>
-                        </select>
+                    </select>
                     <br />
 
                     <label> Email: </label>
