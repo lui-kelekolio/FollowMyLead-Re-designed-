@@ -5,33 +5,61 @@ import { logOff } from 'authenticare/client';
 
 import { IfAuthenticated, IfNotAuthenticated } from './Authenticated';
 
-function Header() {
+class Header extends React.Component {
+  constructor(props) {
+    super(props)
 
-   
-  return (
-    <div className="header">
-      <h1>Follow My Lead</h1>
-      <button>
-        <Link className="button-basic" to="/">
-          Home
-        </Link>
-      </button>
-      <IfNotAuthenticated>
+    this.state = {
+      logedin: false
+    }
+    this.handleClick.bind(this)
+  }
+
+  handleClick = (e) => {
+    e.preventDefault()
+    if (this.state.logedin) {
+      this.setState({
+        logedin: false
+      }) else {
+        this.setState({
+          logedin: true
+        })
+      }
+
+    }
+  }
+
+  render() {
+    return (
+      <div className="header">
+        <h1>Follow My Lead</h1>
         <button>
-          <Link className="button-basic" to="/Login">
-            Login
+          <Link className="button-basic" to="/">
+            Home
           </Link>
         </button>
-      </IfNotAuthenticated>
-      <IfAuthenticated>
-        <button>
-          <Link to="#" onClick={logOff}>
-            Logout
-          </Link>
-        </button>
-      </IfAuthenticated>
-    </div>
-  );
+        {this.state.logedin ?
+          <IfNotAuthenticated>
+            <button onClick={this.handleClick}>
+              <Link className="button-basic" to="/Login">
+                Login
+              </Link>
+            </button>
+          </IfNotAuthenticated>
+          :
+          <IfAuthenticated>
+            <button onClick={this.handleClick}>
+              <Link to="#" onClick={logOff}>
+                Logout
+              </Link>
+            </button>
+          </IfAuthenticated>
+
+        }
+      </div>
+    );
+  }
+
 }
 
 export default Header;

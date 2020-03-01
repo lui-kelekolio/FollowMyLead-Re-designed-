@@ -1,8 +1,9 @@
 import React from 'react'
 import { HashRouter as Router, Route } from 'react-router-dom'
 
-import Header from './Header'
+
 import Footer from './Footer'
+import Nav from './Nav'
 import Home from './Home'
 import Login from './Login'
 import DogList from './DogList'
@@ -13,34 +14,35 @@ import RegisterDog from './RegisterDog'
 import DogProfileEdit from './DogProfileEdit'
 
 import OwnerProfile from './OwnerProfile'
-
-
-
 import WalkerProfile from './WalkerProfile'
 import EditOwnerProfile from './EditOwnerProfile'
 import WalkerProfileEdit from './WalkerProfileEdit'
+import About from './About'
+import Contact from './Contact'
 
 
 
 const App = () => {
   return (
     <Router>
-    <React.Fragment>
-    <Header />
-    <Route exact path="/" component={Home}/>
-    <Route path="/register/owner" component={RegisterOwner}/>
-    <Route path="/owner/:id" component={OwnerProfile}/>
-    <Route path="/owner/:id/edit" component={EditOwnerProfile}/>
-    <Route path="/register/walker" component={RegisterWalker}/>
-    <Route path="/register/dog" component={RegisterDog}/>
-    <Route path="/login" component={Login}/>
-    <Route path="/doglist" component={DogList}/>
-    <Route path = "/walker/:id" component ={WalkerProfile}/>
-    <Route path="/dog/:id" component={DogProfile}/>
-    <Route path ="/walkeredit/" component = {WalkerProfileEdit}/>
-    <Route path ='/dogEdit/' component = {DogProfileEdit} />
-    <Footer />
-    </React.Fragment>
+      <React.Fragment>
+        <Route path="/" component={Nav} />
+        <Route exact path="/" component={Home} />
+        <Route path="/register/owner" component={RegisterOwner} />
+        <Route path="/owner/:id" component={OwnerProfile} />
+        <Route path="/owner/:id/edit" component={EditOwnerProfile} />
+        <Route path="/register/walker" component={RegisterWalker} />
+        <Route path="/register/dog" component={RegisterDog} />
+        <Route path="/login" component={Login} />
+        <Route path="/doglist" component={DogList} />
+        <Route path="/walker/:id" component={WalkerProfile} />
+        <Route path="/dog/:id" component={DogProfile} />
+        <Route path="/walkeredit/" component={WalkerProfileEdit} />
+        <Route path='/dogEdit/' component={DogProfileEdit} />
+        <Route path="/about" component={About} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/" component={Footer} />
+      </React.Fragment>
     </Router>
   )
 }
