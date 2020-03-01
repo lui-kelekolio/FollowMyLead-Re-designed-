@@ -1,7 +1,8 @@
 import React from "react"
 
+import { getDecodedToken } from 'authenticare/client'
 
-import { getDog } from '../api/dogApi'
+import { addDog } from '../api/dogApi'
 
 class RegisterDog extends React.Component {
     constructor(props) {
@@ -34,8 +35,23 @@ class RegisterDog extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        
-        
+        addDog({
+            id: this.state.id, 
+            owner_id: this.state.owner_id, 
+            feedback_id: this.state.feedback_id, 
+            name: this.state.name, 
+            breed: this.state.breed, 
+            sex: this.state.sex, 
+            age: this.state.age, 
+            size: this.state.size, 
+            activity_requirements: this.state.activity_requirements,
+            good_with_other_dogs: this.state.good_with_other_dogs,
+            special_requirements: this.state.special_requirements,
+            photo: this.state.photo,
+            vet_name: this.state.vet_name,
+            vet_contact: this.state.vet_contact,
+        })
+        // .then(() => this.props.history.push('/owner/:id'))
     }
 
     render() {

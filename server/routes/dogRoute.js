@@ -44,5 +44,18 @@ router.put('/:id', (req, res) => {
     })
 })
 
+router.post('/', (req, res) => {   
+    const dog = req.body
+    db.addDog(dog)
+        .then(id => {
+            res.json({ id: id[0] })
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).json({})
+        })
+
+})
+
 
 module.exports = router 
