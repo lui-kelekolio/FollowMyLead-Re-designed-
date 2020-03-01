@@ -55,7 +55,7 @@ class RegisterWalker extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} autoComplete='off'>
                     <h1>Walker form</h1>
                     <br />
                     <label> User Name:
