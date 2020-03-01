@@ -1,8 +1,6 @@
 import React from "react"
 import { register, isAuthenticated } from 'authenticare/client'
-
 import { addWalker } from '../api/walkerApi'
-
 
 class RegisterWalker extends React.Component {
     constructor(props) {
@@ -16,7 +14,7 @@ class RegisterWalker extends React.Component {
             blurb: '',
             location: '',
             email: '',
-            photo: ''
+            photo: '',
         }
     }
 
@@ -44,13 +42,12 @@ class RegisterWalker extends React.Component {
                         location: this.state.location,
                         email: this.state.email,
                         photo: this.state.photo,
+                    }).then(() => {
+                        this.props.history.push('/login')
                     })
-                    this.props.history.push('/')
                 }
             })
     }
-
-
 
     render() {
         return (
@@ -59,45 +56,45 @@ class RegisterWalker extends React.Component {
                     <h1>Walker form</h1>
                     <br />
                     <label> User Name: </label>
-                        <input 
-                            type='text' 
-                            name='username' 
-                            onChange={this.handleChange} />
+                    <input
+                        type='text'
+                        name='username'
+                        onChange={this.handleChange} />
                     <br />
 
                     <label> Password: </label>
-                        <input 
-                            type="text" 
-                            name='password' 
-                            onChange={this.handleChange} />
+                    <input
+                        type="text"
+                        name='password'
+                        onChange={this.handleChange} />
                     <br />
 
                     <label> First name: </label>
-                        <input 
-                            type='text' 
-                            name='first_name' 
-                            onChange={this.handleChange} />
+                    <input
+                        type='text'
+                        name='first_name'
+                        onChange={this.handleChange} />
                     <br />
 
                     <label> Last name: </label>
-                        <input 
-                            type='text' 
-                            name='last_name' 
-                            onChange={this.handleChange} />
+                    <input
+                        type='text'
+                        name='last_name'
+                        onChange={this.handleChange} />
                     <br />
 
                     <label> Blurb: </label>
-                        <input 
-                            type='text' 
-                            name='blurbgit ' 
-                            onChange={this.handleChange} />
+                    <input
+                        type='text'
+                        name='blurbgit '
+                        onChange={this.handleChange} />
                     <br />
 
                     <label> Location: </label>
-                        <select 
-                            type='text' 
-                            name='location' 
-                            onChange={this.handleChange} >
+                    <select
+                        type='text'
+                        name='location'
+                        onChange={this.handleChange} >
                         <option
                             value='select'>select
                         </option>
@@ -263,25 +260,25 @@ class RegisterWalker extends React.Component {
                         <option
                             value='Woodridge'>Woodridge
                         </option>
-                        </select>
+                    </select>
                     <br />
 
                     <label> Email: </label>
-                        <input 
-                            type='text' 
-                            name='email' 
-                            onChange={this.handleChange} />
+                    <input
+                        type='text'
+                        name='email'
+                        onChange={this.handleChange} />
                     <br />
 
                     <label> Photo: </label>
-                        <input 
-                            type='text' 
-                            name='photo' 
-                            onChange={this.handleChange} />
+                    <input
+                        type='text'
+                        name='photo'
+                        onChange={this.handleChange} />
                     <br />
 
-                    <input 
-                        type="submit" 
+                    <input
+                        type="submit"
                         value="Submit" />
                 </form>
             </div>
