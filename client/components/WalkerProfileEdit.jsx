@@ -18,7 +18,7 @@ class WalkerProfileEdit extends React.Component {
     }
 
 handleChange = e => {
-    console.log('line 20, handleChange in walkerProfileEdit runs')
+    console.log('yay')
     this.setState({
         [e.target.name]: e.target.value
     })
@@ -35,8 +35,8 @@ handleSubmit = (e) => {
         location: this.state.location,
         photo: this.state.photo
     })
-    let walker = this.state
-    editWalker(walker)
+    // let walker = this.state
+    // editWalker(walker)
     console.log(this.state)
 }
 
