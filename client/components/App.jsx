@@ -24,16 +24,17 @@ import Contact from './Contact'
 
 const App = () => {
   return (
+
     <Router>
       <React.Fragment>
         <Route path="/" component={Nav} />
         <Route exact path="/" component={Home} />
+        <Route path="/login" component={Login} />
         <Route path="/register/owner" component={RegisterOwner} />
         <Route path="/owner/:id" component={OwnerProfile} />
         <Route path="/owner/:id/edit" component={EditOwnerProfile} />
         <Route path="/register/walker" component={RegisterWalker} />
         <Route path="/register/dog" component={RegisterDog} />
-        <Route path="/login" component={Login} />
         <Route path="/doglist" component={DogList} />
         <Route path="/walker/:id" component={WalkerProfile} />
         <Route path="/dog/:id" component={DogProfile} />
