@@ -51,43 +51,59 @@ class RegisterOwner extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit} autoComplete='off'>
-                    <h1>Owner form</h1>
+                <h1>Owner form</h1>
+                <form className='form' onSubmit={this.handleSubmit}>
+                    
                     <br />
                     <label> Username: </label>
-                        <input 
+                    <br />
+                        <input className='input'
                             type='text' 
                             name='username' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> Password: </label>
-                        <input 
-                            type='text' 
+                    <br />
+                        <input className='input'
+                            type="password" 
+                            id="pwd"
+                            name='password' 
+                            onChange={this.handleChange} />
+                    <br />
+
+                    <label>Confirm Password: </label>
+                    <br />
+                        <input className='input'
+                            type="password" 
+                            id="pwd"
                             name='password' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> First name: </label>
-                        <input 
+                    <br />
+                        <input className='input'
                             type='text' 
                             name='first_name' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> Last name: </label>
-                        <input 
+                    <br />
+                        <input className='input'
                             type='text' 
                             name='last_name' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> Location: </label>
-                        <select 
+                    <br />
+                        <select className='input'
                             type='text' 
                             name='location' 
                             onChange={this.handleChange} >
-                        <option
+                        <option 
                             value='select'>select
                         </option>
                         <option
@@ -256,20 +272,22 @@ class RegisterOwner extends React.Component {
                     <br />
 
                     <label> Email: </label>
-                        <input 
+                    <br />
+                        <input className='input'
                             type='text' 
                             name='email' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> Photo: </label>
-                        <input 
+                    <br />
+                        <input className='input'
                             type='text' 
                             name='photo' 
                             onChange={this.handleChange} />
                     <br />
-
-                    <input 
+                    <br />
+                    <input className='submit'
                         type="submit" 
                         value="Submit" />
                 </form>
