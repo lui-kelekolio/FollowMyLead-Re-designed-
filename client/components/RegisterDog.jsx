@@ -1,16 +1,16 @@
 import React from "react"
 
+import { getDecodedToken } from 'authenticare/client'
 
-import { getDog } from '../api/dogApi'
+import { addDog } from '../api/dogApi'
 
 class RegisterDog extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            id: '', 
-            owner_id: '', 
-            feedback_id: '', 
+            // feedback_id: '',
+            owner_id: '',
             name: '', 
             breed: '', 
             sex: '', 
@@ -34,8 +34,20 @@ class RegisterDog extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        
-        
+        addDog({
+            owner_id: this.state.owner_id,
+            name: this.state.name, 
+            breed: this.state.breed, 
+            sex: this.state.sex, 
+            age: this.state.age, 
+            size: this.state.size, 
+            activity_requirements: this.state.activity_requirements,
+            good_with_other_dogs: this.state.good_with_other_dogs,
+            special_requirements: this.state.special_requirements,
+            photo: this.state.photo,
+            vet_name: this.state.vet_name,
+            vet_contact: this.state.vet_contact,
+        })
     }
 
     render() {
@@ -47,7 +59,7 @@ class RegisterDog extends React.Component {
                     <label> Name: </label>
                         <input 
                         type='text' 
-                        name='Name' 
+                        name='name' 
                         onChange={this.handleChange} />
                     <br />
 
@@ -62,14 +74,14 @@ class RegisterDog extends React.Component {
                     <label> Breed: </label>
                         <input 
                             type='text' 
-                            name='Breed' 
+                            name='breed' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> Sex: </label>
                         <select 
                             type='text' 
-                            name='Sex' 
+                            name='sex' 
                             onChange={this.handleChange} >
                         <option 
                             value='select'>select
@@ -86,7 +98,7 @@ class RegisterDog extends React.Component {
                     <label> Age: </label>
                         <select 
                             type='text' 
-                            name='Age' 
+                            name='age' 
                             onChange={this.handleChange} >
                         <option 
                             value='select'>select
@@ -109,7 +121,7 @@ class RegisterDog extends React.Component {
                     <label> Size: </label>
                         <select 
                             type='text' 
-                            name='Size' 
+                            name='size' 
                             onChange={this.handleChange} >
                         <option 
                             value='select'>select
@@ -129,7 +141,7 @@ class RegisterDog extends React.Component {
                     <label> Activity Requirements: </label>
                         <select 
                             type='text' 
-                            name='Activity Requirements' 
+                            name='activity_requirements' 
                             onChange={this.handleChange} >
                         <option 
                             value='select'>select
@@ -149,7 +161,7 @@ class RegisterDog extends React.Component {
                     <label> Good With Other Dogs: </label>
                         <select 
                             type='text' 
-                            name='Good with other Dogs' 
+                            name='good_with_other_dogs' 
                             onChange={this.handleChange} >
                         <option 
                             value='select'>select
@@ -166,21 +178,21 @@ class RegisterDog extends React.Component {
                     <label> Special Requirements: </label>
                         <input 
                             type='text' 
-                            name='Special Requirements' 
+                            name='special_requirements' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> Vet Practice: </label>
                         <input 
                             type='text'    
-                            name='Vet Practice' 
+                            name='vet_name' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> Vet Contact: </label>
                         <input 
                             type='text' 
-                            name='Vet contact' 
+                            name='vet_contact' 
                             onChange={this.handleChange} />
                     <br />
                     

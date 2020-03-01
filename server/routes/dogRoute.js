@@ -1,4 +1,5 @@
 const express = require('express')
+const { getTokenDecoder } = require('authenticare/server')
 
 const db = require('../db/dogData')
 
@@ -21,18 +22,6 @@ router.get('/:id', (req, res) => {
 
 })
 
-router.post('/register/dog', (req, res) => {
-    let dog = req.body
-
-    db.addDog(dog)
-        .then(id => {
-            res.json({ id: id[0] })
-        })
-        .catch(err => {
-            console.log(err)
-            res.status(500).json({})
-        })
-})
 
 router.put('/:id', (req, res) => {
     let id = req.params.id
@@ -42,6 +31,22 @@ router.put('/:id', (req, res) => {
     .then(response => {
         res.json({})
     })
+})
+
+router.post('/', getTokenDecoder(), (req, res) => {   
+    const dog = req.body
+    // console.log(dog)
+    dog.owner_id = req.user.id
+    // console.log(req.user)
+    db.addDog(dog)
+        .then(id => {
+            res.json({ id: id[0] })
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).json({})
+        })
+
 })
 
 

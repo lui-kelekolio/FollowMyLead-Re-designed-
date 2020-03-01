@@ -12,7 +12,15 @@ function getDog(id, db = connection) {
         .first()
 }
 
+function addDog(dog, db=connection){
+    console.log(dog)
+    return db('dog_table')
+        .insert(dog)
+        .debug()
+}
+
 module.exports = {
     getDogs,
-    getDog
+    getDog,
+    addDog
 }
