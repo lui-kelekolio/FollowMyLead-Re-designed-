@@ -1,7 +1,8 @@
 import React from 'react'
 import { getDogs } from '../api/dogApi'
 // import {getOwner} from '../api/ownerApi'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { getOwner } from '../api/ownerApi'
 
 class DogList extends React.Component {
 
@@ -10,6 +11,7 @@ class DogList extends React.Component {
 
         this.state = {
             dogList: [],
+            suburb: '',
         }
     }
 
@@ -34,11 +36,13 @@ class DogList extends React.Component {
         return (
             <div>
                 {this.state.dogList.map(dog => {
+                    getOwner(dog.owner_id).then(owner => this.setState({ suburb: owner.location }))
                     return (
                         <div className='doglist'>
-                           <Link to = {`/dog/${dog.id}`}><img className='dogphoto' src={dog.photo} /></Link>
-                           <p>{dog.name}</p>
-                           
+                            <Link to={`/dog/${dog.id}`}><img className='dogphoto' src={dog.photo} /></Link>
+                            <p>{dog.name}</p>
+                            <p>{}</p>
+
                         </div>
                     )
                 })}

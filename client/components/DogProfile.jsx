@@ -51,7 +51,7 @@ class DogProfile extends React.Component {
 
         getDog(this.props.match.params.id)
             .then(dog => {
-                getOwner(dog.owner_id).then(owner => this.setState({suburb: owner.location}))
+                getOwner(dog.owner_id).then(owner => this.setState({ suburb: owner.location }))
                 console.log('ownerID=', dog.owner_id)
                 this.setState({
                     photo: dog.photo,
@@ -66,7 +66,6 @@ class DogProfile extends React.Component {
                     vet_name: dog.vet_name,
                     vet_contact: dog.vet_contact,
                     owner_id: dog.owner_id,
-                  
                 })
             })
         console.log('suburb: ', this.state.suburb)
@@ -126,7 +125,7 @@ class DogProfile extends React.Component {
 
     //Profile link button nto working - needs to pass props from dog page
     render() {
-        console.log('walker id',this.state.walker_id)
+        console.log('walker id', this.state.walker_id)
         return (
             <div className='dogprofiledisplay'>
                 <button className='sendMail' name='sendButton' onClick={this.handleClick}>Send request to the dog's owner</button>
