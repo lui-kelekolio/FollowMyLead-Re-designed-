@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import { getDog } from '../api/dogApi'
 import { getOwner } from '../api/ownerApi'
 import { getDecodedToken } from 'authenticare/client'
@@ -65,6 +65,8 @@ class DogProfile extends React.Component {
                     special_requirements: dog.special_requirements,
                     vet_name: dog.vet_name,
                     vet_contact: dog.vet_contact,
+                    owner_id: dog.owner_id,
+                  
                 })
             })
         console.log('suburb: ', this.state.suburb)
@@ -124,6 +126,7 @@ class DogProfile extends React.Component {
 
     //Profile link button nto working - needs to pass props from dog page
     render() {
+        console.log('walker id',this.state.walker_id)
         return (
             <div className='dogprofiledisplay'>
                 <button className='sendMail' name='sendButton' onClick={this.handleClick}>Send request to the dog's owner</button>
