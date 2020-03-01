@@ -22,6 +22,7 @@ class DogList extends React.Component {
                 this.setState({
                     dogList: dogs
                 })
+                
             })
 
         console.log('dogList:', this.state.dogList)
@@ -34,16 +35,16 @@ class DogList extends React.Component {
         return (
             <div>
                 {this.state.dogList.map(dog => {
-                    return (
-                        <div className='doglist'>
-                            <Link to={`/dog/${dog.id}`}><img className='dogphoto' src={dog.photo} /></Link>
-                            <p>{dog.name}</p>
-                        </div>
-                    )
-                    // getOwner(dog.owner_id).then(owner => owner).then(res => {
-                    //     console.log('dog.name: ', res.location)
-
-                    // })
+                    getOwner(dog.owner_id).then(owner => owner).then(res => {
+                        console.log('res.location: ', res.location)
+                        return (
+                            <div className='doglist'>
+                                <Link to={`/dog/${dog.id}`}><img className='dogphoto' src={dog.photo} /></Link>
+                                <p>{dog.name}</p>
+                                <p>{res.location}</p>
+                            </div>
+                        )
+                    })
 
                 })}
             </div>
