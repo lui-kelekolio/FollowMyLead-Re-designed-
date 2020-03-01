@@ -9,11 +9,33 @@ html {
 
   .home-image {
       height: 50%;
-      width: 100%
-      
+      width: 100%;
+      background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 
-   
-}
+    }
+    .home-page-headline {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Love Ya Like A Sister';
+        color:white;
+        font-size: 5em;
+    }
+
+    .home-page-ptag {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'courgette';
+        font-size: 2em;
+        color: white;
+    }
+
 
 
 
@@ -114,7 +136,29 @@ html {
     font-size: 30px;
     text-decoration: none;
  
+}
+
+.blurb-container {
     
-  
+    border: 1px solid gray;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2%;
+    
+    
+
+
+}
+
+.blurb-headline {
+    font-family: 'Courgette';
+    font-size: 30px;
+    text-align: center;
+    
+}
+
+.blurb-text {
+    font-family: Arial, Helvetica, sans-serif;
 
 }
