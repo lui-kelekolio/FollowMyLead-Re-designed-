@@ -55,7 +55,7 @@ class RegisterOwner extends React.Component {
                     <h1>Owner form</h1>
                     <br />
                     <label> Username:
-                        <input type='text' name='username' onChange={this.handleChange} placeholder='Username' autoComplete='off' />
+                        <input type='text' name='username' onChange={this.handleChange} placeholder='Username'  />
                     </label>
                     <br />
                     <label> Password:
