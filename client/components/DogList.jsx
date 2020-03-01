@@ -1,8 +1,7 @@
 import React from 'react';
 import { getDogs } from '../api/dogApi';
-// import {getOwner} from '../api/ownerApi'
 import { Link } from 'react-router-dom';
-import { getOwner } from '../api/ownerApi';
+
 
 class DogList extends React.Component {
   constructor(props) {
@@ -10,7 +9,6 @@ class DogList extends React.Component {
 
     this.state = {
       dogList: [],
-      suburb: ''
     };
   }
 
