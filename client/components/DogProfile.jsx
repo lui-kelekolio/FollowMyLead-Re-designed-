@@ -34,17 +34,24 @@ class DogProfile extends React.Component {
             walker_id: 0,
             request_sent: false,
             walker_link: 'http://localhost:3000/#/walker/',
+            suburb: '',
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleWalk = this.handleWalk.bind(this);
     }
 
     componentDidMount() {
+
+
         getUserDetails(this.state.user_id)
-            .then(user => this.setState({ walker_id: user.walker.id }))
+            .then(user => {
+                console.log('walkerID: ', user.walker.id)
+                this.setState({ walker_id: user.walker.id })
+            })
 
         getDog(this.props.match.params.id)
             .then(dog => {
+                getOwner(dog.owner_id).then(owner => this.setState({suburb: owner.location}))
                 console.log('ownerID=', dog.owner_id)
                 this.setState({
                     photo: dog.photo,
@@ -58,9 +65,9 @@ class DogProfile extends React.Component {
                     special_requirements: dog.special_requirements,
                     vet_name: dog.vet_name,
                     vet_contact: dog.vet_contact,
-                    owner_id: dog.owner_id,
                 })
             })
+        console.log('suburb: ', this.state.suburb)
     }
 
     handleWalk(e) {
@@ -136,6 +143,7 @@ class DogProfile extends React.Component {
                 <h2>Special Requirements: {this.state.special_requirements}</h2>
                 <h2>Vet Name: {this.state.vet_name}</h2>
                 <h2>Vet Contact: {this.state.vet_contact}</h2>
+                <h2>Suburb: {this.state.suburb}</h2>
             </div>
         )
     }
