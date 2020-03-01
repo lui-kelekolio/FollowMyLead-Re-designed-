@@ -69,15 +69,24 @@ The idea is to allow dog lovers to find a compatable dog via a list of profiles 
 ## Views (Client Side)
 
 | name           | purpose                                                                                |
+|----------------|----------------------------------------------------------------------------------------|
 | Home           | Default page displaying login, register for walker and owner as well as include a blurb|
+|----------------|----------------------------------------------------------------------------------------|
 | Register       | View for user to sign up for the App                                                   |
+|----------------|----------------------------------------------------------------------------------------|
 | Login	         | View for user to enter their login credentials                                         |
+|----------------|----------------------------------------------------------------------------------------|
 | Walker Profile | Will link to the DogList component // feedback section                                 |
+|----------------|----------------------------------------------------------------------------------------|
 | Owner Profile  | Save dog/dogs details (conditionally render the component of register dog if true)     |
+|----------------|----------------------------------------------------------------------------------------|
 | Dog profile    | Will display the dog to walkers and a button to "Walkies?" which notify the owner and  | 
 |                | then redirect the walker to the DogList component// comments/feedback section          |
+|----------------|----------------------------------------------------------------------------------------|
 | DogRegistration| Form to populate the dog data and add to Owners profile - this will include dog name.  |
+|----------------|----------------------------------------------------------------------------------------|
 | DogList        | Will display dog profiles to the walker - this will include dog name.                  |
+|----------------|----------------------------------------------------------------------------------------|
 
 
 ## Stretch
@@ -119,8 +128,11 @@ The idea is to allow dog lovers to find a compatable dog via a list of profiles 
 ### dogs
 
 | col_name               | variable type                        |
+|------------------------|--------------------------------------|
 | id                     | increments.                          |
+|------------------------|--------------------------------------|
 | owner_id               | integer.                             |
+|------------------------|--------------------------------------|
 | feedback_id            | integer                              |
 |------------------------|--------------------------------------|
 | name                   | string                               |
