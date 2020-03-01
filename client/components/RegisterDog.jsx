@@ -41,18 +41,18 @@ class RegisterDog extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form className='form' onSubmit={this.handleSubmit}>
                     <h1>Edit Dog Registration Form</h1>
                     <br />
                     <label> Name: </label>
-                        <input 
+                        <input className='input'
                         type='text' 
                         name='Name' 
                         onChange={this.handleChange} />
                     <br />
 
                     <label> Photo: </label>
-                        <input 
+                        <input className='input'
                             type='text' 
                             name='photo' 
                             onChange={this.handleChange} 
@@ -60,14 +60,14 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Breed: </label>
-                        <input 
+                        <input className='input'
                             type='text' 
                             name='Breed' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> Sex: </label>
-                        <select 
+                        <select className='input'
                             type='text' 
                             name='Sex' 
                             onChange={this.handleChange} >
@@ -84,7 +84,7 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Age: </label>
-                        <select 
+                        <select className='input'
                             type='text' 
                             name='Age' 
                             onChange={this.handleChange} >
@@ -107,7 +107,7 @@ class RegisterDog extends React.Component {
                     <br />
                     
                     <label> Size: </label>
-                        <select 
+                        <select className='input'
                             type='text' 
                             name='Size' 
                             onChange={this.handleChange} >
@@ -127,7 +127,7 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Activity Requirements: </label>
-                        <select 
+                        <select className='input'
                             type='text' 
                             name='Activity Requirements' 
                             onChange={this.handleChange} >
@@ -147,7 +147,7 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Good With Other Dogs: </label>
-                        <select 
+                        <select className='input'
                             type='text' 
                             name='Good with other Dogs' 
                             onChange={this.handleChange} >
@@ -164,27 +164,27 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Special Requirements: </label>
-                        <input 
+                        <input className='input'
                             type='text' 
                             name='Special Requirements' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> Vet Practice: </label>
-                        <input 
+                        <input className='input'
                             type='text'    
                             name='Vet Practice' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> Vet Contact: </label>
-                        <input 
+                        <input className='input'
                             type='text' 
                             name='Vet contact' 
                             onChange={this.handleChange} />
                     <br />
                     
-                    <input 
+                    <input className='submit'
                         type="submit" 
                         value="Submit" />
                 </form>

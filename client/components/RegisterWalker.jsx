@@ -55,46 +55,46 @@ class RegisterWalker extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form className='form' onSubmit={this.handleSubmit}>
                     <h1>Walker form</h1>
                     <br />
                     <label> User Name: </label>
-                        <input 
+                        <input className='input'
                             type='text' 
                             name='username' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> Password: </label>
-                        <input 
+                        <input className='input'
                             type="text" 
                             name='password' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> First name: </label>
-                        <input 
+                        <input className='input'
                             type='text' 
                             name='first_name' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> Last name: </label>
-                        <input 
+                        <input className='input'
                             type='text' 
                             name='last_name' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> Blurb: </label>
-                        <input 
+                        <input className='input'
                             type='text' 
                             name='blurbgit ' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> Location: </label>
-                        <select 
+                        <select className='input'
                             type='text' 
                             name='location' 
                             onChange={this.handleChange} >
@@ -267,20 +267,20 @@ class RegisterWalker extends React.Component {
                     <br />
 
                     <label> Email: </label>
-                        <input 
+                        <input className='input'
                             type='text' 
                             name='email' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> Photo: </label>
-                        <input 
+                        <input className='input'
                             type='text' 
                             name='photo' 
                             onChange={this.handleChange} />
                     <br />
 
-                    <input 
+                    <input className='submit'
                         type="submit" 
                         value="Submit" />
                 </form>
