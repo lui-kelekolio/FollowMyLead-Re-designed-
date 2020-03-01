@@ -18,7 +18,7 @@ The idea is to allow dog lovers to find a compatable dog via a list of profiles 
 * Express
 * Knex.js (SQLite3)
 * CSS
-* JWT Auth (Local)
+* JWT Auth (Local) - Authenticare
 * Internal API
 * Mobile first
 
@@ -33,54 +33,44 @@ The idea is to allow dog lovers to find a compatable dog via a list of profiles 
 ### As a user:
 
 * I want to be able to see a home page which will display a title, login/register and blurb.
-* I want to be able to view the FollowMyLead team in a team nav section.
-* I want to reset my password if I forget my password :D
-
 
 ### As a walker:
 
 * I want to register for the App
 * I want to be able to sign in to the App with my login and password
-* I want to be able to review, edit and delete my profile upon registration and for future purposes(eg update photo or contact details)
 * I want to be able to view a list of dogs I can potentially take for a walk
-* I want to be able to view puppy details and previous feedback on the puppy's profile page
-* I want to be able to notify the owner that I am interested in their pet by click of a button.
-* I want to be informed if I am accepted or declined from walking an owners dog
+* I want to be able to notify the owner that I am interested in their pet by click of a button - this will send an email.
 
 ### Stretch Walker:
 
+* I want to be selective in my dog search by filtering location of available of dogs in the doglist
 * I want to be able to leave feedback on the pup on the puppy profile page
-* I want to be able to leave feedback on the pup after the walk has finished via a link.
-* I want to be contactable via IM within the App
-* I want to be abe to use geolocational tech to find walkers in my area at any given time. 
-* I want to be able to filter times and dates of availability of dogs
-* I want to be able to view dog individual profile at a time (think tinder) with swipe functionality
-* I want to be able to receive tips 
+* I want to reset my password if I forget my password
+* I want to be able to review, edit and delete my profile upon registration and for future purposes(eg update photo or contact details)
+* I want to be able to view and leave feedback on the puppy's profile page
+* I want to be informed if declined
 
 ### As an Owner:
 
 * I want to register myself for the App
 * I want to register my dog/dogs for the App.
 * I want to be able to sign in to the App with my login and password
-* I want to be able to review, edit and delete my profile as well as dogs profile upon registration and for future purposes(eg update photo or contact details)
 * I want to be able to receive an email from a potential walker which will include a link to their profile
-* I want to be able to accept or decline a walker by click of a button
+* I want to be able to view the walker that has requested to walk my dog vai a link which will be sent by email.
 * I want to be able to send a confirmation of acceptance or rejection (acceptance will open a line of communication via email)
 
 ### Stretch Owner:
 
 * I want to be able to leave feedback on the walker profile page
-* I want to be able to leave feedback on the walker after the walk has finished via a link.
-* I want to be notified by app notification when a walker has chosen my dog which will display on my profile.
-* I want to be able to contact walkers that have chosen my dog via IM.
-* I want to be able to tip walkers.
-* I want to be able to display times and dates of availablilty. 
+* I want to be able to accept or decline a walker by button on app
+* I want to reset my password if I forget my password
+* I want to be able to review, edit and delete my profile as well as dogs profile upon registration and for future purposes(eg update photo or contact details)
 
 ## Views (Client Side)
 
 | name           | purpose                                                                                |
 |----------------|----------------------------------------------------------------------------------------|
-| Home           | Default page displaying login, register and blurb                                      |
+| Home           | Default page displaying login, register for walker and owner as well as include a blurb|
 |----------------|----------------------------------------------------------------------------------------|
 | Register       | View for user to sign up for the App                                                   |
 |----------------|----------------------------------------------------------------------------------------|
@@ -93,6 +83,8 @@ The idea is to allow dog lovers to find a compatable dog via a list of profiles 
 | Dog profile    | Will display the dog to walkers and a button to "Walkies?" which notify the owner and  | 
 |                | then redirect the walker to the DogList component// comments/feedback section          |
 |----------------|----------------------------------------------------------------------------------------|
+| DogRegistration| Form to populate the dog data and add to Owners profile - this will include dog name.  |
+|----------------|----------------------------------------------------------------------------------------|
 | DogList        | Will display dog profiles to the walker - this will include dog name.                  |
 |----------------|----------------------------------------------------------------------------------------|
 
@@ -103,35 +95,29 @@ The idea is to allow dog lovers to find a compatable dog via a list of profiles 
 |----------------|----------------------------------------------------------------------------------------|
 | Feedback View  | Will display upon click a link that will be sent after confirmation of walk            |
 |----------------|----------------------------------------------------------------------------------------|
-| About the team | Will display us!                                                                       |
-|----------------|----------------------------------------------------------------------------------------|
-| Map View of NZ | Will be used to find and display nearby dogs to walk                                   |
-|----------------|----------------------------------------------------------------------------------------|
-| Schedule       | Will display a calendar of availability for the dog.. maybe walker?                    |
-|----------------|----------------------------------------------------------------------------------------|
 
 
 ## API (Client - Server)
 
-	Endpoint	Protected	Usage	Response
-
 | Type | Endpoint                 |  Usage reponse                                                            |
 |------|--------------------------|---------------------------------------------------------------------------|
-| Post | /api/auth/login          | (Yes)	Log In a User	The Users JWT Token                                   |
+| Post | /api/auth/login          | Login as a user using JWT Token                                           |
 |------|--------------------------|---------------------------------------------------------------------------|
-| Post | /api/auth/register	      | (Yes)	Register a User	The Users JWT Token                                 |
+| Post | /api/auth/register	  | Register a user with JWT Token                                            |
 |------|--------------------------|---------------------------------------------------------------------------|
-| Get	 | /api/walker/:id	        |(Yes) display the walker profile - return a walker object                  |
+| Get  | /api/walker/:id	  | Display the walker profile - returns a walker object                      |
 |------|--------------------------|---------------------------------------------------------------------------|
-| Get  | /api/dogs                | (Yes) display the list of filtered dogs - return and array of dog objects |
+| Get  | /api/doglist             | Displays list of dogs - return and array of dog objects                   |
 |------|--------------------------|---------------------------------------------------------------------------|
-| Get  | /api/dogs/:id            | (Yes) display the selected dog profile - returns a dog object.            | 
+| Get  | /api/dogs/:id            | Display the selected dog profile - returns a dog object.                  | 
 |------|--------------------------|---------------------------------------------------------------------------|
-| Get  | /api/owner/:id           | (Yes) display an owners profile - returns one owner object                |
+| Get  | /api/owner/              | Display a list of owners - returns an array of owner objects              |
 |------|--------------------------|---------------------------------------------------------------------------|
-| Get  | /api/owner/:id/dogs.     | (Yes) return the list of the onwers dogs                                  |
+| Get  | /api/owner/:id           | Display an owners - returns an owner objects                              |
 |------|--------------------------|---------------------------------------------------------------------------|
-| Post | /api/feedback/dog/:id    | (Yes) insert feedback comment and match to dog id using join table.       |
+| Get  | /api/owner/:id/dogs.     | Return a list of the onwers dogs                                          |
+|------|--------------------------|---------------------------------------------------------------------------|
+| Post | /api/feedback/dog/:id    | Insert feedback comment and match to dog id using join table.       |
 |------|--------------------------|---------------------------------------------------------------------------|
 | Post | /api/feedback/walker/:id | (Yes) insert feedback comment and match to walker id using join table.    |
 |------|--------------------------|---------------------------------------------------------------------------|
