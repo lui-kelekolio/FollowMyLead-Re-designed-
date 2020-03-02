@@ -1,5 +1,5 @@
 import React from "react"
-// import { editWalker } from '../api/walkerApi'
+import { editWalker } from '../api/walkerApi'
 
 //Josh Sat 29/2
 
@@ -35,9 +35,11 @@ handleSubmit = (e) => {
         location: this.state.location,
         photo: this.state.photo
     })
-    // let walker = this.state
-    // editWalker(walker)
-    console.log(this.state)
+    let walker = this.state
+    let id = this.props.match.params.id
+    editWalker(id, walker)
+    .then(() => this.props.history.push('/walker/' + id))
+ 
 }
 
 
@@ -73,7 +75,7 @@ handleSubmit = (e) => {
                     </label>
                     <br />
                     <br />
-                    <input type="submit" value="Submit" onChange={this.handleChange} />
+                    <input type="submit" value="Submit"  />
                 </form>
             </div>
         )
