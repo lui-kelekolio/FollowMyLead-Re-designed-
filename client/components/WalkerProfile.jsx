@@ -28,7 +28,7 @@ class WalkerProfile extends React.Component {
         return (
             <div>
                 <h1>Walker Profile Page</h1>
-                <button><Link to ='/walkeredit'>Edit</Link></button>
+                <button><Link to={`/walker/${this.state.walker.id}/edit`}>Edit</Link></button>
                 <br />
                 <br />
                 <button><Link to ='/doglist'>Dog list</Link></button>

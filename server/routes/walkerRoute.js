@@ -26,16 +26,19 @@ router.post('/', getTokenDecoder(), (req, res) => {
 })
 
 
-router.put('/', getTokenDecoder(), (req,res) =>{
-    let newWalker = req.body
-    console.log('route yay')
-    try{
-        const walker = db.editWalker(newWalker)
-                res.json(walker)
-    } catch(err) {
-        res.status(500).send(err.message)
-    }
+
+router.put('/:id/edit', getTokenDecoder(), (req,res) =>{
+    let id = req.params.id
+    let updatedWalker = req.body
+    console.log(updatedWalker)
+
+    db.editWalker(id, updatedWalker)
+        .then(updated => console.log(updated, ' updated'))
+                
+   
 })
+
+
 
 //Unsure on this code? ask Rich
 router.get('/:id', (req, res) => {
