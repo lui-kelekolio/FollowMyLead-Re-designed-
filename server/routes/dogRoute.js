@@ -6,7 +6,7 @@ const db = require('../db/dogData')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    db.getDogs()
+    db.getDogsWithOwners()
         .then(dogs => {
 
             return res.json(dogs)
