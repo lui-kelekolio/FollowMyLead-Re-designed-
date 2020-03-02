@@ -54,7 +54,7 @@ class RegisterWalker extends React.Component {
             <div>
                  <h1>Walker form</h1>
                 <form className='form' onSubmit={this.handleSubmit}>
-                   
+                <img className="logoform" src="/images/Logo2.png" alt="logo" />
                     <br />
                     <label> User Name: </label>
                     <br />
