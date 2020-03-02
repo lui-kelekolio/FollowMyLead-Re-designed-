@@ -43,6 +43,13 @@ class OwnerProfile extends React.Component {
         <h2>Photo: {this.state.photo}</h2>
         <h2>Location: {this.state.location}</h2>
         <h2>Email: {this.state.email}</h2>
+
+        {/* <Link to ={`/owner/${this.state.owner.id}/edit`}>
+        <button type = 'button'>Edit</button>
+        </Link> */}
+
+        <br />
+        <br />
         <Link to="/register/dog">
           <button type="button">
             Register your dog
