@@ -7,10 +7,12 @@ const dogRoute = require('./routes/dogRoute')
 const authRoute = require('./routes/authRoute')
 const ownerRoute = require('./routes/ownerRoute')
 const userRoute = require('./routes/userRoute')
+const dogFeedbackRoute = require('./routes/dogFeedbackRoute')
 
 server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
 
+server.use('/api/dogfeedback', dogFeedbackRoute)
 server.use('/api/user', userRoute)
 server.use('/api/dogs', dogRoute)
 server.use('/api/walker', walkerRoute)
