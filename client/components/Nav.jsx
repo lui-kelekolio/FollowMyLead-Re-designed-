@@ -17,7 +17,7 @@ class Nav extends React.Component {
 
 
                 <ul>
-                    <img className="logo" src="/images/Logo1.png" alt="logo" />
+                    <Link to ='/'><img className="logo" src="/images/Logo1.png" alt="logo" /></Link>
                     <li><Link className="button-basic" to='/' >Home</Link></li>
                     <IfNotAuthenticated>
 
