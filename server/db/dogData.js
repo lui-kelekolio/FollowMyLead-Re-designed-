@@ -15,7 +15,6 @@ function getDogsWithOwners(db = connection) {
                     .first()
                     .then(owner => {
                         dog.owner = {}
-                        console.log(owner.location)
                         dog.owner.location = owner.location
                         return dog
                     })
@@ -33,7 +32,6 @@ function getDog(id, db = connection) {
 
 
 function addDog(dog, db = connection) {
-    console.log(dog)
     return db('dog_table')
         .insert(dog)
         .debug()

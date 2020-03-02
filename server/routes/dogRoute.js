@@ -35,9 +35,7 @@ router.put('/:id', (req, res) => {
 
 router.post('/', getTokenDecoder(), (req, res) => {   
     const dog = req.body
-    // console.log(dog)
     dog.owner_id = req.user.id
-    // console.log(req.user)
     db.addDog(dog)
         .then(id => {
             res.json({ id: id[0] })

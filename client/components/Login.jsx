@@ -27,10 +27,8 @@ class Login extends React.Component {
             baseUrl: process.env.BASE_API_URL // see .env and webpack.config.js
         })
             .then((token) => {
-                console.log(token + "This is the token :)")
                 if (isAuthenticated()) {
                     getUserDetails(getDecodedToken().id).then(user => {
-                        console.log('line 33, login,user:', user)
                         if (user.walker) this.props.history.push('/walker/' + user.walker.id)
                         if (user.owner) this.props.history.push('/owner/' + user.owner.id)
                     })

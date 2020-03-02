@@ -20,19 +20,12 @@ class DogList extends React.Component {
                     dogList: dogs
                 })
             })
-
-
-        console.log('dogList:', this.state.dogList)
-
-        console.log(this.state.dogList)
-
     }
 
     render() {
         return (
             <div>
                 {this.state.dogList.map(dog => {
-                    console.log('dog: ', dog)
                     return (
                         <div className='doglist'>
                             <Link to={`/dog/${dog.id}`}><img className='dogphoto' src={dog.photo} /></Link>
