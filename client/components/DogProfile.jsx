@@ -1,10 +1,11 @@
 import React from 'react'
-import { getDog } from '../api/dogApi'
+import { getDog, returnFeedback } from '../api/dogApi'
 import { getOwner } from '../api/ownerApi'
 import { getDecodedToken } from 'authenticare/client'
 import { getUserDetails } from '../api/walkerApi'
 import { Link } from 'react-router-dom'
 import { send } from 'emailjs-com'
+import { getFeedback } from '../api/dogFeedbackApi'
 
 
 
@@ -35,6 +36,7 @@ class DogProfile extends React.Component {
             request_sent: false,
             walker_link: 'http://localhost:3000/#/walker/',
             suburb: '',
+            feedback: '',
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleWalk = this.handleWalk.bind(this);
@@ -42,7 +44,7 @@ class DogProfile extends React.Component {
 
     componentDidMount() {
 
-
+        console.log(this.state)
         getUserDetails(this.state.user_id)
             .then(user => {
                 this.setState({ walker_id: user.walker.id })
@@ -50,7 +52,10 @@ class DogProfile extends React.Component {
 
         getDog(this.props.match.params.id)
             .then(dog => {
-                getOwner(dog.owner_id).then(owner => this.setState({ suburb: owner.location }))
+                getOwner(dog.owner_id)
+                .then(owner => this.setState({ 
+                    suburb: owner.location 
+                }))
                 this.setState({
                     photo: dog.photo,
                     name: dog.name,
@@ -66,6 +71,18 @@ class DogProfile extends React.Component {
                     owner_id: dog.owner_id,
                 })
             })
+        // getDogFeedback(this.state.feedback_id)
+        // .then(feedback => {
+        //     this.setState({
+        //         feedback_id: feedback.id
+        //     })
+        // })
+        returnFeedback(this.props.match.params.id)
+         .then(feedbackInfo => {
+             this.setState({
+                 feedback: feedbackInfo
+             })
+         })
     }
 
     handleWalk(e) {
@@ -133,6 +150,7 @@ class DogProfile extends React.Component {
                 <h2>Vet Name: {this.state.vet_name}</h2>
                 <h2>Vet Contact: {this.state.vet_contact}</h2>
                 <h2>Suburb: {this.state.suburb}</h2>
+                <p>Feedback: {this.state.feedback.feedback}</p>
             </div>
         )
     }
