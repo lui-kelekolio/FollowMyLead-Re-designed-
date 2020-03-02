@@ -1,47 +1,52 @@
 import React from 'react';
-import { getDogs } from '../api/dogApi';
+import { getDogOwner, getDogs } from '../api/dogApi';
 import { Link } from 'react-router-dom';
 
-
 class DogList extends React.Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      dogList: [],
-    };
-  }
+    constructor(props) {
+        super(props)
 
-  componentDidMount() {
-    getDogs().then(dogs => {
-      this.setState({
-        dogList: dogs
-      });
-    });
+        this.state = {
+            dogList: [],
+        }
+    }
 
-    console.log('dogList:', this.state.dogList);
 
-    console.log(this.state.dogList);
-  }
+    componentDidMount() {
+        getDogs()
+            .then(dogs => {
+                this.setState({
+                    dogList: dogs
+                })
+            })
 
-  render() {
-    return (
-      <div>
-        <h1>Choose a friend</h1>
-        {this.state.dogList.map(dog => {
-          return (
-            <div className="doglist">
-              <Link to={`/dog/${dog.id}`}>
-                <img className="dogphoto" src={dog.photo} />
-              </Link>
-              <p>{dog.name}</p>
-              <p>{}</p>
+
+        console.log('dogList:', this.state.dogList)
+
+        console.log(this.state.dogList)
+
+    }
+
+    render() {
+        return (
+            <div>
+                {this.state.dogList.map(dog => {
+                    console.log('dog: ', dog)
+                    return (
+                        <div className='doglist'>
+                            <Link to={`/dog/${dog.id}`}><img className='dogphoto' src={dog.photo} /></Link>
+                            <p>{dog.name}</p>
+                            <p>{dog.owner.location}</p>
+                        </div>
+                    )
+                })}
             </div>
-          );
-        })}
-      </div>
-    );
-  }
+        )
+
+    }
+
 }
 
-export default DogList;
+
+export default DogList
