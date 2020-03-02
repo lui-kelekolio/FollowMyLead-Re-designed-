@@ -16,6 +16,12 @@ export function getDog(id) {
         .then(res => res.body)
 }
 
+export function getDogOwner() {
+    return request
+        .get(apiDogUrl)
+        .then(res => res.body)
+}
+
 export function addDog(dog) {
     // console.log(dog)
     return request
@@ -26,3 +32,4 @@ export function addDog(dog) {
             res.body
         )
 }
+
