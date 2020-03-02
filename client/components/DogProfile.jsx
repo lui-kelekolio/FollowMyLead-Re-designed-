@@ -1,10 +1,11 @@
-import React, { useReducer } from 'react'
-import { getDog } from '../api/dogApi'
+import React from 'react'
+import { getDog, returnFeedback } from '../api/dogApi'
 import { getOwner } from '../api/ownerApi'
 import { getDecodedToken } from 'authenticare/client'
 import { getUserDetails } from '../api/walkerApi'
 import { Link } from 'react-router-dom'
 import { send } from 'emailjs-com'
+import { getFeedback } from '../api/dogFeedbackApi'
 
 
 
@@ -35,6 +36,7 @@ class DogProfile extends React.Component {
             request_sent: false,
             walker_link: 'http://localhost:3000/#/walker/',
             suburb: '',
+            feedback: '',
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleWalk = this.handleWalk.bind(this);
@@ -42,17 +44,18 @@ class DogProfile extends React.Component {
 
     componentDidMount() {
 
-
+        console.log(this.state)
         getUserDetails(this.state.user_id)
             .then(user => {
-                console.log('walkerID: ', user.walker.id)
                 this.setState({ walker_id: user.walker.id })
             })
 
         getDog(this.props.match.params.id)
             .then(dog => {
-                getOwner(dog.owner_id).then(owner => this.setState({ suburb: owner.location }))
-                console.log('ownerID=', dog.owner_id)
+                getOwner(dog.owner_id)
+                .then(owner => this.setState({ 
+                    suburb: owner.location 
+                }))
                 this.setState({
                     photo: dog.photo,
                     name: dog.name,
@@ -68,25 +71,32 @@ class DogProfile extends React.Component {
                     owner_id: dog.owner_id,
                 })
             })
-        console.log('suburb: ', this.state.suburb)
+        // getDogFeedback(this.state.feedback_id)
+        // .then(feedback => {
+        //     this.setState({
+        //         feedback_id: feedback.id
+        //     })
+        // })
+        returnFeedback(this.props.match.params.id)
+         .then(feedbackInfo => {
+             this.setState({
+                 feedback: feedbackInfo
+             })
+         })
     }
 
     handleWalk(e) {
         e.preventDefault()
-        // console.log('walkerID=', this.state.walker_id)
 
         getOwner(this.state.owner_id)
             .then(owner => {
-                console.log('ownerMail=', owner.email)
                 this.setState({
                     owner_email: owner.email,
                     owner_name: owner.first_name
                 })
-                console.log('owner_name:', this.state.owner_name)
             })
         getUserDetails(this.state.user_id)
             .then(user => {
-                console.log('walkerMail=', user.walker.email)
                 this.setState({
                     walker_email: user.walker.email,
                     walker_link: this.state.walker_link + user.walker.id
@@ -97,9 +107,6 @@ class DogProfile extends React.Component {
 
     handleClick(e) {
         e.preventDefault()
-        console.log('owner_email: ', this.state.owner_email, 'walker_link: ', this.state.walker_link)
-
-        console.log(this.state.request_sent)
         //code snippet for emailjs
         const template_params = {
             owner_email: this.state.owner_email,
@@ -120,12 +127,9 @@ class DogProfile extends React.Component {
             request_sent: true,
             walk_the_dog: false
         })
-        console.log('request_sent:', this.state.request_sent)
     }
 
-    //Profile link button nto working - needs to pass props from dog page
     render() {
-        console.log('walker id', this.state.walker_id)
         return (
             <div className='dogprofiledisplay'>
                 <button className='sendMail' name='sendButton' onClick={this.handleClick}>Send request to the dog's owner</button>
@@ -146,7 +150,8 @@ class DogProfile extends React.Component {
                 <h2>Special Requirements: {this.state.special_requirements}</h2>
                 <h2>Vet Practice: {this.state.vet_name}</h2>
                 <h2>Vet Contact: {this.state.vet_contact}</h2>
-                
+                <h2>Suburb: {this.state.suburb}</h2>
+                <p>Feedback: {this.state.feedback.feedback}</p>
             </div>
         )
     }

@@ -8,17 +8,17 @@ function Nav() {
 
     return (
         <div className="nav">
-
+            <Link to ='/'><img className="logo" src="/images/Logo1.png" alt="logo" /></Link>
 
 
                 <ul>
-                    <Link to ='/'><img className="logo" src="/images/Logo1.png" alt="logo" /></Link>
-                    <li><Link className="button-basic" to='/' >Home</Link></li>
+
+                    <li><Link className="nav-link" to='/' >Home</Link></li>
                     <IfNotAuthenticated>
 
-                    <li><Link className="button-basic" to='/Login' >Login</Link></li>
-                    <li><Link className="button-basic" to='/About'>About</Link></li>
-                    <li><Link className="button-basic" to='/Contact' >Contact</Link></li>
+                    <li><Link className="nav-link" to='/Login' >Login</Link></li>
+                    <li><Link className="nav-link" to='/About'>About</Link></li>
+                    <li><Link className="nav-link" to='/Contact' >Contact</Link></li>
 
 
                 </IfNotAuthenticated>

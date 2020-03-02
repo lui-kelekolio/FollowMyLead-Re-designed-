@@ -26,15 +26,15 @@ class WalkerProfile extends React.Component {
     render() {
 
         return (
-            <div>
-                <h1>Walker Profile Page</h1>
+            <div className = "profile-container">
+                <div className="home-page-ptag">Walker Profile Page</div>
                 <button><Link to={`/walker/${this.state.walker.id}/edit`}>Edit</Link></button>
                 <br />
                 <br />
                 <button><Link to ='/doglist'>Dog list</Link></button>
                 <br />
                 <br />
-                {this.state.walker && (
+                {this.state.walker && 
                     <>
                         <h1>{this.state.walker.first_name} {this.state.walker.last_name} </h1>
                         <h2>email:{this.state.walker.email}</h2>
@@ -42,7 +42,7 @@ class WalkerProfile extends React.Component {
                         <p>{this.state.walker.blurb}</p>
                         <img src={this.state.walker.photo} />
                     </>
-                )} 
+                } 
             </div>
         )
 
