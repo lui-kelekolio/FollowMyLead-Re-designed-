@@ -689,7 +689,7 @@ function (_React$Component) {
       }, "Profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.state.request_sent && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Great, your request has been sent to this dog's owner. They should be in touch soon!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "dogprofilephoto",
         src: this.state.photo
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Name: ", this.state.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Suburb: ", this.state.suburb), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Breed: ", this.state.breed), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Sex: ", this.state.sex), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Size: ", this.state.size), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Walk Length: ", this.state.activity_requirements), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Good with other dogs: ", this.state.good_with_other_dogs), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Special Requirements: ", this.state.special_requirements), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Vet Practice: ", this.state.vet_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Vet Contact: ", this.state.vet_contact), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Suburb: ", this.state.suburb));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Name: ", this.state.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Suburb: ", this.state.suburb), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Breed: ", this.state.breed), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Sex: ", this.state.sex), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Size: ", this.state.size), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Walk Length: ", this.state.activity_requirements), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Good with other dogs: ", this.state.good_with_other_dogs), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Special Requirements: ", this.state.special_requirements), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Vet Practice: ", this.state.vet_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Vet Contact: ", this.state.vet_contact));
     }
   }]);
 
@@ -753,6 +753,7 @@ function (_React$Component) {
 
     _defineProperty(_assertThisInitialized(_this), "handleSubmit", function (e) {
       e.preventDefault();
+      add;
     });
 
     _this.state = {
@@ -1433,13 +1434,15 @@ function (_React$Component) {
         vet_name: _this.state.vet_name,
         vet_contact: _this.state.vet_contact
       }).then(function () {
-        _this.props.history.push('/doglist');
+        // this.props.history.push('/doglist')
+        _this.props.history.push('/dog' + '/' + _this.state.id);
       });
     });
 
     _this.state = {
       // feedback_id: '',
-      owner_id: '',
+      id: 0,
+      owner_id: Object(authenticare_client__WEBPACK_IMPORTED_MODULE_1__["getDecodedToken"])().id,
       name: '',
       breed: '',
       sex: '',
@@ -1456,6 +1459,19 @@ function (_React$Component) {
   }
 
   _createClass(RegisterDog, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      Object(_api_dogApi__WEBPACK_IMPORTED_MODULE_2__["getDogs"])().then(function (dogs) {
+        console.log('dog.length: ', dogs.length + 1);
+
+        _this2.setState({
+          id: dogs.length + 1
+        });
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Edit Dog Registration Form"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {

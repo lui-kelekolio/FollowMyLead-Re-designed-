@@ -152,7 +152,6 @@ class DogProfile extends React.Component {
                 <h2>Special Requirements: {this.state.special_requirements}</h2>
                 <h2>Vet Practice: {this.state.vet_name}</h2>
                 <h2>Vet Contact: {this.state.vet_contact}</h2>
-                <h2>Suburb: {this.state.suburb}</h2>
             </div>
         );
     }
