@@ -2,7 +2,7 @@ import request from 'superagent'
 import { getEncodedToken } from 'authenticare/client'
 
 const apiDogUrl = '/api/dogs/'
-const dogFeedback = '/api/dogfeedback'
+const dogFeedback = '/api/dogfeedback/'
 
 
 export function getDogs() {
@@ -33,8 +33,9 @@ export function addDog(dog) {
         )
 }
 
-export function returnFeedback() {
+export function returnFeedback(id) {
+    console.log(id)
     return request
-    .get(dogFeedback)
-    .then(res =>  res.body )
+    .get(dogFeedback + id)
+    .then(res =>  res.body)
 }

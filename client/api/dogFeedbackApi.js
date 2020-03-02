@@ -1,9 +1,9 @@
 import request from 'superagent'
 
+const apiDogFeedbackUrl = '/api/dogfeedback'
 
-const apiDogFeedbackUrl = '/api/feedback/dogs'
 export function getDogFeedback(id) {
     return request
-        .get(apiDogFeedbackUrl + id + '/feedback')
+        .get(apiDogFeedbackUrl + id)
         .then(res => res.body)
 }

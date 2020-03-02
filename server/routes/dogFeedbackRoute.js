@@ -3,11 +3,11 @@ const db = require('../db/dogFeedbackData')
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-  db.getFeedback()
+router.get('/:id', (req, res) => {
+  db.getFeedback(req.params.id)
     .then(feedback => {
       console.log(feedback)
-      return res.json(feedback)
+      res.json(feedback)
     })
 })
 
