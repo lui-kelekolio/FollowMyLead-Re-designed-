@@ -18,7 +18,7 @@ render(){
 
                 <div className="hero-image">
                     <div className="hero-text"></div>
-                    <img className="home-image" src="/images/dog-background2.jpg" 
+                    <img className="home-image" src="/images/dog-on-lead.jpeg"
                     alt="hero-dog-image" />
                     <div className="home-page-headline">Follow My Lead!</div>
                     <div className="home-page-ptag">Partnering People and Pooches!</div>
