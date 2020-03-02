@@ -46,15 +46,15 @@ class Login extends React.Component {
                 <form className='form' onSubmit={this.handleSubmit}>
                     
                 <img className="logoform" src="/images/Logo2.png" alt="logo" />
-                <br />
+                    <br />
                     <label> Username:</label>
                     <br />
-               <input className='input' type='text' placeholder='username' name='username' onChange={this.handlChange} />
+                    <input className='input' type='text' placeholder='username' name='username' onChange={this.handlChange} />
                     
                     <br />
                     <label> Password: </label>
                     <br />
-               <input className='input' type='text' placeholder='password' name='password' onChange={this.handlChange} />
+                    <input className='input' type='text' placeholder='password' name='password' onChange={this.handlChange} />
                     
                     <br />
                     <br />
