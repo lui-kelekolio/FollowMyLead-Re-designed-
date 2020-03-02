@@ -48,6 +48,7 @@ class RegisterDog extends React.Component {
             vet_name: this.state.vet_name,
             vet_contact: this.state.vet_contact,
         })
+        this.props.history.push('/dog' + id)
     }
 
     render() {

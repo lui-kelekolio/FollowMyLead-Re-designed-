@@ -39,6 +39,8 @@ class DogProfileEdit extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
+
+    add
   };
 
   render() {
