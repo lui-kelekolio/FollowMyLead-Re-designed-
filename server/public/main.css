@@ -9,9 +9,33 @@ html {
 
   .home-image {
       height: 50%;
-      width: 100%
-    
-}
+      width: 100%;
+      background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    }
+    .home-page-headline {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Love Ya Like A Sister';
+        color:white;
+        font-size: 5em;
+    }
+
+    .home-page-ptag {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'courgette';
+        font-size: 2em;
+        color: white;
+    }
+
 
 
 
@@ -115,86 +139,101 @@ html {
  
 }
 
+.blurb-container {
+    
+    border: 1px solid gray;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2%;
+    
+    
+
+
+}
+
+.blurb-headline {
+    font-family: 'Courgette';
+    font-size: 30px;
+    text-align: center;
+    
+}
+
+.blurb-text {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
 .submit{
-    width: 25%;
-    height: 50px;
+  width: 25%;
+  height: 50px;
 }
 
 .input, select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    
-  }
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
   
-  .input{
-    width: 70%;
-    /* text-align: center; */
+}
+
+.input{
+  width: 70%;
+  /* text-align: center; */
+  background-color: #5BC4F1;
+  color: white;
+  font-size: x-large;
+  /* padding: 14px 20px; */
+  margin: 8px 0;
+  border: none;
+  border-style: solid;
+  border-color: white;
+  transform: scale(1);
+  transition: .3s ease-in-out;
+}
+
+.input:hover {
+  background-color: white;
+  transform: scale(1.02);
+  transition: .3s ease-in-out;
+  color: black;
+}
+
+
+label {
+  font-size: xx-large;
+  text-align: center    
+}
+
+.form {
+    display: block;
+    text-align: center;
+    margin-left: 22%;
+    margin-right: 22%;  
     background-color: #5BC4F1;
     color: white;
-    font-size: x-large;
-    /* padding: 14px 20px; */
-    margin: 8px 0;
-    border: none;
-    border-style: solid;
-    border-color: white;
-    transform: scale(1);
-    transition: .3s ease-in-out;
-  }
+    border-radius: 10px;
+    padding-bottom: 2.5%;
+    padding-top: 1.5%;
+
+}
+
+.logoform {
+  height:150px;
+  width:150px;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition:         transform .3s ease-in-out;
+
+}
+
+.logoform:hover {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
   
-  .input:hover {
-    background-color: white;
-    transform: scale(1.02);
-    transition: .3s ease-in-out;
-    color: black;
-  }
-  
-  div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    
-  }
+}
 
-
-  label {
-    font-size: xx-large;
-    text-align: center    
-  }
-
-  .form {
-      display: block;
-      text-align: center;
-      margin-left: 22%;
-      margin-right: 22%;  
-      background-color: #5BC4F1;
-      color: white;
-      border-radius: 10px;
-      padding-bottom: 2.5%;
-      padding-top: 1.5%;
-
-  }
-
-  .logoform {
-    height:150px;
-    width:150px;
-    -webkit-transition: -webkit-transform .3s ease-in-out;
-    transition:         transform .3s ease-in-out;
- 
-  }
-
-  .logoform:hover {
-      -webkit-transform: rotate(30deg);
-              transform: rotate(30deg);
-    
-  }
-
- h1 {
-   text-align: center;
- }
-
-
-
+h1 {
+ text-align: center;
+}
