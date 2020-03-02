@@ -15,7 +15,7 @@ function getDogsWithOwners(db = connection) {
                     .first()
                     .then(owner => {
                         dog.owner = {}
-                        console.log(owner.location)
+                        // console.log(owner.location)
                         dog.owner.location = owner.location
                         return dog
                     })

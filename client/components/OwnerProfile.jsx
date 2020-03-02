@@ -37,7 +37,7 @@ class OwnerProfile extends React.Component {
     return (
       <div className="owner-profile-container">
         <h1>Owner Profile Page</h1>
-        <br />
+        <br/>
         <h2>First Name: {this.state.first_name}</h2>
         <h2>Last Name: {this.state.last_name}</h2>
         <h2>Photo: {this.state.photo}</h2>

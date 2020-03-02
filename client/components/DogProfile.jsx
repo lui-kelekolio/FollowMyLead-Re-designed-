@@ -35,6 +35,7 @@ class DogProfile extends React.Component {
             request_sent: false,
             walker_link: 'http://localhost:3000/#/walker/',
             suburb: '',
+            feedback: '',
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleWalk = this.handleWalk.bind(this);
@@ -125,7 +126,6 @@ class DogProfile extends React.Component {
 
     //Profile link button nto working - needs to pass props from dog page
     render() {
-        console.log('walker id', this.state.walker_id)
         return (
             <div className='dogprofiledisplay'>
                 <button className='sendMail' name='sendButton' onClick={this.handleClick}>Send request to the dog's owner</button>
@@ -146,6 +146,7 @@ class DogProfile extends React.Component {
                 <h2>Vet Name: {this.state.vet_name}</h2>
                 <h2>Vet Contact: {this.state.vet_contact}</h2>
                 <h2>Suburb: {this.state.suburb}</h2>
+                <p>Feedback: {this.state.feedback}</p>
             </div>
         )
     }
