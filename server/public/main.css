@@ -14,7 +14,6 @@ html {
 }
 
 
-
 .nav ul {
     list-style-type: none;
     margin: 0;
@@ -41,9 +40,6 @@ html {
     height: 80px;
     width: 80px;
 }
-
-
-
 
 
 .footer {
@@ -97,7 +93,6 @@ html {
 }
 
 
-
 .register-buttons {
     display: flex;
     justify-content: center;
@@ -132,11 +127,9 @@ html {
   
   .input{
     width: 70%;
-    /* text-align: center; */
     background-color: #5BC4F1;
     color: white;
     font-size: x-large;
-    /* padding: 14px 20px; */
     margin: 8px 0;
     border: none;
     border-style: solid;
