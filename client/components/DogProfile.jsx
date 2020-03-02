@@ -37,7 +37,11 @@ class DogProfile extends React.Component {
         // this.handleWalk = this.handleWalk.bind(this);
     }
 
-    componentDidMount() {
+  componentDidMount() {
+    // console.log(this.state);
+    getUserDetails(this.state.user_id).then(user => {
+      this.setState({ walker_id: user.walker.id });
+    });
 
         // console.log(this.state)
         getUserDetails(this.state.user_id)
@@ -66,12 +70,7 @@ class DogProfile extends React.Component {
                     owner_id: dog.owner_id,
                 })
             })
-        // getDogFeedback(this.state.feedback_id)
-        // .then(feedback => {
-        //     this.setState({
-        //         feedback_id: feedback.id
-        //     })
-        // })
+
         returnFeedback(this.props.match.params.id)
             .then(feedbackInfo => {
                 this.setState({
@@ -80,25 +79,7 @@ class DogProfile extends React.Component {
             })
     }
 
-    // handleWalk(e) {
-    //     e.preventDefault()
 
-    // //     getOwner(this.state.owner_id)
-    // //         .then(owner => {
-    // //             this.setState({
-    // //                 owner_email: owner.email,
-    // //                 owner_name: owner.first_name
-    // //             })
-    // //         })
-    // //     getUserDetails(this.state.user_id)
-    // //         .then(user => {
-    // //             this.setState({
-    // //                 walker_email: user.walker.email,
-    // //                 walker_link: this.state.walker_link + user.walker.id
-    // //             })
-    // //         })
-    // //     this.setState({ walk_the_dog: true })
-    // // }
 
     handleClick(e) {
         e.preventDefault()
@@ -129,6 +110,10 @@ class DogProfile extends React.Component {
             .catch((error) => {
                 console.log('FAILED...', error)
             })
+            this.setState({
+              request_sent: true,
+              walk_the_dog: false
+            });
     }
 
 

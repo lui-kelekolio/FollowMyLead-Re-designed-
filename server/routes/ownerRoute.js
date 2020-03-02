@@ -18,7 +18,7 @@ router.post('/', getTokenDecoder(), (req, res) => {
             res.json({ id: id[0] })
         })
         .catch(err => {
-            console.log(err)
+            // console.log(err)
             res.status(500).json({})
         })
 

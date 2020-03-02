@@ -32,8 +32,8 @@ router.put('/:id', (req, res) => {
 })
 
 router.post('/', getTokenDecoder(), (req, res) => { 
-    console.log(req.files)
-    console.log("youve made it to the post route")  
+    // console.log(req.files)
+    // console.log("youve made it to the post route")  
     const dog = req.body
     dog.owner_id = req.user.id
     db.addDog(dog)
@@ -41,7 +41,7 @@ router.post('/', getTokenDecoder(), (req, res) => {
             res.json({ id: id[0] })
         })
         .catch(err => {
-            console.log(err)
+            // console.log(err)
             res.status(500).json({})
         })
 
