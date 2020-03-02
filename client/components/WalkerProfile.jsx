@@ -26,8 +26,8 @@ class WalkerProfile extends React.Component {
     render() {
 
         return (
-            <div>
-                <h1>Walker Profile Page</h1>
+            <div className = "profile-container">
+                <div className="home-page-ptag">Walker Profile Page</div>
                 <button><Link to={`/walker/${this.state.walker.id}/edit`}>Edit</Link></button>
                 <br />
                 <br />
