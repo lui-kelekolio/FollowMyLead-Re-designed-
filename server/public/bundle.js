@@ -131,30 +131,8 @@ function addDog(dog) {
   });
 }
 function returnFeedback(id) {
-  console.log(id);
+  // console.log(id)
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get(dogFeedback + id).then(function (res) {
-    return res.body;
-  });
-}
-
-/***/ }),
-
-/***/ "./client/api/dogFeedbackApi.js":
-/*!**************************************!*\
-  !*** ./client/api/dogFeedbackApi.js ***!
-  \**************************************/
-/*! exports provided: getDogFeedback */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getDogFeedback", function() { return getDogFeedback; });
-/* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! superagent */ "./node_modules/superagent/lib/client.js");
-/* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(superagent__WEBPACK_IMPORTED_MODULE_0__);
-
-var apiDogFeedbackUrl = '/api/dogfeedback';
-function getDogFeedback(id) {
-  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get(apiDogFeedbackUrl + id).then(function (res) {
     return res.body;
   });
 }
@@ -253,9 +231,7 @@ function editWalker(id, walker) {
     'Accept': 'application/json'
   }).send(walker).then(function (res) {
     return res.body.walker;
-  })["catch"](function (err) {
-    return console.log(err);
-  });
+  }); // .catch(err => console.log(err))
 } //api ok
 
 /***/ }),
@@ -545,7 +521,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var emailjs_com__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! emailjs-com */ "./node_modules/emailjs-com/source/index.js");
 /* harmony import */ var emailjs_com__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(emailjs_com__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _api_dogFeedbackApi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../api/dogFeedbackApi */ "./client/api/dogFeedbackApi.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -563,7 +538,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 
 
 
@@ -618,7 +592,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      console.log(this.state);
+      // console.log(this.state);
       Object(_api_walkerApi__WEBPACK_IMPORTED_MODULE_4__["getUserDetails"])(this.state.user_id).then(function (user) {
         _this2.setState({
           walker_id: user.walker.id
@@ -644,17 +618,6 @@ function (_React$Component) {
           vet_name: dog.vet_name,
           vet_contact: dog.vet_contact,
           owner_id: dog.owner_id
-        });
-      }); // getDogFeedback(this.state.feedback_id)
-      // .then(feedback => {
-      //     this.setState({
-      //         feedback_id: feedback.id
-      //     })
-      // })
-
-      Object(_api_dogApi__WEBPACK_IMPORTED_MODULE_1__["returnFeedback"])(this.props.match.params.id).then(function (feedbackInfo) {
-        _this2.setState({
-          feedback: feedbackInfo
         });
       });
     }
@@ -691,12 +654,10 @@ function (_React$Component) {
         walker_link: this.state.walker_link
       };
       var userID = 'user_Zf2pkHv28X6ZJ5OWbpWqp';
-      var service_id = "default_service";
-      var template_id = "walker_to_owner";
-      Object(emailjs_com__WEBPACK_IMPORTED_MODULE_6__["send"])(service_id, template_id, template_params, userID).then(function (response) {
-        console.log('SUCCESS!', response.status, response.text);
-      }, function (error) {
-        console.log('FAILED...', error);
+      var service_id = 'default_service';
+      var template_id = 'walker_to_owner';
+      Object(emailjs_com__WEBPACK_IMPORTED_MODULE_6__["send"])(service_id, template_id, template_params, userID).then(function (response) {// console.log('SUCCESS!', response.status, response.text);
+      }, function (error) {// console.log('FAILED...', error);
       });
       this.setState({
         request_sent: true,
@@ -720,10 +681,10 @@ function (_React$Component) {
         to: "/doglist"
       }, "Dog list")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
         to: '/walker/' + this.state.walker_id
-      }, "Profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Name: ", this.state.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, "Profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "dogprofilephoto",
         src: this.state.photo
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Breed: ", this.state.breed), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Sex: ", this.state.sex), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Size: ", this.state.size), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Walk Length: ", this.state.activity_requirements), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Good with other dogs: ", this.state.good_with_other_dogs), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Special Requirements: ", this.state.special_requirements), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Vet Name: ", this.state.vet_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Vet Contact: ", this.state.vet_contact), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Suburb: ", this.state.suburb), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Feedback: ", this.state.feedback.feedback));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Name: ", this.state.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Suburb: ", this.state.suburb), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Breed: ", this.state.breed), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Sex: ", this.state.sex), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Size: ", this.state.size), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Walk Length: ", this.state.activity_requirements), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Good with other dogs: ", this.state.good_with_other_dogs), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Special Requirements: ", this.state.special_requirements), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Vet Practice: ", this.state.vet_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Vet Contact: ", this.state.vet_contact), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Suburb: ", this.state.suburb));
     }
   }]);
 
@@ -1197,9 +1158,7 @@ function (_React$Component) {
             if (user.owner) _this.props.history.push('/owner/' + user.owner.id);
           });
         }
-      })["catch"](function (err) {
-        return console.log(err);
-      });
+      }); // .catch(err => console.log(err))
     });
 
     _this.state = {
@@ -1551,11 +1510,11 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "select"
       }, "select"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "small"
+        value: "Small"
       }, "Small 9kg or less"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "medium"
+        value: "Medium"
       }, "Medium 10-22kg"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "large"
+        value: "Large"
       }, "Large 22kg or more")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Activity Requirements: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         className: "input",
         type: "text",
@@ -1564,11 +1523,11 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "select"
       }, "select"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "30mins"
+        value: "30-45mins"
       }, "30-45 minutes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "45mins"
+        value: "45-60mins"
       }, "45-60 minutes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "60mins"
+        value: "60-90mins"
       }, "60-90 minutes")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Good With Other Dogs: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         className: "input",
         type: "text",

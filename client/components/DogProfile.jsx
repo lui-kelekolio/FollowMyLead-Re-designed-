@@ -39,7 +39,7 @@ class DogProfile extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.state);
+    // console.log(this.state);
     getUserDetails(this.state.user_id).then(user => {
       this.setState({ walker_id: user.walker.id });
     });
@@ -98,10 +98,10 @@ class DogProfile extends React.Component {
     const template_id = 'walker_to_owner';
     send(service_id, template_id, template_params, userID).then(
       function(response) {
-        console.log('SUCCESS!', response.status, response.text);
+        // console.log('SUCCESS!', response.status, response.text);
       },
       function(error) {
-        console.log('FAILED...', error);
+        // console.log('FAILED...', error);
       }
     );
     this.setState({
