@@ -10,11 +10,11 @@ exports.up = function(knex) {
     table.string('age')
     table.string('size')
     table.string('activity_requirements')
-    table.boolean('good_with_other_dogs')
+    table.string('good_with_other_dogs')
     table.string('special_requirements')
     table.string('photo')
     table.string('vet_name')
-    table.integer('vet_contact')
+    table.string('vet_contact')
   })
 };
 
