@@ -1,5 +1,6 @@
 import React from "react"
-// import { editWalker } from '../api/walkerApi'
+import { editWalker } from '../api/walkerApi'
+import {IfAuthenticated} from './Authenticated'
 
 //Josh Sat 29/2
 
@@ -35,9 +36,11 @@ handleSubmit = (e) => {
         location: this.state.location,
         photo: this.state.photo
     })
-    // let walker = this.state
-    // editWalker(walker)
-    console.log(this.state)
+    let walker = this.state
+    let id = this.props.match.params.id
+    editWalker(id, walker)
+    this.props.history.push('/walker/' + id)
+ 
 }
 
 
@@ -45,36 +48,38 @@ handleSubmit = (e) => {
 
         return (
             <div>
-                <h1>Edit Walker Details</h1>
-                <form onSubmit = {this.handleSubmit}>
-                    <br />
-                    <label> First name:
-        <input type='text' name='first_name' placeholder='First name' onChange={this.handleChange} />
-                    </label>
-                    <br />
-                    <label> Last name:
-        <input type='text' name='last_name' placeholder='Last name' onChange={this.handleChange} />
-                    </label>
-                    <br />
-                    <label> email:
-        <input type='text' name='email' placeholder='email' onChange={this.handleChange} />
-                    </label>
-                    <br />
-                    <label> Blurb:
-        <input type='text' name='blurb' placeholder='Blurb' onChange={this.handleChange} />
-                    </label>
-                    <br />
-                    <label> Location:
-        <input type='text' name='location' placeholder='Location' onChange={this.handleChange} />
-                    </label>
-                    <br />
-                    <label> Photo:
-        <input type='text' name='photo' placeholder='Image URL' onChange={this.handleChange} />
-                    </label>
-                    <br />
-                    <br />
-                    <input type="submit" value="Submit" onChange={this.handleChange} />
-                </form>
+                <ifAuthenticated>
+                    <h1>Edit Walker Details</h1>
+                    <form onSubmit = {this.handleSubmit}>
+                        <br />
+                        <label> First name:
+            <input type='text' name='first_name' placeholder='First name' onChange={this.handleChange} />
+                        </label>
+                        <br />
+                        <label> Last name:
+            <input type='text' name='last_name' placeholder='Last name' onChange={this.handleChange} />
+                        </label>
+                        <br />
+                        <label> email:
+            <input type='text' name='email' placeholder='email' onChange={this.handleChange} />
+                        </label>
+                        <br />
+                        <label> Blurb:
+            <input type='text' name='blurb' placeholder='Blurb' onChange={this.handleChange} />
+                        </label>
+                        <br />
+                        <label> Location:
+            <input type='text' name='location' placeholder='Location' onChange={this.handleChange} />
+                        </label>
+                        <br />
+                        <label> Photo:
+            <input type='text' name='photo' placeholder='Image URL' onChange={this.handleChange} />
+                        </label>
+                        <br />
+                        <br />
+                        <input type="submit" value="Submit"  />
+                    </form>
+                </ifAuthenticated>
             </div>
         )
     }
