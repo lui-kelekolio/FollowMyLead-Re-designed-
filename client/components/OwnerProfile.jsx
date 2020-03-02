@@ -26,29 +26,31 @@ class OwnerProfile extends React.Component {
 
   render() {
     return (
-      <div className="owner-profile-container">
-        <h1>Owner Profile Page</h1>
-        <br />
+      <div className="profile-container">
+        <div className="profile-heading">My Owner Profile</div>
+        <img className="profile-picture" src =  {this.state.owner.photo}/>
+        <p>Location: {this.state.owner.location}</p>
+        <br/>
+        <div className="profile-info">
         {this.state.owner && 
           <>
-            <h2>First Name: {this.state.owner.first_name}</h2>
-            <h2>Last Name: {this.state.owner.last_name}</h2>
-            <h2>Location: {this.state.owner.location}</h2>
-            <h2>Email: {this.state.owner.email}</h2>
-            <img src =  {this.state.owner.photo}/>
+            <p>Name: {this.state.owner.first_name} {this.state.owner.last_name} </p>
+            
+            <p>Email: {this.state.owner.email}</p>
+            
           </>
         }
+        </div>
       
-        <Link to={'/owner/' + this.state.owner.id + '/edit'}>
-        <button type = 'button'>Edit</button>
+        <Link className="button" to={'/owner/' + this.state.owner.id + '/edit'}>
+
+        Edit Profile
         </Link>
 
-        <br />
-        <br />
-        <Link to="/register/dog">
-          <button type="button">
+        <Link className="button" to="/register/dog">
+          
             Register your dog
-          </button>
+          
         </Link>
       </div>
     )

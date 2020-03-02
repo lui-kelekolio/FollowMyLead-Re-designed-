@@ -142,10 +142,13 @@ html {
     /* Profile CSS */
 
     .profile-container {
-        width: 50%;
+        width: 40%;
         margin: 0 auto;
         text-align: center;
-        background-color: powderblue;
+        background-color: rgb(135, 250, 191);
+        border-radius:5px;
+        margin-top: 1%;
+        padding: 1%;
 
     }
 
@@ -153,11 +156,19 @@ html {
         height: 200px;
         width: 200px;
         border-radius: 50%;
-        border-style: solid;
-        border-color: #5BC4F1;
         border-width: 5px;
     }
 
+    .profile-heading {
+        font-size: x-large;
+        padding: 3%;
+    }
+
+    .profile-info {
+        text-align: left;
+    }
+
+  
 
 
 
