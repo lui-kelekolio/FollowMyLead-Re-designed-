@@ -39,7 +39,7 @@ class DogProfile extends React.Component {
             feedback: '',
         }
         this.handleClick = this.handleClick.bind(this);
-        this.handleWalk = this.handleWalk.bind(this);
+        // this.handleWalk = this.handleWalk.bind(this);
     }
 
     componentDidMount() {
@@ -53,9 +53,9 @@ class DogProfile extends React.Component {
         getDog(this.props.match.params.id)
             .then(dog => {
                 getOwner(dog.owner_id)
-                .then(owner => this.setState({ 
-                    suburb: owner.location 
-                }))
+                    .then(owner => this.setState({
+                        suburb: owner.location
+                    }))
                 this.setState({
                     photo: dog.photo,
                     name: dog.name,
@@ -78,51 +78,63 @@ class DogProfile extends React.Component {
         //     })
         // })
         returnFeedback(this.props.match.params.id)
-         .then(feedbackInfo => {
-             this.setState({
-                 feedback: feedbackInfo
-             })
-         })
-    }
-
-    handleWalk(e) {
-        e.preventDefault()
-
-        getOwner(this.state.owner_id)
-            .then(owner => {
+            .then(feedbackInfo => {
                 this.setState({
-                    owner_email: owner.email,
-                    owner_name: owner.first_name
+                    feedback: feedbackInfo
                 })
             })
-        getUserDetails(this.state.user_id)
-            .then(user => {
-                this.setState({
-                    walker_email: user.walker.email,
-                    walker_link: this.state.walker_link + user.walker.id
-                })
-            })
-        this.setState({ walk_the_dog: true })
     }
+
+    // handleWalk(e) {
+    //     e.preventDefault()
+
+    // //     getOwner(this.state.owner_id)
+    // //         .then(owner => {
+    // //             this.setState({
+    // //                 owner_email: owner.email,
+    // //                 owner_name: owner.first_name
+    // //             })
+    // //         })
+    // //     getUserDetails(this.state.user_id)
+    // //         .then(user => {
+    // //             this.setState({
+    // //                 walker_email: user.walker.email,
+    // //                 walker_link: this.state.walker_link + user.walker.id
+    // //             })
+    // //         })
+    // //     this.setState({ walk_the_dog: true })
+    // // }
 
     handleClick(e) {
         e.preventDefault()
-        //code snippet for emailjs
-        const template_params = {
-            owner_email: this.state.owner_email,
-            owner_name: this.state.owner_name,
-            walker_link: this.state.walker_link,
-        }
-        const userID = 'user_Zf2pkHv28X6ZJ5OWbpWqp'
-        const service_id = "default_service";
-        const template_id = "walker_to_owner";
-        send(service_id, template_id, template_params, userID)
-            .then(function (response) {
-                console.log('SUCCESS!', response.status, response.text)
 
-            }, function (error) {
+        Promise.all([
+            getOwner(this.state.owner_id),
+            getUserDetails(this.state.user_id),
+        ])
+            .then(([owner, user]) => {
+
+                //code snippet for emailjs
+                const template_params = {
+                    owner_email: owner.email,
+                    owner_name: owner.first_name,
+                    walker_link: this.state.walker_link + user.walker.id,
+                }
+
+                const userID = 'user_Zf2pkHv28X6ZJ5OWbpWqp'
+                const service_id = "default_service";
+                const template_id = "walker_to_owner";
+                return send(service_id, template_id, template_params, userID)
+
+            })
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text)
+            })
+            .catch((error) => {
                 console.log('FAILED...', error)
             })
+
+
         this.setState({
             request_sent: true,
             walk_the_dog: false
@@ -133,8 +145,6 @@ class DogProfile extends React.Component {
         return (
             <div className='dogprofiledisplay'>
                 <button className='sendMail' name='sendButton' onClick={this.handleClick}>Send request to the dog's owner</button>
-                <button className='walkDog' name='walkDogButton' onClick={this.handleWalk}>I would like to walk this dog</button>
-                {this.state.walk_the_dog && <p>You would like to walk this dog. Click the request button to contact the owner</p>}
                 {this.state.request_sent && <p>Great, your request has been sent to this dog's owner. They should be in touch soon!</p>}
                 <button><Link to='/doglist'>Dog list</Link></button>
                 <br />
