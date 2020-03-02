@@ -33,7 +33,9 @@ router.put('/:id', (req, res) => {
     })
 })
 
-router.post('/', getTokenDecoder(), (req, res) => {   
+router.post('/', getTokenDecoder(), (req, res) => { 
+    console.log(req.files)
+    console.log("youve made it to the post route")  
     const dog = req.body
     // console.log(dog)
     dog.owner_id = req.user.id
