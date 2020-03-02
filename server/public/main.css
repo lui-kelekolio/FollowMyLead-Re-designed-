@@ -71,8 +71,9 @@ html {
     height: 400px;
     width: 400px;
     border-radius: 50%;
-    padding: 2%;
-
+    border-style: solid;
+    border-color:#5BC4F1 ;
+    border-width: 5px;
 }
 
 
