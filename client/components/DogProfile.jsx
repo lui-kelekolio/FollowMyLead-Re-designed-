@@ -1,16 +1,12 @@
-import React from 'react'
-import { getDog, returnFeedback } from '../api/dogApi'
-import { getOwner } from '../api/ownerApi'
-import { getDecodedToken } from 'authenticare/client'
-import { getUserDetails } from '../api/walkerApi'
-import { Link } from 'react-router-dom'
-import { send } from 'emailjs-com'
-import { getFeedback } from '../api/dogFeedbackApi'
-
-
+import React from 'react';
+import { getDog, returnFeedback } from '../api/dogApi';
+import { getOwner } from '../api/ownerApi';
+import { getDecodedToken } from 'authenticare/client';
+import { getUserDetails } from '../api/walkerApi';
+import { Link } from 'react-router-dom';
+import { send } from 'emailjs-com';
 
 class DogProfile extends React.Component {
-
     constructor(props) {
         super(props)
 
@@ -31,7 +27,6 @@ class DogProfile extends React.Component {
             owner_email: '',
             user_id: getDecodedToken().id,
             walker_email: '',
-            walk_the_dog: false,
             walker_id: 0,
             request_sent: false,
             walker_link: 'http://localhost:3000/#/walker/',
@@ -107,6 +102,7 @@ class DogProfile extends React.Component {
 
     handleClick(e) {
         e.preventDefault()
+        this.setState({ request_sent: true })
 
         Promise.all([
             getOwner(this.state.owner_id),
@@ -133,23 +129,33 @@ class DogProfile extends React.Component {
             .catch((error) => {
                 console.log('FAILED...', error)
             })
-
-
-        this.setState({
-            request_sent: true,
-            walk_the_dog: false
-        })
     }
+
 
     render() {
         return (
-            <div className='dogprofiledisplay'>
-                <button className='sendMail' name='sendButton' onClick={this.handleClick}>Send request to the dog's owner</button>
-                {this.state.request_sent && <p>Great, your request has been sent to this dog's owner. They should be in touch soon!</p>}
-                <button><Link to='/doglist'>Dog list</Link></button>
+            <div className="dogprofiledisplay">
+                <button
+                    className="sendMail"
+                    name="sendButton"
+                    onClick={this.handleClick}
+                >
+                    Send request to the dog's owner
+                </button>
+                <button>
+                    <Link to="/doglist">Dog list</Link>
+                </button>
+                {this.state.request_sent && (
+                    <p>
+                        Great, your request has been sent to this dog's owner. They should
+                        be in touch soon!
+                    </p>
+                )}
                 <br />
-                <button><Link to={'/walker/' + this.state.walker_id}>Profile</Link></button>
-                <img className='dogprofilephoto' src={this.state.photo} />
+                <button>
+                    <Link to={'/walker/' + this.state.walker_id}>Profile</Link>
+                </button>
+                <img className="dogprofilephoto" src={this.state.photo} />
                 <h2>Name: {this.state.name}</h2>
                 <h2>Suburb: {this.state.suburb}</h2>
                 <h2>Breed: {this.state.breed}</h2>
@@ -161,11 +167,9 @@ class DogProfile extends React.Component {
                 <h2>Vet Practice: {this.state.vet_name}</h2>
                 <h2>Vet Contact: {this.state.vet_contact}</h2>
                 <h2>Suburb: {this.state.suburb}</h2>
-                <p>Feedback: {this.state.feedback.feedback}</p>
             </div>
-        )
+        );
     }
-
 }
 
-export default DogProfile 
+export default DogProfile;
