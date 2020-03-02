@@ -1,19 +1,14 @@
 import React from "react"
-import { isAuthenticated } from 'authenticare/client'
 import { Link } from 'react-router-dom'
 import { logOff } from 'authenticare/client'
 
 import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 
-class Nav extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = { logedin: false }
-    }
+function Nav() {
 
-    render() {
-        return (
-            <div className="nav">
+    return (
+        <div className="nav">
+
 
 
                 <ul>
@@ -21,33 +16,33 @@ class Nav extends React.Component {
                     <li><Link className="button-basic" to='/' >Home</Link></li>
                     <IfNotAuthenticated>
 
-                        <li><Link className="button-basic" to='/Login' >Login</Link></li>
-                        <li><Link className="button-basic" to='/About'>About</Link></li>
-                        <li><Link className="button-basic" to='/Contact' >Contact</Link></li>
+                    <li><Link className="button-basic" to='/Login' >Login</Link></li>
+                    <li><Link className="button-basic" to='/About'>About</Link></li>
+                    <li><Link className="button-basic" to='/Contact' >Contact</Link></li>
 
 
-                    </IfNotAuthenticated>
+                </IfNotAuthenticated>
 
-                    <IfAuthenticated>
-                        <li><Link to='/' onClick={logOff}>Logout</Link></li>
+                <IfAuthenticated>
+                    <li><Link to='/' onClick={logOff}>Logout</Link></li>
 
-                        <li><Link className="nav-link" to='/' >My Profile</Link></li>
-                        <li><Link className="nav-link" to='/doglist' >Doglist</Link></li>
-                        <li><Link className="nav-link" to='/About'>About</Link></li>
-                        <li><Link className="nav-link" to='/Contact' >Contact</Link></li>
-
-
-                    </IfAuthenticated>
-                </ul>
+                    <li><Link className="nav-link" to='/' >My Profile</Link></li>
+                    <li><Link className="nav-link" to='/doglist' >Doglist</Link></li>
+                    <li><Link className="nav-link" to='/About'>About</Link></li>
+                    <li><Link className="nav-link" to='/Contact' >Contact</Link></li>
 
 
-
-            </div>
-        )
-    }
+                </IfAuthenticated>
+            </ul>
 
 
+
+        </div>
+    )
 }
+
+
+
 
 
 

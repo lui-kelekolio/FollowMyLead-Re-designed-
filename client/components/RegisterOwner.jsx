@@ -1,7 +1,7 @@
 import React from "react"
 import { register, isAuthenticated } from 'authenticare/client'
-
 import { addOwner } from '../api/ownerApi'
+
 
 class RegisterOwner extends React.Component {
     constructor(props) {
@@ -43,7 +43,9 @@ class RegisterOwner extends React.Component {
                         location: this.state.location,
                         email: this.state.email,
                         photo: this.state.photo,
-                    }).then(() => this.props.history.push('/login'))
+                    }).then(() => {
+                        this.props.history.push('/login')
+                    })
                 }
             })
     }
@@ -53,7 +55,7 @@ class RegisterOwner extends React.Component {
             <div>
                 <h1>Owner form</h1>
                 <form className='form' onSubmit={this.handleSubmit}>
-                    
+                <img className="logoform" src="/images/Logo2.png" alt="logo" />
                     <br />
                     <label> Username: </label>
                     <br />
@@ -268,7 +270,7 @@ class RegisterOwner extends React.Component {
                         <option
                             value='Woodridge'>Woodridge
                         </option>
-                        </select>
+                    </select>
                     <br />
 
                     <label> Email: </label>
