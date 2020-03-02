@@ -1,9 +1,9 @@
 const express = require('express')
-const db = require('../db/userData')
+const db = require('../db/dogData')
 const router = express.Router()
 
-router.get('/:id', (req, res) => {
-    db.getUserDetails(req.params.id)
+router.get('/', (req, res) => {
+    db.getDogOwner(id)
         .then(response => {
             res.json(response)
         })
