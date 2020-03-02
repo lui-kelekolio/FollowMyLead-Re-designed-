@@ -4,7 +4,10 @@ import {Link} from 'react-router-dom'
  function Footer () {
     return(
         <div className="footer">
-            <p>This is a footer!</p>
+            
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-instagram"></a>
         </div>
     )
 }
