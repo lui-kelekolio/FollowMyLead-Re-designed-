@@ -19,14 +19,12 @@ class WalkerProfileEdit extends React.Component {
     }
 
 handleChange = e => {
-    console.log('yay')
     this.setState({
         [e.target.name]: e.target.value
     })
 }
 
 handleSubmit = (e) => {
-    console.log('submitworking')
     e.preventDefault()
     this.setState({
         first_name: this.state.first_name,

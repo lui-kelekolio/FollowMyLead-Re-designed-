@@ -9,9 +9,6 @@ export function addOwner(owner) {
         .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
         .set({ 'Content-Type': 'application/json' })
         .send(owner)
-        .then(res => {
-            console.log('line12, ownerApi res.body:', res.body)
-        })
 }
 
 export function getOwner(id) {
