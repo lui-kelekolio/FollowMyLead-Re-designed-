@@ -195,6 +195,60 @@ background-color: rgb(32, 40, 41);
 
 }
 
+
+.form {
+    background-color:#5BC4F1 ;
+    display: block;
+    text-align: center;
+    margin-left: 22%;
+    margin-right: 22%;
+    color: white;
+    border-radius: 10px;
+    padding-bottom: 2.5%;
+    padding-top: 1.5%;
+}
+
+label {
+    font-size: xx-large;
+    text-align: center;
+}
+
+.logoform {
+    height:150px;
+    width: 150px;
+    transition: transform .3s ease-in-out;
+}
+
+.logoform:hover {
+    transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+
+.input {
+    width: 70%;
+    background-color: #5BC4F1;
+    color: white;
+    font-size: x-large;
+    margin:8px 0;
+    border: none;
+    border-style: solid;
+    border-color: white;
+    transform: scale(1);
+    transition: .3s ease-in-out;
+}
+
+.input:hover {
+    background-color: white;
+    transform: scale(1.02);
+    transition: .3s ease-in-out;
+    color: black;
+}
+
+h1 {
+    text-align: center;
+}
+
+
 .fa {
     padding: 15px;
     font-size: 20px;
