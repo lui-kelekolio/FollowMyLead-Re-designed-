@@ -23,7 +23,6 @@ export function getDogOwner() {
 }
 
 export function addDog(dog) {
-    // console.log(dog)
     return request
     .post(apiDogUrl)
     .set({ 'Authorization': `Bearer ${getEncodedToken()}` })

@@ -30,8 +30,6 @@ router.post('/', getTokenDecoder(), (req, res) => {
 router.put('/:id/edit', getTokenDecoder(), (req,res) =>{
     let id = req.params.id
     let updatedWalker = req.body
-    console.log(updatedWalker)
-
     db.editWalker(id, updatedWalker)
         .then(updated => console.log(updated, ' updated'))
                 

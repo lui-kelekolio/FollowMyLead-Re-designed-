@@ -18,8 +18,6 @@ export function getWalkers(URL) {
     .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
     .set({ 'Accept': 'application/json' })
     .then(res => {
-      console.log(res.body + " this is the res.body,line 21 walkerApi")
-      console.log(res.body.walker + " this is the res.body after the res.body")
       return res.body.walker
     })
     .catch(logError)
@@ -41,8 +39,7 @@ export function getWalker(id) {
 }
 
 export function editWalker (id, walker) {
-  console.log(id, walker)
-  return request.put('/api/walker/' + id + '/edit') // this needs an id
+  return request.put(URL + id + '/edit') // this needs an id
   .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
   .set({ 'Accept': 'application/json' })
     .send(walker)
