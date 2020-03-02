@@ -1,16 +1,16 @@
 import React from "react"
 
+import { getDecodedToken } from 'authenticare/client'
 
-import { getDog } from '../api/dogApi'
+import { addDog } from '../api/dogApi'
 
 class RegisterDog extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            id: '', 
-            owner_id: '', 
-            feedback_id: '', 
+            // feedback_id: '',
+            owner_id: '',
             name: '', 
             breed: '', 
             sex: '', 
@@ -34,25 +34,40 @@ class RegisterDog extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        
-        
+        addDog({
+            owner_id: this.state.owner_id,
+            name: this.state.name, 
+            breed: this.state.breed, 
+            sex: this.state.sex, 
+            age: this.state.age, 
+            size: this.state.size, 
+            activity_requirements: this.state.activity_requirements,
+            good_with_other_dogs: this.state.good_with_other_dogs,
+            special_requirements: this.state.special_requirements,
+            photo: this.state.photo,
+            vet_name: this.state.vet_name,
+            vet_contact: this.state.vet_contact,
+        })
     }
 
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <h1>Edit Dog Registration Form</h1>
+                 <h1>Edit Dog Registration Form</h1>
+                <form className='form' onSubmit={this.handleSubmit}>
+                   
                     <br />
                     <label> Name: </label>
-                        <input 
+                    <br />
+                        <input className='input'
                         type='text' 
-                        name='Name' 
+                        name='name' 
                         onChange={this.handleChange} />
                     <br />
 
                     <label> Photo: </label>
-                        <input 
+                    <br />
+                        <input className='input'
                             type='text' 
                             name='photo' 
                             onChange={this.handleChange} 
@@ -60,16 +75,18 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Breed: </label>
-                        <input 
+                    <br />
+                        <input className='input'
                             type='text' 
-                            name='Breed' 
+                            name='breed' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> Sex: </label>
-                        <select 
+                    <br />
+                        <select className='input'
                             type='text' 
-                            name='Sex' 
+                            name='sex' 
                             onChange={this.handleChange} >
                         <option 
                             value='select'>select
@@ -84,9 +101,10 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Age: </label>
-                        <select 
+                    <br />
+                        <select className='input'
                             type='text' 
-                            name='Age' 
+                            name='age' 
                             onChange={this.handleChange} >
                         <option 
                             value='select'>select
@@ -107,9 +125,10 @@ class RegisterDog extends React.Component {
                     <br />
                     
                     <label> Size: </label>
-                        <select 
+                    <br />
+                        <select className='input'
                             type='text' 
-                            name='Size' 
+                            name='size' 
                             onChange={this.handleChange} >
                         <option 
                             value='select'>select
@@ -127,9 +146,10 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Activity Requirements: </label>
-                        <select 
+                    <br />
+                        <select className='input'
                             type='text' 
-                            name='Activity Requirements' 
+                            name='activity_requirements' 
                             onChange={this.handleChange} >
                         <option 
                             value='select'>select
@@ -147,9 +167,10 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Good With Other Dogs: </label>
-                        <select 
+                    <br />
+                        <select className='input'
                             type='text' 
-                            name='Good with other Dogs' 
+                            name='good_with_other_dogs' 
                             onChange={this.handleChange} >
                         <option 
                             value='select'>select
@@ -164,27 +185,30 @@ class RegisterDog extends React.Component {
                     <br />
 
                     <label> Special Requirements: </label>
-                        <input 
+                    <br />
+                        <input className='input'
                             type='text' 
-                            name='Special Requirements' 
+                            name='special_requirements' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> Vet Practice: </label>
-                        <input 
+                    <br />
+                        <input className='input'
                             type='text'    
-                            name='Vet Practice' 
+                            name='vet_name' 
                             onChange={this.handleChange} />
                     <br />
 
                     <label> Vet Contact: </label>
-                        <input 
+                    <br />
+                        <input className='input'
                             type='text' 
-                            name='Vet contact' 
+                            name='vet_contact' 
                             onChange={this.handleChange} />
                     <br />
-                    
-                    <input 
+                    <br />
+                    <input className='submit'
                         type="submit" 
                         value="Submit" />
                 </form>
