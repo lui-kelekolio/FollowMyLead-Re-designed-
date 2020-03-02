@@ -523,6 +523,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var emailjs_com__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(emailjs_com__WEBPACK_IMPORTED_MODULE_6__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -575,15 +583,14 @@ function (_React$Component) {
       owner_email: '',
       user_id: Object(authenticare_client__WEBPACK_IMPORTED_MODULE_3__["getDecodedToken"])().id,
       walker_email: '',
-      walk_the_dog: false,
       walker_id: 0,
       request_sent: false,
       walker_link: 'http://localhost:3000/#/walker/',
       suburb: '',
       feedback: ''
     };
-    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
-    _this.handleWalk = _this.handleWalk.bind(_assertThisInitialized(_this));
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this)); // this.handleWalk = this.handleWalk.bind(this);
+
     return _this;
   }
 
@@ -593,6 +600,12 @@ function (_React$Component) {
       var _this2 = this;
 
       // console.log(this.state);
+      Object(_api_walkerApi__WEBPACK_IMPORTED_MODULE_4__["getUserDetails"])(this.state.user_id).then(function (user) {
+        _this2.setState({
+          walker_id: user.walker.id
+        });
+      }); // console.log(this.state)
+
       Object(_api_walkerApi__WEBPACK_IMPORTED_MODULE_4__["getUserDetails"])(this.state.user_id).then(function (user) {
         _this2.setState({
           walker_id: user.walker.id
@@ -620,44 +633,40 @@ function (_React$Component) {
           owner_id: dog.owner_id
         });
       });
-    }
-  }, {
-    key: "handleWalk",
-    value: function handleWalk(e) {
-      var _this3 = this;
-
-      e.preventDefault();
-      Object(_api_ownerApi__WEBPACK_IMPORTED_MODULE_2__["getOwner"])(this.state.owner_id).then(function (owner) {
-        _this3.setState({
-          owner_email: owner.email,
-          owner_name: owner.first_name
+      Object(_api_dogApi__WEBPACK_IMPORTED_MODULE_1__["returnFeedback"])(this.props.match.params.id).then(function (feedbackInfo) {
+        _this2.setState({
+          feedback: feedbackInfo
         });
-      });
-      Object(_api_walkerApi__WEBPACK_IMPORTED_MODULE_4__["getUserDetails"])(this.state.user_id).then(function (user) {
-        _this3.setState({
-          walker_email: user.walker.email,
-          walker_link: _this3.state.walker_link + user.walker.id
-        });
-      });
-      this.setState({
-        walk_the_dog: true
       });
     }
   }, {
     key: "handleClick",
     value: function handleClick(e) {
-      e.preventDefault(); //code snippet for emailjs
+      var _this3 = this;
 
-      var template_params = {
-        owner_email: this.state.owner_email,
-        owner_name: this.state.owner_name,
-        walker_link: this.state.walker_link
-      };
-      var userID = 'user_Zf2pkHv28X6ZJ5OWbpWqp';
-      var service_id = 'default_service';
-      var template_id = 'walker_to_owner';
-      Object(emailjs_com__WEBPACK_IMPORTED_MODULE_6__["send"])(service_id, template_id, template_params, userID).then(function (response) {// console.log('SUCCESS!', response.status, response.text);
-      }, function (error) {// console.log('FAILED...', error);
+      e.preventDefault();
+      this.setState({
+        request_sent: true
+      });
+      Promise.all([Object(_api_ownerApi__WEBPACK_IMPORTED_MODULE_2__["getOwner"])(this.state.owner_id), Object(_api_walkerApi__WEBPACK_IMPORTED_MODULE_4__["getUserDetails"])(this.state.user_id)]).then(function (_ref) {
+        var _ref2 = _slicedToArray(_ref, 2),
+            owner = _ref2[0],
+            user = _ref2[1];
+
+        //code snippet for emailjs
+        var template_params = {
+          owner_email: owner.email,
+          owner_name: owner.first_name,
+          walker_link: _this3.state.walker_link + user.walker.id
+        };
+        var userID = 'user_Zf2pkHv28X6ZJ5OWbpWqp';
+        var service_id = "default_service";
+        var template_id = "walker_to_owner";
+        return Object(emailjs_com__WEBPACK_IMPORTED_MODULE_6__["send"])(service_id, template_id, template_params, userID);
+      }).then(function (response) {
+        console.log('SUCCESS!', response.status, response.text);
+      })["catch"](function (error) {
+        console.log('FAILED...', error);
       });
       this.setState({
         request_sent: true,
@@ -673,15 +682,11 @@ function (_React$Component) {
         className: "sendMail",
         name: "sendButton",
         onClick: this.handleClick
-      }, "Send request to the dog's owner"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "walkDog",
-        name: "walkDogButton",
-        onClick: this.handleWalk
-      }, "I would like to walk this dog"), this.state.walk_the_dog && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "You would like to walk this dog. Click the request button to contact the owner"), this.state.request_sent && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Great, your request has been sent to this dog's owner. They should be in touch soon!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+      }, "Send request to the dog's owner"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
         to: "/doglist"
       }, "Dog list")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
         to: '/walker/' + this.state.walker_id
-      }, "Profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, "Profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.state.request_sent && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Great, your request has been sent to this dog's owner. They should be in touch soon!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "dogprofilephoto",
         src: this.state.photo
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Name: ", this.state.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Suburb: ", this.state.suburb), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Breed: ", this.state.breed), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Sex: ", this.state.sex), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Size: ", this.state.size), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Walk Length: ", this.state.activity_requirements), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Good with other dogs: ", this.state.good_with_other_dogs), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Special Requirements: ", this.state.special_requirements), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Vet Practice: ", this.state.vet_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Vet Contact: ", this.state.vet_contact), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Suburb: ", this.state.suburb));
