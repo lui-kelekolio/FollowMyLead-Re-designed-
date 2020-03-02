@@ -6,7 +6,7 @@ const db = require('../db/dogData')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    db.getDogsWithOwners()
+    db.getDogs()
         .then(dogs => {
 
             return res.json(dogs)
@@ -18,8 +18,6 @@ router.get('/:id', (req, res) => {
         .then(dog => {
             res.json(dog)
         })
-
-
 })
 
 
