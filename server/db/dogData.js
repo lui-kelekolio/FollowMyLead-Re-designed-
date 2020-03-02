@@ -33,22 +33,30 @@ function getDog(id, db = connection) {
 //         })
 // }
 
-function getDogOwner(db = connection) {
+function getDogOwner(id, db = connection) {
     return db('dog_table')
+        .where({owner_id: id})
         .then(dog => {
             return db('owner_table')
-                .where({ id: dog.owner_id })
+                .where({ id: id })
                 .first()
                 .then(owner => {
-                    dog.owner = owner
-                    return owner
+                    owner.dog = dog
+                    return owner 
                 })
         })
-
+}
+    
+function addDog(dog, db=connection){
+    console.log(dog)
+    return db('dog_table')
+        .insert(dog)
+        .debug()
 }
 
 module.exports = {
     getDogs,
     getDog,
-    getDogOwner
+    getDogOwner,
+    addDog,
 }

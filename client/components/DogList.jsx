@@ -1,8 +1,6 @@
-import React from 'react'
-import { getDogs } from '../api/dogApi'
-// import {getOwner} from '../api/ownerApi'
-import { Link } from 'react-router-dom'
-import { getOwner } from '../api/ownerApi'
+import React from 'react';
+import { getDogOwner, getDogs } from '../api/dogApi';
+import { Link } from 'react-router-dom';
 
 class DogList extends React.Component {
 
@@ -16,14 +14,12 @@ class DogList extends React.Component {
 
 
     componentDidMount() {
+        getDogs()
+            .then(dogs => dogs)
+            .then(dog => getDogOwner(dog.id).then(owner =>
+                this.state.dogList.push(owner)
+            ))
 
-        getDogOwner()
-            .then(dog => {
-                this.setState({
-                    dogList: dog
-                })
-
-            })
 
         console.log('dogList:', this.state.dogList)
 
@@ -35,20 +31,21 @@ class DogList extends React.Component {
         return (
             <div>
                 {this.state.dogList.map(owner => {
-                    console.log('owner.dog: ', owner.dog)
+                    console.log('owner: ', owner)
                     return (
                         <div className='doglist'>
-                            <Link to={`/dog/${dog.id}`}><img className='dogphoto' src={dog.photo} /></Link>
-                            <p>{dog.name}</p>
-                            <p>{dog.owner.location}</p>
+                            <Link to={`/dog/${owner.dog.id}`}><img className='dogphoto' src={owner.dog.photo} /></Link>
+                            <p>{owner.dog.name}</p>
+                            <p>{owner.location}</p>
                         </div>
                     )
-
-
                 })}
             </div>
         )
+
     }
+
 }
+
 
 export default DogList

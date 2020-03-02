@@ -2,6 +2,7 @@ import React from "react"
 import {Link} from 'react-router-dom'
 
 
+
 class Home extends React.Component{
     constructor() {
         super()
@@ -12,8 +13,22 @@ class Home extends React.Component{
 
 render(){
     return(
+        <>
         <main>
-            <h1>Partnering People to Pooches!</h1>
+
+                <div className="hero-image">
+                    <img className="home-image" src="/images/dog-background2.jpg" alt="hero-dog-image" />
+                   
+                    </div>
+
+                
+
+
+       
+            
+            
+            
+            
             <div className="register-buttons">
 
                 <div className="button">
@@ -29,6 +44,7 @@ render(){
             
             
         </main>
+        </>
     )
 }
 
