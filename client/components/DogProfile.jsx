@@ -39,7 +39,7 @@ class DogProfile extends React.Component {
 
     componentDidMount() {
 
-        console.log(this.state)
+        // console.log(this.state)
         getUserDetails(this.state.user_id)
             .then(user => {
                 this.setState({ walker_id: user.walker.id })
@@ -145,16 +145,17 @@ class DogProfile extends React.Component {
                 <button>
                     <Link to="/doglist">Dog list</Link>
                 </button>
+                <br />
+                <button>
+                    <Link to={'/walker/' + this.state.walker_id}>Profile</Link>
+                </button>
+                <br />
                 {this.state.request_sent && (
                     <p>
                         Great, your request has been sent to this dog's owner. They should
                         be in touch soon!
                     </p>
                 )}
-                <br />
-                <button>
-                    <Link to={'/walker/' + this.state.walker_id}>Profile</Link>
-                </button>
                 <img className="dogprofilephoto" src={this.state.photo} />
                 <h2>Name: {this.state.name}</h2>
                 <h2>Suburb: {this.state.suburb}</h2>
