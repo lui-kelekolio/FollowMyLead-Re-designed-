@@ -136,13 +136,13 @@ class RegisterDog extends React.Component {
                             value='select'>select
                         </option>
                         <option 
-                            value='small'>Small 9kg or less
+                            value='Small'>Small 9kg or less
                         </option>
                         <option 
-                            value='medium'>Medium 10-22kg
+                            value='Medium'>Medium 10-22kg
                         </option>
                         <option 
-                            value='large'>Large 22kg or more 
+                            value='Large'>Large 22kg or more 
                         </option>
                         </select>
                     <br />
@@ -157,13 +157,13 @@ class RegisterDog extends React.Component {
                             value='select'>select
                         </option>
                         <option 
-                            value='30mins'>30-45 minutes
+                            value='30-45mins'>30-45 minutes
                         </option>
                         <option 
-                            value='45mins'>45-60 minutes
+                            value='45-60mins'>45-60 minutes
                         </option>
                         <option 
-                            value='60mins'>60-90 minutes
+                            value='60-90mins'>60-90 minutes
                         </option>
                         </select>
                     <br />
