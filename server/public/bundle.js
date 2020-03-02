@@ -547,13 +547,15 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+//import React
+ //import dependencies
 
 
 
 
 
 
-
+ //add DogProfile as statefull component
 
 var DogProfile =
 /*#__PURE__*/
@@ -565,7 +567,8 @@ function (_React$Component) {
 
     _classCallCheck(this, DogProfile);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(DogProfile).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(DogProfile).call(this, props)); //set initial state
+
     _this.state = {
       photo: '',
       name: '',
@@ -581,6 +584,7 @@ function (_React$Component) {
       owner_id: 0,
       owner_name: '',
       owner_email: '',
+      // set user_id to the id stored in our auth token
       user_id: Object(authenticare_client__WEBPACK_IMPORTED_MODULE_3__["getDecodedToken"])().id,
       walker_email: '',
       walker_id: 0,
@@ -588,9 +592,9 @@ function (_React$Component) {
       walker_link: 'http://localhost:3000/#/walker/',
       suburb: '',
       feedback: ''
-    };
-    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this)); // this.handleWalk = this.handleWalk.bind(this);
+    }; // bind event handler
 
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -599,24 +603,21 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      // console.log(this.state);
+      //get user details so we can set the walker_id
       Object(_api_walkerApi__WEBPACK_IMPORTED_MODULE_4__["getUserDetails"])(this.state.user_id).then(function (user) {
         _this2.setState({
           walker_id: user.walker.id
         });
-      }); // console.log(this.state)
+      }); //get dog using the current url params
 
-      Object(_api_walkerApi__WEBPACK_IMPORTED_MODULE_4__["getUserDetails"])(this.state.user_id).then(function (user) {
-        _this2.setState({
-          walker_id: user.walker.id
-        });
-      });
       Object(_api_dogApi__WEBPACK_IMPORTED_MODULE_1__["getDog"])(this.props.match.params.id).then(function (dog) {
-        Object(_api_ownerApi__WEBPACK_IMPORTED_MODULE_2__["getOwner"])(dog.owner_id).then(function (owner) {
+        //get the dogs owner using the id of the dog returned fro get dog
+        Object(_api_ownerApi__WEBPACK_IMPORTED_MODULE_2__["getOwner"])(dog.owner_id) //set suburb state to this dog's owner's location
+        .then(function (owner) {
           return _this2.setState({
             suburb: owner.location
           });
-        });
+        }); //set states to be rendered from returned dog
 
         _this2.setState({
           photo: dog.photo,
@@ -644,16 +645,18 @@ function (_React$Component) {
     value: function handleClick(e) {
       var _this3 = this;
 
-      e.preventDefault();
+      e.preventDefault(); //switch request_sent state so 
+
       this.setState({
         request_sent: true
-      });
+      }); //use Promise.all to return the promises inside as an array 
+
       Promise.all([Object(_api_ownerApi__WEBPACK_IMPORTED_MODULE_2__["getOwner"])(this.state.owner_id), Object(_api_walkerApi__WEBPACK_IMPORTED_MODULE_4__["getUserDetails"])(this.state.user_id)]).then(function (_ref) {
         var _ref2 = _slicedToArray(_ref, 2),
             owner = _ref2[0],
             user = _ref2[1];
 
-        //code snippet for emailjs
+        //code snippet for emailjs. Use inside .then and set variables directly from the promises. Don't set state.
         var template_params = {
           owner_email: owner.email,
           owner_name: owner.first_name,
@@ -667,10 +670,11 @@ function (_React$Component) {
         console.log('SUCCESS!', response.status, response.text);
       })["catch"](function (error) {
         console.log('FAILED...', error);
-      });
+      }); //code snippet ends 
+      // set state for sent notification
+
       this.setState({
-        request_sent: true,
-        walk_the_dog: false
+        request_sent: true
       });
     }
   }, {
@@ -686,10 +690,13 @@ function (_React$Component) {
         to: "/doglist"
       }, "Dog list")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
         to: '/walker/' + this.state.walker_id
-      }, "Profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.state.request_sent && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Great, your request has been sent to this dog's owner. They should be in touch soon!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, "Profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.state.request_sent && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "notification",
+        name: "request_sent"
+      }, "Great, your request has been sent to this dog's owner. They should be in touch soon!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "dogprofilephoto",
         src: this.state.photo
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Name: ", this.state.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Suburb: ", this.state.suburb), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Breed: ", this.state.breed), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Sex: ", this.state.sex), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Size: ", this.state.size), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Walk Length: ", this.state.activity_requirements), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Good with other dogs: ", this.state.good_with_other_dogs), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Special Requirements: ", this.state.special_requirements), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Vet Practice: ", this.state.vet_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Vet Contact: ", this.state.vet_contact), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Suburb: ", this.state.suburb));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Name: ", this.state.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Suburb: ", this.state.suburb), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Breed: ", this.state.breed), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Sex: ", this.state.sex), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Size: ", this.state.size), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Walk Length: ", this.state.activity_requirements), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Good with other dogs: ", this.state.good_with_other_dogs), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Special Requirements: ", this.state.special_requirements), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Vet Practice: ", this.state.vet_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Vet Contact: ", this.state.vet_contact));
     }
   }]);
 
@@ -753,6 +760,7 @@ function (_React$Component) {
 
     _defineProperty(_assertThisInitialized(_this), "handleSubmit", function (e) {
       e.preventDefault();
+      add;
     });
 
     _this.state = {
@@ -1435,6 +1443,8 @@ function (_React$Component) {
       }).then(function () {
         _this.props.history.push('/doglist');
       });
+
+      _this.props.history.push('/dog' + id);
     });
 
     _this.state = {

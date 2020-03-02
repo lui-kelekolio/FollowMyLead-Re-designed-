@@ -50,6 +50,7 @@ class RegisterDog extends React.Component {
         }).then(() => {
             this.props.history.push('/doglist')
         })
+        this.props.history.push('/dog' + id)
     }
 
     render() {
