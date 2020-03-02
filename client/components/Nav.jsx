@@ -10,10 +10,11 @@ function Nav() {
         <div className="nav">
 
 
-            <ul>
-                <img className="logo" src="/images/Logo1.png" alt="logo" />
-                <li><Link className="button-basic" to='/' >Home</Link></li>
-                <IfNotAuthenticated>
+
+                <ul>
+                    <Link to ='/'><img className="logo" src="/images/Logo1.png" alt="logo" /></Link>
+                    <li><Link className="button-basic" to='/' >Home</Link></li>
+                    <IfNotAuthenticated>
 
                     <li><Link className="button-basic" to='/Login' >Login</Link></li>
                     <li><Link className="button-basic" to='/About'>About</Link></li>
