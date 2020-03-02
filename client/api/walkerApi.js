@@ -40,10 +40,11 @@ export function getWalker(id) {
     .then(response => response.body)
 }
 
-export function editWalker (walker) {
-  return request.put('/api/walkeredit')
-    .set({ 'Accept': 'application/json' })
-    .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
+export function editWalker (id, walker) {
+  console.log(id, walker)
+  return request.put('/api/walker/' + id + '/edit') // this needs an id
+  .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
+  .set({ 'Accept': 'application/json' })
     .send(walker)
     .then(res => res.body.walker)
     .catch(err => console.log(err))
