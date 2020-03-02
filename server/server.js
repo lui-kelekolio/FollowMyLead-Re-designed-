@@ -1,6 +1,7 @@
 const path = require('path')
 const express = require('express')
 const server = express()
+const fileUpload = require('express-fileupload')
 
 const walkerRoute = require('./routes/walkerRoute')
 const dogRoute = require('./routes/dogRoute')
@@ -9,6 +10,7 @@ const ownerRoute = require('./routes/ownerRoute')
 const userRoute = require('./routes/userRoute')
 
 server.use(express.json())
+server.use(fileUpload())
 server.use(express.static(path.join(__dirname, './public')))
 
 server.use('/api/user', userRoute)
