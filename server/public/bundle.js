@@ -1192,7 +1192,7 @@ function (_React$Component) {
         onChange: this.handlChange
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Password: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "input",
-        type: "text",
+        type: "password",
         placeholder: "password",
         name: "password",
         onChange: this.handlChange
