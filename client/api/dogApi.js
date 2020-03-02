@@ -12,3 +12,7 @@ export function getDog(id) {
     return request.get(apiDogUrl + id)
         .then(res => res.body)
 }
+
+export function getDogOwner() {
+    return request.get(apiDogUrl)
+}
