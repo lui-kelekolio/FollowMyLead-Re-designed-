@@ -6,6 +6,7 @@ function getDogs(db = connection) {
     return db('dog_table').select()
 }
 
+
 // function getDogsWithOwners(db = connection) {
 //     return db('dog_table').select()
 //         .then(dogs => {

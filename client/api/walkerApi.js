@@ -8,18 +8,13 @@ export function addWalker(walker) {
     .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
     .set({ 'Content-Type': 'application/json' })
     .send(walker)
-    .then(res => {
-      console.log('line 12, walkerApi, res.body:', res.body)
-    })
 }
 
 export function getWalkers(URL) {
   return request.get(URL)
     .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
     .set({ 'Accept': 'application/json' })
-    .then(res => {
-      return res.body.walker
-    })
+    .then(res => {return res.body.walker})
     .catch(logError)
 }
 

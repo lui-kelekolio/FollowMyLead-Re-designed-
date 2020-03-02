@@ -80,9 +80,6 @@ html {
 }
 
 
-
-
-
 .footer {
     position:relative;
     left:0px;
@@ -136,7 +133,6 @@ html {
 }
 
 
-
 .register-buttons {
     display: flex;
     justify-content: center;
@@ -180,6 +176,7 @@ background-color: rgb(32, 40, 41);
     margin-left: auto;
     margin-right: auto;
     padding: 2%;
+
     
 }
 
@@ -194,7 +191,6 @@ background-color: rgb(32, 40, 41);
     font-family: Arial, Helvetica, sans-serif;
 
 }
-
 
 .form {
     background-color:#5BC4F1 ;
@@ -273,7 +269,14 @@ h1 {
     color: white;
   }
 
-
-
-
+.input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    
+  }
+  
 
