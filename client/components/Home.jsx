@@ -22,6 +22,12 @@ render(){
                     alt="hero-dog-image" />
                     <div className="home-page-headline">Follow My Lead!</div>
                     <div className="home-page-ptag">Partnering People and Pooches!</div>
+
+                    <div className="register-buttons">
+                        <Link className="button" to='/Register/Owner' >Register as an owner</Link>
+                        <Link className="button" to='/Register/Walker' >Register as a Walker</Link>
+                    </div>
+
                 </div>
 
 
@@ -46,17 +52,7 @@ render(){
             
             
             
-            <div className="register-buttons">
-
-                <div className="button">
-                <Link className="button-basic" to = '/Register/Owner' >Register as an owner</Link>
-                </div>
-
-                <div className="button">
-                <Link className="button-basic" to = '/Register/Walker' >Register as a Walker</Link>
-                </div>
-
-            </div>
+          
             
             
             

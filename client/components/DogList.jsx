@@ -27,6 +27,7 @@ class DogList extends React.Component {
   render() {
     return (
       <div>
+        <h1>Choose a friend</h1>
         {this.state.dogList.map(dog => {
           return (
             <div className="doglist">
