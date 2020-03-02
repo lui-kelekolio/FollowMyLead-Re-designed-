@@ -172,18 +172,27 @@ html {
 
 
 
-
+.dog-align {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
 
 
 
 .doglist {
-    height: 300px;
-    width: 300px;
-    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    border-radius: 3%;
     padding: 1%;
+    margin: 1%;
     display: inline-block;
     text-align: center;
     justify-content: center;
+    background-color: rgb(135, 250, 191);
+    box-shadow: 5px 10px 18px grey;
+    
+    
 
 }
 
