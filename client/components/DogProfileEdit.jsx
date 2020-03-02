@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { getDog } from '../api/dogApi';
-import ImageUploader from 'react-images-upload'
+// import ImageUploader from 'react-images-upload'
 
 class DogProfileEdit extends React.Component {
   constructor(props) {
