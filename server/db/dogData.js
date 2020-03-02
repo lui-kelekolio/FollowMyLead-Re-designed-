@@ -3,25 +3,10 @@ const { generateHash } = require('authenticare/server')
 const connection = require('./connection')
 
 function getDogs(db = connection) {
-    return db('dog_table').select()
+    return db('dog_table')
+        .select()
+        .orderBy('id', 'desc')
 }
-
-
-// function getDogsWithOwners(db = connection) {
-//     return db('dog_table').select()
-//         .then(dogs => {
-//             return Promise.all(dogs.map(dog => {
-//                 return db('owner_table')
-//                     .where('owner_table.id', dog.owner_id)
-//                     .first()
-//                     .then(owner => {
-//                         console.log(owner)
-//                         owner.location = owner.location
-//                         return dog
-//                     })
-//             }))
-//         })
-// }
 
 
 function getDog(id, db = connection) {

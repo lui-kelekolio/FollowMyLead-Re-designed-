@@ -34,7 +34,7 @@ export function addDog(dog) {
 }
 
 export function returnFeedback(id) {
-    console.log(id)
+    // console.log(id)
     return request
     .get(dogFeedback + id)
     .then(res =>  res.body)
