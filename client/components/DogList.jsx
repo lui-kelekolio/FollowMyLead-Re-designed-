@@ -30,7 +30,7 @@ class DogList extends React.Component {
                         <div className='doglist'>
                             <Link to={`/dog/${dog.id}`}><img className='dogphoto' src={dog.photo} /></Link>
                             <p>{dog.name}</p>
-                            <p>{dog.owner.location}</p>
+                            <p>{dog.location}</p>
                         </div>
                     )
                 })}

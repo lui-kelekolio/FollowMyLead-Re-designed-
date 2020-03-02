@@ -2,8 +2,6 @@ const connection = require('./connection')
 const { generateHash } = require('authenticare/server')
 
 module.exports = {
-    // createUser,
-    // userExists,
     addWalker,
     getUserByName,
     getWalkers,

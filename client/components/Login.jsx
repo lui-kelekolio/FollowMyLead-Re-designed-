@@ -40,11 +40,13 @@ class Login extends React.Component {
     render() {
         return (
             <div>
+                <form className="form" onSubmit={this.handleSubmit}>
+
                 <h1>Login</h1>
                 <form className='form' onSubmit={this.handleSubmit}>
                     
                 <img className="logoform" src="/images/Logo2.png" alt="logo" />
-                    <br />
+                  <br />
                     <label> Username:</label>
                     <br />
                     <input className='input' type='text' placeholder='username' name='username' onChange={this.handlChange} />
