@@ -271,24 +271,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Footer */ "./client/components/Footer.jsx");
-/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Nav */ "./client/components/Nav.jsx");
-/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Home */ "./client/components/Home.jsx");
-/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Login */ "./client/components/Login.jsx");
-/* harmony import */ var _DogList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./DogList */ "./client/components/DogList.jsx");
-/* harmony import */ var _DogProfile__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./DogProfile */ "./client/components/DogProfile.jsx");
-/* harmony import */ var _RegisterOwner__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./RegisterOwner */ "./client/components/RegisterOwner.jsx");
-/* harmony import */ var _RegisterWalker__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./RegisterWalker */ "./client/components/RegisterWalker.jsx");
-/* harmony import */ var _RegisterDog__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./RegisterDog */ "./client/components/RegisterDog.jsx");
-/* harmony import */ var _DogProfileEdit__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./DogProfileEdit */ "./client/components/DogProfileEdit.jsx");
-/* harmony import */ var _OwnerProfile__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./OwnerProfile */ "./client/components/OwnerProfile.jsx");
-/* harmony import */ var _WalkerProfile__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./WalkerProfile */ "./client/components/WalkerProfile.jsx");
-/* harmony import */ var _EditOwnerProfile__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./EditOwnerProfile */ "./client/components/EditOwnerProfile.jsx");
-/* harmony import */ var _WalkerProfileEdit__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./WalkerProfileEdit */ "./client/components/WalkerProfileEdit.jsx");
-/* harmony import */ var _About__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./About */ "./client/components/About.jsx");
-/* harmony import */ var _Contact__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./Contact */ "./client/components/Contact.jsx");
+/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Nav */ "./client/components/Nav.jsx");
+/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Home */ "./client/components/Home.jsx");
+/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Login */ "./client/components/Login.jsx");
+/* harmony import */ var _DogList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./DogList */ "./client/components/DogList.jsx");
+/* harmony import */ var _DogProfile__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./DogProfile */ "./client/components/DogProfile.jsx");
+/* harmony import */ var _RegisterOwner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./RegisterOwner */ "./client/components/RegisterOwner.jsx");
+/* harmony import */ var _RegisterWalker__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./RegisterWalker */ "./client/components/RegisterWalker.jsx");
+/* harmony import */ var _RegisterDog__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./RegisterDog */ "./client/components/RegisterDog.jsx");
+/* harmony import */ var _DogProfileEdit__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./DogProfileEdit */ "./client/components/DogProfileEdit.jsx");
+/* harmony import */ var _OwnerProfile__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./OwnerProfile */ "./client/components/OwnerProfile.jsx");
+/* harmony import */ var _WalkerProfile__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./WalkerProfile */ "./client/components/WalkerProfile.jsx");
+/* harmony import */ var _EditOwnerProfile__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./EditOwnerProfile */ "./client/components/EditOwnerProfile.jsx");
+/* harmony import */ var _WalkerProfileEdit__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./WalkerProfileEdit */ "./client/components/WalkerProfileEdit.jsx");
+/* harmony import */ var _About__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./About */ "./client/components/About.jsx");
+/* harmony import */ var _Contact__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Contact */ "./client/components/Contact.jsx");
 
-
+ // import Footer from './Footer'
 
 
 
@@ -309,55 +308,52 @@ __webpack_require__.r(__webpack_exports__);
 var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/",
-    component: _Nav__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: _Nav__WEBPACK_IMPORTED_MODULE_2__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/",
-    component: _Home__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _Home__WEBPACK_IMPORTED_MODULE_3__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/login",
-    component: _Login__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _Login__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/register/owner",
-    component: _RegisterOwner__WEBPACK_IMPORTED_MODULE_8__["default"]
+    component: _RegisterOwner__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/owner/:id",
-    component: _OwnerProfile__WEBPACK_IMPORTED_MODULE_12__["default"]
+    component: _OwnerProfile__WEBPACK_IMPORTED_MODULE_11__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/owner/:id/edit",
-    component: _EditOwnerProfile__WEBPACK_IMPORTED_MODULE_14__["default"]
+    component: _EditOwnerProfile__WEBPACK_IMPORTED_MODULE_13__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/register/walker",
-    component: _RegisterWalker__WEBPACK_IMPORTED_MODULE_9__["default"]
+    component: _RegisterWalker__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/register/dog",
-    component: _RegisterDog__WEBPACK_IMPORTED_MODULE_10__["default"]
+    component: _RegisterDog__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/doglist",
-    component: _DogList__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _DogList__WEBPACK_IMPORTED_MODULE_5__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/walker/:id",
-    component: _WalkerProfile__WEBPACK_IMPORTED_MODULE_13__["default"]
+    component: _WalkerProfile__WEBPACK_IMPORTED_MODULE_12__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/dog/:id",
-    component: _DogProfile__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _DogProfile__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/walker/:id/edit",
-    component: _WalkerProfileEdit__WEBPACK_IMPORTED_MODULE_15__["default"]
+    component: _WalkerProfileEdit__WEBPACK_IMPORTED_MODULE_14__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/dogEdit/",
-    component: _DogProfileEdit__WEBPACK_IMPORTED_MODULE_11__["default"]
+    component: _DogProfileEdit__WEBPACK_IMPORTED_MODULE_10__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/about",
-    component: _About__WEBPACK_IMPORTED_MODULE_16__["default"]
+    component: _About__WEBPACK_IMPORTED_MODULE_15__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     path: "/contact",
-    component: _Contact__WEBPACK_IMPORTED_MODULE_17__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    path: "/",
-    component: _Footer__WEBPACK_IMPORTED_MODULE_2__["default"]
+    component: _Contact__WEBPACK_IMPORTED_MODULE_16__["default"]
   })));
 };
 
@@ -482,7 +478,9 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.dogList.map(function (dog) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dog-align"
+      }, this.state.dogList.map(function (dog) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "doglist"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -681,22 +679,25 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dogprofiledisplay"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "sendMail",
+        className: "profile-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-heading"
+      }, "My Dog Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "profile-picture",
+        src: this.state.photo
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Suburb: ", this.state.suburb), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Name: ", this.state.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Breed: ", this.state.breed), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Sex: ", this.state.sex), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Size: ", this.state.size), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Walk Length: ", this.state.activity_requirements), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Good with other dogs: ", this.state.good_with_other_dogs), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Special Requirements: ", this.state.special_requirements), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Vet Practice: ", this.state.vet_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Vet Contact: ", this.state.vet_contact), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Suburb: ", this.state.suburb)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "button",
         name: "sendButton",
         onClick: this.handleClick
-      }, "Send request to the dog's owner"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+      }, "Send request to the dog's owner"), this.state.walk_the_dog && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "You would like to walk this dog. Click the request button to contact the owner"), this.state.request_sent && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Great, your request has been sent to this dog's owner. They should be in touch soon!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+        className: "button",
         to: "/doglist"
-      }, "Dog list")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+      }, "Dog list"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+        className: "button",
         to: '/walker/' + this.state.walker_id
-      }, "Profile")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.state.request_sent && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "notification",
-        name: "request_sent"
-      }, "Great, your request has been sent to this dog's owner. They should be in touch soon!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "dogprofilephoto",
-        src: this.state.photo
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Name: ", this.state.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Suburb: ", this.state.suburb), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Breed: ", this.state.breed), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Sex: ", this.state.sex), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Size: ", this.state.size), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Walk Length: ", this.state.activity_requirements), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Good with other dogs: ", this.state.good_with_other_dogs), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Special Requirements: ", this.state.special_requirements), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Vet Practice: ", this.state.vet_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Vet Contact: ", this.state.vet_contact));
+      }, "Profile"));
     }
   }]);
 
@@ -1026,6 +1027,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Footer */ "./client/components/Footer.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1043,6 +1045,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -1091,7 +1094,7 @@ function (_React$Component) {
         className: "blurb-headline"
       }, "Who are we? "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "blurb-text"
-      }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis voluptates esse excepturi, impedit nemo delectus voluptatibus, labore officia vel facilis incidunt quae asperiores aut dolorem enim similique ipsum ad ratione molestiae! Repellat molestias porro nostrum cum in perspiciatis eveniet placeat officiis. Consequuntur earum officia iure animi quia quidem architecto possimus aut, deserunt quibusdam praesentium odit, est, dignissimos velit dolorem sequi corrupti. Eius, nulla impedit a voluptates magnam sed earum ducimus numquam repellendus nostrum saepe iusto, quae sequi, explicabo velit eos repellat dolor? Reprehenderit laboriosam reiciendis dolore repellendus, incidunt quo natus enim exercitationem, expedita optio", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)))));
+      }, "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis voluptates esse excepturi, impedit nemo delectus voluptatibus, labore officia vel facilis incidunt quae asperiores aut dolorem enim similique ipsum ad ratione molestiae! Repellat molestias porro nostrum cum in perspiciatis eveniet placeat officiis. Consequuntur earum officia iure animi quia quidem architecto possimus aut, deserunt quibusdam praesentium odit, est, dignissimos velit dolorem sequi corrupti. Eius, nulla impedit a voluptates magnam sed earum ducimus numquam repellendus nostrum saepe iusto, quae sequi, explicabo velit eos repellat dolor? Reprehenderit laboriosam reiciendis dolore repellendus, incidunt quo natus enim exercitationem, expedita optio", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
     }
   }]);
 
@@ -1349,18 +1352,21 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "owner-profile-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Owner Profile Page"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.state.owner && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "First Name: ", this.state.owner.first_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Last Name: ", this.state.owner.last_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Location: ", this.state.owner.location), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Email: ", this.state.owner.email), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "profile-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-heading"
+      }, "My Owner Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "profile-picture",
         src: this.state.owner.photo
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Location: ", this.state.owner.location), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-info"
+      }, this.state.owner && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Name: ", this.state.owner.first_name, " ", this.state.owner.last_name, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Email: ", this.state.owner.email))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        className: "button",
         to: '/owner/' + this.state.owner.id + '/edit'
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "button"
-      }, "Edit")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      }, "Edit Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        className: "button",
         to: "/register/dog"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "button"
-      }, "Register your dog")));
+      }, "Register your dog"));
     }
   }]);
 
@@ -2191,14 +2197,19 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "home-page-ptag"
-      }, "Walker Profile Page"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/walker/".concat(this.state.walker.id, "/edit")
-      }, "Edit")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/doglist"
-      }, "Dog list")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.state.walker && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.state.walker.first_name, " ", this.state.walker.last_name, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "email:", this.state.walker.email), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Location: ", this.state.walker.location), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.state.walker.blurb), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "profile-heading"
+      }, "My Walker Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "profile-picture",
         src: this.state.walker.photo
-      })));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Location: ", this.state.walker.location), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-info"
+      }, this.state.walker && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.state.walker.first_name, " ", this.state.walker.last_name, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor veniam aperiam exercitationem distinctio maiores accusamus deserunt eum iure quod, sint nisi! Ipsam deleniti laboriosam, vitae eum placeat eaque maiores distinctio dolorum impedit sint tenetur accusamus libero necessitatibus neque cum officia laudantium beatae unde dolore deserunt ratione iusto. Quidem, temporibus obcaecati?")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "email:", this.state.walker.email)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        className: "button",
+        to: "/walker/".concat(this.state.walker.id, "/edit")
+      }, "Edit Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        className: "button",
+        to: "/doglist"
+      }, "See the Dogs!"));
     }
   }]);
 

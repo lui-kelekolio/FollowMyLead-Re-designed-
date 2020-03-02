@@ -13,7 +13,7 @@ import { send } from 'emailjs-com';
 class DogProfile extends React.Component {
     constructor(props) {
         super(props)
-//set initial state
+        //set initial state
         this.state = {
             photo: '',
             name: '',
@@ -42,13 +42,13 @@ class DogProfile extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-  componentDidMount() {
+    componentDidMount() {
         //get user details so we can set the walker_id
         getUserDetails(this.state.user_id)
             .then(user => {
                 this.setState({ walker_id: user.walker.id })
             })
-            //get dog using the current url params
+        //get dog using the current url params
         getDog(this.props.match.params.id)
             .then(dog => {
                 //get the dogs owner using the id of the dog returned fro get dog
@@ -57,7 +57,7 @@ class DogProfile extends React.Component {
                     .then(owner => this.setState({
                         suburb: owner.location
                     }))
-                    //set states to be rendered from returned dog
+                //set states to be rendered from returned dog
                 this.setState({
                     photo: dog.photo,
                     name: dog.name,
@@ -114,50 +114,46 @@ class DogProfile extends React.Component {
             .catch((error) => {
                 console.log('FAILED...', error)
             })
-            //code snippet ends 
+        //code snippet ends 
 
-            // set state for sent notification
-            this.setState({
-              request_sent: true,
-            });
+        // set state for sent notification
+        this.setState({
+            request_sent: true,
+        });
     }
 
 
     render() {
         return (
-            <div className="dogprofiledisplay">
-                <button
-                    className="sendMail"
-                    name="sendButton"
-                    onClick={this.handleClick}
-                >
-                    Send request to the dog's owner
-                </button>
-                <button>
-                    <Link to="/doglist">Dog list</Link>
-                </button>
+            <div className="profile-container">
+                <div className="profile-heading">My Dog Profile</div>
+                <img className="profile-picture" src={this.state.photo} />
+                <p>Suburb: {this.state.suburb}</p>
                 <br />
-                <button>
-                    <Link to={'/walker/' + this.state.walker_id}>Profile</Link>
-                </button>
+
+                <div className="profile-info">
+
+
+                    <p>Name: {this.state.name}</p>
+                    <p>Breed: {this.state.breed}</p>
+                    <p>Sex: {this.state.sex}</p>
+                    <p>Size: {this.state.size}</p>
+                    <p>Walk Length: {this.state.activity_requirements}</p>
+                    <p>Good with other dogs: {this.state.good_with_other_dogs}</p>
+                    <p>Special Requirements: {this.state.special_requirements}</p>
+                    <p>Vet Practice: {this.state.vet_name}</p>
+                    <p>Vet Contact: {this.state.vet_contact}</p>
+                    <p>Suburb: {this.state.suburb}</p>
+
+                </div>
+
+                <button className="button" name='sendButton' onClick={this.handleClick}>Send request to the dog's owner</button>
+                
+                {this.state.walk_the_dog && <p>You would like to walk this dog. Click the request button to contact the owner</p>}
+                {this.state.request_sent && <p>Great, your request has been sent to this dog's owner. They should be in touch soon!</p>}
+                <Link className="button" to='/doglist'>Dog list</Link>
                 <br />
-                {this.state.request_sent && (
-                    <p className='notification' name='request_sent' >
-                        Great, your request has been sent to this dog's owner. They should
-                        be in touch soon!
-                    </p>
-                )}
-                <img className="dogprofilephoto" src={this.state.photo} />
-                <h2>Name: {this.state.name}</h2>
-                <h2>Suburb: {this.state.suburb}</h2>
-                <h2>Breed: {this.state.breed}</h2>
-                <h2>Sex: {this.state.sex}</h2>
-                <h2>Size: {this.state.size}</h2>
-                <h2>Walk Length: {this.state.activity_requirements}</h2>
-                <h2>Good with other dogs: {this.state.good_with_other_dogs}</h2>
-                <h2>Special Requirements: {this.state.special_requirements}</h2>
-                <h2>Vet Practice: {this.state.vet_name}</h2>
-                <h2>Vet Contact: {this.state.vet_contact}</h2>
+                <Link className="button" to={'/walker/' + this.state.walker_id}>Profile</Link>
             </div>
         );
     }

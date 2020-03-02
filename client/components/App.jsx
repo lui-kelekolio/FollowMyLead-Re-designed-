@@ -2,7 +2,7 @@ import React from 'react'
 import { HashRouter as Router, Route } from 'react-router-dom'
 
 
-import Footer from './Footer'
+// import Footer from './Footer'
 import Nav from './Nav'
 import Home from './Home'
 import Login from './Login'
@@ -42,7 +42,7 @@ const App = () => {
         <Route path='/dogEdit/' component={DogProfileEdit} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
-        <Route path="/" component={Footer} />
+        {/* <Route path="/" component={Footer} /> */}
       </React.Fragment>
     </Router>
   )
