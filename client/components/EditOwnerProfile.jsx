@@ -18,14 +18,12 @@ class EditOwnerProfile extends React.Component {
   }
 
 handleChange = (e) =>{
-  console.log('yay')
   this.setState({
     [e.target.name]: e.target.value
   })
 }
 
 handleSubmit = (e) => {
-  console.log('submit working')
   e.preventDefault()
   this.setState({
     first_name: this.state.first_name,
@@ -34,7 +32,6 @@ handleSubmit = (e) => {
     location: this.state.location,
     email: this.state.email,
   })
-  console.log(this.state)
 }
 
 render() {

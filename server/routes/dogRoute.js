@@ -6,7 +6,7 @@ const db = require('../db/dogData')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    db.getDogsWithOwners()
+    db.getDogs()
         .then(dogs => {
 
             return res.json(dogs)
@@ -18,8 +18,6 @@ router.get('/:id', (req, res) => {
         .then(dog => {
             res.json(dog)
         })
-
-
 })
 
 
@@ -33,11 +31,11 @@ router.put('/:id', (req, res) => {
     })
 })
 
-router.post('/', getTokenDecoder(), (req, res) => {   
+router.post('/', getTokenDecoder(), (req, res) => { 
+    console.log(req.files)
+    console.log("youve made it to the post route")  
     const dog = req.body
-    // console.log(dog)
     dog.owner_id = req.user.id
-    // console.log(req.user)
     db.addDog(dog)
         .then(id => {
             res.json({ id: id[0] })

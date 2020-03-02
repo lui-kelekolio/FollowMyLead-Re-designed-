@@ -46,14 +46,12 @@ class DogProfile extends React.Component {
 
         getUserDetails(this.state.user_id)
             .then(user => {
-                console.log('walkerID: ', user.walker.id)
                 this.setState({ walker_id: user.walker.id })
             })
 
         getDog(this.props.match.params.id)
             .then(dog => {
                 getOwner(dog.owner_id).then(owner => this.setState({ suburb: owner.location }))
-                console.log('ownerID=', dog.owner_id)
                 this.setState({
                     photo: dog.photo,
                     name: dog.name,
@@ -69,25 +67,20 @@ class DogProfile extends React.Component {
                     owner_id: dog.owner_id,
                 })
             })
-        console.log('suburb: ', this.state.suburb)
     }
 
     handleWalk(e) {
         e.preventDefault()
-        // console.log('walkerID=', this.state.walker_id)
 
         getOwner(this.state.owner_id)
             .then(owner => {
-                console.log('ownerMail=', owner.email)
                 this.setState({
                     owner_email: owner.email,
                     owner_name: owner.first_name
                 })
-                console.log('owner_name:', this.state.owner_name)
             })
         getUserDetails(this.state.user_id)
             .then(user => {
-                console.log('walkerMail=', user.walker.email)
                 this.setState({
                     walker_email: user.walker.email,
                     walker_link: this.state.walker_link + user.walker.id
@@ -98,9 +91,6 @@ class DogProfile extends React.Component {
 
     handleClick(e) {
         e.preventDefault()
-        console.log('owner_email: ', this.state.owner_email, 'walker_link: ', this.state.walker_link)
-
-        console.log(this.state.request_sent)
         //code snippet for emailjs
         const template_params = {
             owner_email: this.state.owner_email,
@@ -121,10 +111,8 @@ class DogProfile extends React.Component {
             request_sent: true,
             walk_the_dog: false
         })
-        console.log('request_sent:', this.state.request_sent)
     }
 
-    //Profile link button nto working - needs to pass props from dog page
     render() {
         return (
             <div className='dogprofiledisplay'>

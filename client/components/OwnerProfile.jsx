@@ -18,8 +18,6 @@ class OwnerProfile extends React.Component {
 
     getOwner(this.props.match.params.id)
       .then(ownerInfo => {
-        console.log(ownerInfo)
-
         this.setState({
           owner: ownerInfo
         })
