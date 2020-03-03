@@ -26,8 +26,10 @@ class OwnerProfile extends React.Component {
 
   render() {
     return (
+      <>
+      <h1 className="page-title">{this.state.owner.first_name}'s Profile</h1>
       <div className="profile-container">
-        <div className="profile-heading">My Owner Profile</div>
+        
         <img className="profile-picture" src =  {this.state.owner.photo}/>
         <p>Location: {this.state.owner.location}</p>
         <br/>
@@ -53,6 +55,7 @@ class OwnerProfile extends React.Component {
           
         </Link>
       </div>
+      </>
     )
   }
 

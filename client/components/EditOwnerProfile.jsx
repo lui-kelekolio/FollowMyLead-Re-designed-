@@ -43,38 +43,40 @@ handleSubmit = (e) => {
 render() {
   return(
     <div>
-      <h1>Edit My Details</h1>
+      <h1 className="page-title">Edit My Details</h1>
+      <div className="form-container">
       <form className='form' onSubmit = {this.handleSubmit}>
       <img className="logoform" src="/images/Logo2.png" alt="logo" />
       <br/>
       <label> First name:
       <br />
-      <input className='input' type = 'text' name='first_name' placeholder = 'First name' onChange = {this.handleChange} />
+      <input className='input' type = 'text' name='first_name' placeholder = 'First name' onChange = {this.handleChange} autocomplete="off" />
       </label>
       <br />
       <label> Last name:
       <br />
-      <input className='input' type = 'text' name='last_name' placeholder = 'Last name' onChange = {this.handleChange} />
+      <input className='input' type = 'text' name='last_name' placeholder = 'Last name' onChange = {this.handleChange} autocomplete="off"/>
       </label>
       <br/>
       <label> Photo:
       <br />
-      <input className='input' type = 'text' name='photo' placeholder = 'Photo URL' onChange = {this.handleChange} />
+      <input className='input' type = 'text' name='photo' placeholder = 'Photo URL' onChange = {this.handleChange} autocomplete="off"/>
       </label>
       <br/>
       <label> Location:
       <br />
-      <input className='input' type = 'text' name='location' placeholder = 'Location' onChange = {this.handleChange} />
+      <input className='input' type = 'text' name='location' placeholder = 'Location' onChange = {this.handleChange} autocomplete="off" />
       </label>
       <br/>
       <label> Email:
       <br />
-      <input className='input' type = 'text' name='email' placeholder = 'Email' onChange = {this.handleChange} />
+      <input className='input' type = 'text' name='email' placeholder = 'Email' onChange = {this.handleChange} autocomplete="off"/>
       </label>
       <br/>
       <br />
-      <input className='input' type="submit" value="Submit"  />
+      <input className='button' type="submit" value="Submit" autocomplete="off" />
       </form>
+      </div>
     </div>
   )
 }

@@ -53,7 +53,8 @@ class RegisterOwner extends React.Component {
     render() {
         return (
             <div>
-                <h1>Owner form</h1>
+                <h1 className="page-title">Owner registration form</h1>
+                <div className="form-container">
                 <form className='form' onSubmit={this.handleSubmit}>
                 <img className="logoform" src="/images/Logo2.png" alt="logo" />
                     <br />
@@ -62,7 +63,8 @@ class RegisterOwner extends React.Component {
                         <input className='input'
                             type='text' 
                             name='username' 
-                            onChange={this.handleChange} />
+                            onChange={this.handleChange}
+                            autocomplete="off" />
                     <br />
 
                     <label> Password: </label>
@@ -71,7 +73,8 @@ class RegisterOwner extends React.Component {
                             type="password" 
                             id="pwd"
                             name='password' 
-                            onChange={this.handleChange} />
+                            onChange={this.handleChange}
+                            autocomplete="off" />
                     <br />
 
                     <label>Confirm Password: </label>
@@ -80,7 +83,8 @@ class RegisterOwner extends React.Component {
                             type="password" 
                             id="pwd"
                             name='password' 
-                            onChange={this.handleChange} />
+                            onChange={this.handleChange}
+                            autocomplete="off" />
                     <br />
 
                     <label> First name: </label>
@@ -88,7 +92,8 @@ class RegisterOwner extends React.Component {
                         <input className='input'
                             type='text' 
                             name='first_name' 
-                            onChange={this.handleChange} />
+                            onChange={this.handleChange}
+                            autocomplete="off" />
                     <br />
 
                     <label> Last name: </label>
@@ -96,7 +101,8 @@ class RegisterOwner extends React.Component {
                         <input className='input'
                             type='text' 
                             name='last_name' 
-                            onChange={this.handleChange} />
+                            onChange={this.handleChange}
+                            autocomplete="off" />
                     <br />
 
                     <label> Location: </label>
@@ -104,7 +110,8 @@ class RegisterOwner extends React.Component {
                         <select className='input'
                             type='text' 
                             name='location' 
-                            onChange={this.handleChange} >
+                            onChange={this.handleChange}
+                            autocomplete="off" >
                         <option 
                             value='select'>select
                         </option>
@@ -278,7 +285,8 @@ class RegisterOwner extends React.Component {
                         <input className='input'
                             type='text' 
                             name='email' 
-                            onChange={this.handleChange} />
+                            onChange={this.handleChange} 
+                            autocomplete="off"/>
                     <br />
 
                     <label> Photo: </label>
@@ -286,13 +294,16 @@ class RegisterOwner extends React.Component {
                         <input className='input'
                             type='text' 
                             name='photo' 
-                            onChange={this.handleChange} />
+                            onChange={this.handleChange}
+                            autocomplete="off" />
                     <br />
                     <br />
-                    <input className='submit'
+                    <input className='button'
                         type="submit" 
-                        value="Submit" />
+                        value="Submit"
+                        autocomplete="off" />
                 </form>
+            </div>
             </div>
         )
     }

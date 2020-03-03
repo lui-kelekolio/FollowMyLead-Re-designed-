@@ -66,7 +66,8 @@ class RegisterDog extends React.Component {
     render() {
         return (
             <div>
-                <h1>Edit Dog Registration Form</h1>
+                <h1 className="page-title">Dog Registration Form</h1>
+                <div className="form-container">
                 <form className='form' onSubmit={this.handleSubmit}>
                     <img className="logoform" src="/images/Logo2.png" alt="logo" />
                     <br />
@@ -75,7 +76,8 @@ class RegisterDog extends React.Component {
                     <input className='input'
                         type='text'
                         name='name'
-                        onChange={this.handleChange} />
+                        onChange={this.handleChange}
+                        autocomplete="off" />
                     <br />
 
                     <label> Photo: </label>
@@ -84,6 +86,7 @@ class RegisterDog extends React.Component {
                         type='text'
                         name='photo'
                         onChange={this.handleChange}
+                        autocomplete="off"
                         placeholder='Upload File' />
                     <br />
 
@@ -92,7 +95,8 @@ class RegisterDog extends React.Component {
                     <input className='input'
                         type='text'
                         name='breed'
-                        onChange={this.handleChange} />
+                        onChange={this.handleChange}
+                        autocomplete="off" />
                     <br />
 
                     <label> Sex: </label>
@@ -199,7 +203,7 @@ class RegisterDog extends React.Component {
 
                     <label> Special Requirements: </label>
                     <br />
-                    <input className='input'
+                    <textarea className='input'
                         type='text'
                         name='special_requirements'
                         onChange={this.handleChange} />
@@ -210,7 +214,8 @@ class RegisterDog extends React.Component {
                     <input className='input'
                         type='text'
                         name='vet_name'
-                        onChange={this.handleChange} />
+                        onChange={this.handleChange}
+                        autocomplete='off' />
                     <br />
 
                     <label> Vet Contact: </label>
@@ -218,13 +223,15 @@ class RegisterDog extends React.Component {
                     <input className='input'
                         type='text'
                         name='vet_contact'
-                        onChange={this.handleChange} />
+                        onChange={this.handleChange} 
+                        autocomplete='off'/>
                     <br />
                     <br />
-                    <input className='submit'
+                    <input className='button'
                         type="submit"
                         value="Submit" />
                 </form>
+                </div>
             </div>
         )
     }

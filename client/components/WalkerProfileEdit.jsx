@@ -48,43 +48,45 @@ handleSubmit = (e) => {
         return (
             <div>
                 <ifAuthenticated>
-                    <h1>Edit Walker Details</h1>
+                    <h1 className="page-title" >Edit Walker Details</h1>
+                    <div className="form-container">
                     <form className='form' onSubmit = {this.handleSubmit}>
                     <img className="logoform" src="/images/Logo2.png" alt="logo" />
                         <br />
                         <label> First name:
                             <br/>
-            <input className='input' type='text' name='first_name' placeholder='First name' onChange={this.handleChange} />
+            <input className='input' type='text' name='first_name' placeholder='First name' onChange={this.handleChange} autocomplete="off"/>
                         </label>
                         <br />
                         <label> Last name:
                         <br/>
-            <input className='input' type='text' name='last_name' placeholder='Last name' onChange={this.handleChange} />
+            <input className='input' type='text' name='last_name' placeholder='Last name' onChange={this.handleChange} autocomplete="off"/>
                         </label>
                         <br />
                         <label> email:
                         <br/>
-            <input className='input' type='text' name='email' placeholder='email' onChange={this.handleChange} />
+            <input className='input' type='text' name='email' placeholder='email' onChange={this.handleChange} autocomplete="off"/>
                         </label>
                         <br />
                         <label> Blurb:
                         <br/>
-            <input className='input' type='text' name='blurb' placeholder='Blurb' onChange={this.handleChange} />
+            <input className='input' type='text' name='blurb' placeholder='Blurb' onChange={this.handleChange} autocomplete="off"/>
                         </label>
                         <br />
                         <label> Location:
                         <br/>
-            <input className='input' type='text' name='location' placeholder='Location' onChange={this.handleChange} />
+            <input className='input' type='text' name='location' placeholder='Location' onChange={this.handleChange} autocomplete="off"/>
                         </label>
                         <br />
                         <label> Photo:
                         <br/>
-            <input className='input' type='text' name='photo' placeholder='Image URL' onChange={this.handleChange} />
+            <input className='input' type='text' name='photo' placeholder='Image URL' onChange={this.handleChange} autocomplete="off"/>
                         </label>
                         <br />
                         <br />
-                        <input className='input' type="submit" value="Submit"  />
+                        <input className='button' type="submit" value="Submit" autocomplete="off" />
                     </form>
+                    </div>
                 </ifAuthenticated>
             </div>
         )
