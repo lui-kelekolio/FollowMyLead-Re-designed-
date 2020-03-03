@@ -153,27 +153,7 @@ class DogProfile extends React.Component {
                 {this.state.request_sent && <p>Great, your request has been sent to this dog's owner. They should be in touch soon!</p>}
                 <Link className="button" to='/doglist'>Dog list</Link>
                 <br />
-<<<<<<< HEAD
-                {this.state.request_sent && (
-                    <p>
-                        Great, your request has been sent to this dog's owner. They should
-                        be in touch soon!
-                    </p>
-                )}
-                <img className="dogprofilephoto" src={this.state.photo} />
-                <h2>Name: {this.state.name}</h2>
-                <h2>Suburb: {this.state.suburb}</h2>
-                <h2>Breed: {this.state.breed}</h2>
-                <h2>Sex: {this.state.sex}</h2>
-                <h2>Size: {this.state.size}</h2>
-                <h2>Walk Length: {this.state.activity_requirements}</h2>
-                <h2>Good with other dogs: {this.state.good_with_other_dogs}</h2>
-                <h2>Special Requirements: {this.state.special_requirements}</h2>
-                <h2>Vet Practice: {this.state.vet_name}</h2>
-                <h2>Vet Contact: {this.state.vet_contact}</h2>
-=======
                 <Link className="button" to={'/walker/' + this.state.walker_id}>Profile</Link>
->>>>>>> dev
             </div>
         );
     }
