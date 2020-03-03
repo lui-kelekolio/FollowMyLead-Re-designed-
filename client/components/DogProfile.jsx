@@ -129,8 +129,10 @@ class DogProfile extends React.Component {
     render() {
         console.log('id deets' + this.state.walker_id)
         return (
+            <>
+            <h1 className="page-title">{this.state.name}'s profile</h1>
             <div className="profile-container">
-                <div className="profile-heading">My Dog Profile</div>
+                
                 <img className="profile-picture" src={this.state.photo} />
                 <p>Suburb: {this.state.suburb}</p>
                 <br />
@@ -147,7 +149,7 @@ class DogProfile extends React.Component {
                     <p>Special Requirements: {this.state.special_requirements}</p>
                     <p>Vet Practice: {this.state.vet_name}</p>
                     <p>Vet Contact: {this.state.vet_contact}</p>
-                    <p>Suburb: {this.state.suburb}</p>
+                    
 
                 </div>
                 {this.state.walker_id !==0 ? <button className="button" name='sendButton' onClick={this.handleClick}>Send request to the dog's owner</button>: null}
@@ -156,6 +158,7 @@ class DogProfile extends React.Component {
                 {this.state.request_sent && <p>Great, your request has been sent to this dog's owner. They should be in touch soon!</p>}
 
             </div>
+            </>
         );
     }
 }
