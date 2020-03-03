@@ -25,8 +25,8 @@ render(){
                     <div className="home-page-ptag">Partnering People and Pooches!</div>
 
                     <div className="register-buttons">
-                        <Link className="button" to='/Register/Owner' >Register your Dog</Link>
-                        <Link className="button" to='/Register/Walker' >Register to Dog Walk</Link>
+                        <Link className="button" to='/Register/Owner' >Register As An Owner</Link>
+                        <Link className="button" to='/Register/Walker' >Register As A Dog Walker</Link>
                     </div>
 
                 </div>
