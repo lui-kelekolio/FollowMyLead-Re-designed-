@@ -25,8 +25,8 @@ class Home extends React.Component {
                         <div className="home-page-ptag">Partnering People and Pooches!</div>
 
                         <div className="register-buttons">
-                            <Link className="button" to='/Register/Owner' >Register As An Owner</Link>
-                            <Link className="button" to='/Register/Walker' >Register As A Dog Walker</Link>
+                            <Link className="button" to='/Register/Owner' >Register to have your dog walked</Link>
+                            <Link className="button" to='/Register/Walker' >Register to walk a dog</Link>
                         </div>
 
                     </div>

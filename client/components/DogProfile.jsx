@@ -151,29 +151,31 @@ class DogProfile extends React.Component {
                 <h1 className="page-title">{this.state.name}'s profile</h1>
                 <div className="profile-container">
 
+
                     <img className="profile-picture" src={this.state.photo} />
-                    <p>Suburb: {this.state.suburb}</p>
+                    <p> <strong>Suburb: </strong> {this.state.suburb}</p>
                     <br />
 
                     <div className="profile-info">
 
 
-                        <p>Name:{this.state.name}</p>
-                        <p>Breed: {this.state.breed}</p>
-                        <p>Sex: {this.state.sex}</p>
-                        <p>Size: {this.state.size}</p>
-                        <p>Walk Length: {this.state.activity_requirements}</p>
-                        <p>Good with other dogs: {this.state.good_with_other_dogs}</p>
-                        <p>Special Requirements: {this.state.special_requirements}</p>
-                        <p>Vet Practice: {this.state.vet_name}</p>
-                        <p>Vet Contact: {this.state.vet_contact}</p>
-
+                        <p><strong>Name:</strong>{this.state.name}</p>
+                        <p><strong>Breed: </strong>{this.state.breed}</p>
+                        <p><strong>Sex: </strong>{this.state.sex}</p>
+                        <p><strong>Size: </strong>{this.state.size}</p>
+                        <p><strong>Walk Length: </strong>{this.state.activity_requirements}</p>
+                        <p><strong>Good with other dogs: </strong>{this.state.good_with_other_dogs}</p>
+                        <p><strong>Special Requirements: </strong>{this.state.special_requirements}</p>
+                        <p><strong>Vet Practice: </strong>{this.state.vet_name}</p>
+                        <p><strong>Vet Contact: </strong>{this.state.vet_contact}</p>
 
                     </div>
                     {this.state.walker_id !== 0 ? <button className="button" name='sendButton' onClick={this.handleClick}>Send request to the dog's owner</button> : null}
 
                     {this.state.walk_the_dog && <p>You would like to walk this dog. Click the request button to contact the owner</p>}
-                    {this.state.request_sent && <p>Great, your request has been sent to this dog's owner. They should be in touch soon!</p>}
+                    {this.state.request_sent && <div><p>Great, your request has been sent to this dog's owner. They should be in touch soon!</p><br />
+                        <p>Check out</p><a className='button' className='move' href="http://www.google.com">MOVE</a><p>for some awesome walking spots in Wellington</p></div>
+                    }
 
                 </div>
             </>
