@@ -6,8 +6,8 @@ function Contact() {
    
     return (
       <div className="contact">
-        <h1>Follow My Lead Contact Page!</h1>
-        
+        <h1>Super Speedy Contact Page!</h1>
+        <p className='form-container'>Just email us at filler@gmail.com and one of our dog handlers will be in touch!</p>
       </div>
     );
   }
