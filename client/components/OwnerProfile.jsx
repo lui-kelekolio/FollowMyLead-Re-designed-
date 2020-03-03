@@ -36,7 +36,7 @@ class OwnerProfile extends React.Component {
         <div className="profile-info">
         {this.state.owner && 
           <>
-            <p>Name: {this.state.owner.first_name} {this.state.owner.last_name} </p>
+            <p>Name:{this.state.owner.first_name} {this.state.owner.last_name} </p>
             
             <p>Email: {this.state.owner.email}</p>
             
