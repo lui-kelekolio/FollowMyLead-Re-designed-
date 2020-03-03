@@ -7,7 +7,7 @@ exports.seed = function (knex) {
       return knex('dog_table').insert([
         {
           id: 1,
-          owner_id: 3,
+          owner_id: 4,
           feedback_id: 3,
           name: 'Jake',
           breed: 'Animated',
@@ -23,7 +23,7 @@ exports.seed = function (knex) {
         },
         {
           id: 2,
-          owner_id: 2,
+          owner_id: 4,
           feedback_id: 2,
           name: 'Wilkie',
           breed: 'Unknown',
@@ -39,7 +39,7 @@ exports.seed = function (knex) {
         },
         {
           id: 3, 
-          owner_id: 1, 
+          owner_id: 4, 
           feedback_id: 1, 
           name: 'Hattie', 
           breed: 'Border Terrier', 
@@ -55,7 +55,7 @@ exports.seed = function (knex) {
         },
         {
           id: 4, 
-          owner_id: 3, 
+          owner_id: 4, 
           feedback_id: 3, 
           name: 'Borris', 
           breed: 'Boxer', 
@@ -71,7 +71,7 @@ exports.seed = function (knex) {
         },
         {
           id: 5, 
-          owner_id: 2, 
+          owner_id: 4, 
           feedback_id: 2, 
           name: 'Sage', 
           breed: 'Shih Tzu', 
@@ -87,7 +87,7 @@ exports.seed = function (knex) {
         },
         {
           id: 6, 
-          owner_id: 1, 
+          owner_id: 4, 
           feedback_id: 1, 
           name: 'Sadie', 
           breed: 'Corgi', 
@@ -103,7 +103,7 @@ exports.seed = function (knex) {
         },
         {
           id: 7, 
-          owner_id: 3, 
+          owner_id: 4, 
           feedback_id: 3, 
           name: 'Duke', 
           breed: 'Golden Retriever ', 
@@ -119,7 +119,7 @@ exports.seed = function (knex) {
         },
         {
           id: 8, 
-          owner_id: 2, 
+          owner_id: 4, 
           feedback_id: 2, 
           name: 'Bean', 
           breed: 'Chocolate Lab', 
@@ -135,7 +135,7 @@ exports.seed = function (knex) {
         },
         {
           id: 9, 
-          owner_id: 1, 
+          owner_id: 4, 
           feedback_id: 1, 
           name: 'Bear', 
           breed: 'Bernese Mountain', 
@@ -151,7 +151,7 @@ exports.seed = function (knex) {
         },
         {
           id: 10, 
-          owner_id: 3, 
+          owner_id: 4, 
           feedback_id: 3, 
           name: 'Lola', 
           breed: 'Chow Chow', 
@@ -167,7 +167,7 @@ exports.seed = function (knex) {
         },
         {
           id: 11, 
-          owner_id: 2, 
+          owner_id: 4, 
           feedback_id: 2, 
           name: 'Jack', 
           breed: 'Dalmatian', 
@@ -183,7 +183,7 @@ exports.seed = function (knex) {
         },
         {
           id: 12, 
-          owner_id: 1, 
+          owner_id: 4, 
           feedback_id: 1, 
           name: 'Jedi', 
           breed: 'German Shepherd', 
@@ -199,7 +199,7 @@ exports.seed = function (knex) {
         },
         {
           id: 13, 
-          owner_id: 3, 
+          owner_id: 4, 
           feedback_id: 3, 
           name: 'Peaches', 
           breed: 'Pit Bull', 
@@ -215,7 +215,7 @@ exports.seed = function (knex) {
         },
         {
           id: 14, 
-          owner_id: 2, 
+          owner_id: 4, 
           feedback_id: 2, 
           name: 'Luka', 
           breed: 'Dachshund', 
@@ -231,7 +231,7 @@ exports.seed = function (knex) {
         },
         {
           id: 15, 
-          owner_id: 1, 
+          owner_id: 4, 
           feedback_id: 1, 
           name: 'Rocky', 
           breed: 'Rottweiler', 
@@ -247,7 +247,7 @@ exports.seed = function (knex) {
         },
         {
           id: 16, 
-          owner_id: 3, 
+          owner_id: 4, 
           feedback_id: 3, 
           name: 'Deno', 
           breed: 'Unknown', 
@@ -263,7 +263,7 @@ exports.seed = function (knex) {
         },
         {
           id: 17, 
-          owner_id: 2, 
+          owner_id: 4, 
           feedback_id: 2, 
           name: 'Ebony', 
           breed: 'Pug', 
@@ -279,7 +279,7 @@ exports.seed = function (knex) {
         },
         {
           id: 18, 
-          owner_id: 1, 
+          owner_id: 4, 
           feedback_id: 1, 
           name: 'Toast', 
           breed: 'Westie, Schnauzer, Poodle cross ', 
@@ -295,7 +295,7 @@ exports.seed = function (knex) {
         },
         {
           id: 19, 
-          owner_id: 3, 
+          owner_id: 4, 
           feedback_id: 3, 
           name: 'Cooper', 
           breed: 'Beagle', 
@@ -311,7 +311,7 @@ exports.seed = function (knex) {
         },
         {
           id: 20, 
-          owner_id: 2, 
+          owner_id: 4, 
           feedback_id: 2, 
           name: 'Luna', 
           breed: 'Boston Terrier', 
@@ -327,7 +327,7 @@ exports.seed = function (knex) {
         },
         {
           id: 21, 
-          owner_id: 3, 
+          owner_id: 4, 
           feedback_id: 3, 
           name: 'Johnny', 
           breed: 'Jack Russell Terrier', 
@@ -343,7 +343,7 @@ exports.seed = function (knex) {
         },
         {
           id: 22, 
-          owner_id: 2, 
+          owner_id: 4, 
           feedback_id: 2, 
           name: 'Crumpet', 
           breed: 'Border Collie', 
@@ -359,7 +359,7 @@ exports.seed = function (knex) {
         },
         {
           id: 23, 
-          owner_id: 1, 
+          owner_id: 4, 
           feedback_id: 1, 
           name: "D'Angelo", 
           breed: 'Vizsla', 
