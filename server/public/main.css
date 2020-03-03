@@ -14,6 +14,7 @@ html {
     justify-content: space-between;
     align-items: center;
     background-color:#5BC4F1;
+    padding: 5px 16px;
 }
 
 .nav ul {
@@ -141,14 +142,19 @@ html {
 
     /* Profile CSS */
 
+    .page-title {
+       margin: 3%;
+    }
+
     .profile-container {
         width: 40%;
         margin: 0 auto;
         text-align: center;
-        background-color: rgb(135, 250, 191);
+        background-color: rgba(151, 163, 142, 0.4);
         border-radius:5px;
         margin-top: 1%;
         padding: 1%;
+        box-shadow: 5px 10px 18px grey;
 
     }
 
@@ -189,7 +195,7 @@ html {
     display: inline-block;
     text-align: center;
     justify-content: center;
-    background-color: rgb(135, 250, 191);
+    background-color: rgba(151, 163, 142, 0.4);
     box-shadow: 5px 10px 18px grey;
     
     
@@ -222,41 +228,26 @@ html {
 .form-container {
     width: 40%;
     margin: 0 auto;
+    margin-bottom: 3%;
     text-align: center;
     border-radius:5px;
-    margin-top: 1%;
     padding: 1%;
-    background-color:#5BC4F1 ;
+    background-color: rgba(151, 163, 142, 0.4);
+    box-shadow: 5px 10px 18px grey;
 }
-
-/* .profile-container {
-    width: 40%;
-    margin: 0 auto;
-    text-align: center;
-    background-color: rgb(135, 250, 191);
-    border-radius:5px;
-    margin-top: 1%;
-    padding: 1%;
-
-} */
-
 
 
 .form {
     
-    /* display: block;
-    margin-left: 22%;
-    margin-right: 22%; */
-    color: white;
-    /* border-radius: 10px;
-    padding-bottom: 2.5%;
-    padding-top: 1.5%; */
-
+    color: black;
+    
 }
+
+
 
 label {
     font-size: medium;
-    text-align: center;
+    text-align: left;
 }
 
 .logoform {
@@ -271,16 +262,19 @@ label {
 }
 
 .input {
-    width: 70%;
-    background-color: #5BC4F1;
-    color: white;
-    font-size: x-large;
+    width: 60%;
+    background-color: white;
+    color: black;
+    font-size: 20px;
     margin:8px 0;
     border: none;
     border-style: solid;
     border-color: white;
     transform: scale(1);
     transition: .3s ease-in-out;
+    /* border: 1px solid black; */
+    box-shadow: 5px 5px 5px grey;
+   
 }
 
 .input:hover {

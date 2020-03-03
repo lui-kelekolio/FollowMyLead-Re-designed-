@@ -43,7 +43,8 @@ handleSubmit = (e) => {
 render() {
   return(
     <div>
-      <h1>Edit My Details</h1>
+      <h1 className="page-title">Edit My Details</h1>
+      <div className="form-container">
       <form className='form' onSubmit = {this.handleSubmit}>
       <img className="logoform" src="/images/Logo2.png" alt="logo" />
       <br/>
@@ -73,8 +74,9 @@ render() {
       </label>
       <br/>
       <br />
-      <input className='input' type="submit" value="Submit"  />
+      <input className='button' type="submit" value="Submit"  />
       </form>
+      </div>
     </div>
   )
 }

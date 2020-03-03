@@ -48,7 +48,8 @@ handleSubmit = (e) => {
         return (
             <div>
                 <ifAuthenticated>
-                    <h1>Edit Walker Details</h1>
+                    <h1 className="page-title" >Edit Walker Details</h1>
+                    <div className="form-container">
                     <form className='form' onSubmit = {this.handleSubmit}>
                     <img className="logoform" src="/images/Logo2.png" alt="logo" />
                         <br />
@@ -83,8 +84,9 @@ handleSubmit = (e) => {
                         </label>
                         <br />
                         <br />
-                        <input className='input' type="submit" value="Submit"  />
+                        <input className='button' type="submit" value="Submit"  />
                     </form>
+                    </div>
                 </ifAuthenticated>
             </div>
         )
