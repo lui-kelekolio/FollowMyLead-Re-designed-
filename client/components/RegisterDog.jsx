@@ -76,7 +76,8 @@ class RegisterDog extends React.Component {
                     <input className='input'
                         type='text'
                         name='name'
-                        onChange={this.handleChange} />
+                        onChange={this.handleChange}
+                        autocomplete="off" />
                     <br />
 
                     <label> Photo: </label>
@@ -85,6 +86,7 @@ class RegisterDog extends React.Component {
                         type='text'
                         name='photo'
                         onChange={this.handleChange}
+                        autocomplete="off"
                         placeholder='Upload File' />
                     <br />
 
@@ -93,7 +95,8 @@ class RegisterDog extends React.Component {
                     <input className='input'
                         type='text'
                         name='breed'
-                        onChange={this.handleChange} />
+                        onChange={this.handleChange}
+                        autocomplete="off" />
                     <br />
 
                     <label> Sex: </label>
