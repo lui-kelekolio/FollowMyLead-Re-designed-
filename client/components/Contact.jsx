@@ -1,5 +1,6 @@
 import React from "react"
 
+const contactEmail = 'contact@followmylead.com'
 
 function Contact() {
 
@@ -7,7 +8,7 @@ function Contact() {
     return (
       <div className="contact">
         <h1>Super Speedy Contact Page!</h1>
-        <p className='form-container'>Just email us at filler@gmail.com and one of our dog handlers will be in touch!</p>
+        <p className='form-container'>Email us at <a href="">{contactEmail}</a> and one of our doghandlers will be in touch!</p>
       </div>
     );
   }
