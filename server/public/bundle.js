@@ -143,13 +143,14 @@ function returnFeedback(id) {
 /*!********************************!*\
   !*** ./client/api/ownerApi.js ***!
   \********************************/
-/*! exports provided: addOwner, getOwner */
+/*! exports provided: addOwner, getOwner, editOwner */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addOwner", function() { return addOwner; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getOwner", function() { return getOwner; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editOwner", function() { return editOwner; });
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! superagent */ "./node_modules/superagent/lib/client.js");
 /* harmony import */ var superagent__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(superagent__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var authenticare_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! authenticare/client */ "./node_modules/authenticare/client/index.js");
@@ -167,6 +168,18 @@ function addOwner(owner) {
 function getOwner(id) {
   return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.get(URL + id).then(function (response) {
     return response.body;
+  });
+}
+function editOwner(id, owner) {
+  console.log(owner);
+  return superagent__WEBPACK_IMPORTED_MODULE_0___default.a.put(URL + id + '/edit').set({
+    'Authorization': "Bearer ".concat(Object(authenticare_client__WEBPACK_IMPORTED_MODULE_1__["getEncodedToken"])())
+  }).set({
+    'Accept': 'application/json'
+  }).send(owner).then(function (res) {
+    return res.body.owner;
+  })["catch"](function (err) {
+    return console.log(err);
   });
 }
 
@@ -912,10 +925,13 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(EditOwnerProfile).call(this));
 
     _defineProperty(_assertThisInitialized(_this), "handleChange", function (e) {
+      console.log('handle change working');
+
       _this.setState(_defineProperty({}, e.target.name, e.target.value));
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleSubmit", function (e) {
+      console.log('handle submit working');
       e.preventDefault();
 
       _this.setState({
@@ -925,6 +941,12 @@ function (_React$Component) {
         location: _this.state.location,
         email: _this.state.email
       });
+
+      var owner = _this.state;
+      var id = _this.props.match.params.id;
+      Object(_api_ownerApi__WEBPACK_IMPORTED_MODULE_1__["editOwner"])(id, owner);
+
+      _this.props.history.push('/owner/' + id);
     });
 
     _this.state = {

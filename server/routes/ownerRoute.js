@@ -24,7 +24,13 @@ router.post('/', getTokenDecoder(), (req, res) => {
 
 })
 
-
+router.put('/:id/edit', getTokenDecoder(), (req,res) =>{
+    console.log(req.params.id)
+    console.log(req.body)
+    let id = req.params.id
+    let updatedOwner = req.body
+    db.editOwner(id, updatedOwner)
+})
 
 
 router.get('/:id', (req, res) => {
@@ -34,15 +40,15 @@ router.get('/:id', (req, res) => {
         })
 })
 
-router.put('/:id', (req, res) => {
-    let id = req.params.id
-    let owner = req.body
+// router.put('/:id', (req, res) => {
+//     let id = req.params.id
+//     let owner = req.body
 
-    db.updateOwner(id, owner)
-    .then(response => {
-        res.json({})
-    })
-})
+//     db.updateOwner(id, owner)
+//     .then(response => {
+//         res.json({})
+//     })
+// })
 
 
 module.exports = router 
