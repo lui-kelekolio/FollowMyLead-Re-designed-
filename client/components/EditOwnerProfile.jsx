@@ -43,31 +43,37 @@ handleSubmit = (e) => {
 render() {
   return(
     <div>
-      <h1>Edit Owner Details</h1>
-      <form onSubmit = {this.handleSubmit}>
+      <h1>Edit My Details</h1>
+      <form className='form' onSubmit = {this.handleSubmit}>
+      <img className="logoform" src="/images/Logo2.png" alt="logo" />
       <br/>
       <label> First name:
-      <input type = 'text' name='first_name' placeholder = 'First name' onChange = {this.handleChange} />
+      <br />
+      <input className='input' type = 'text' name='first_name' placeholder = 'First name' onChange = {this.handleChange} />
       </label>
       <br />
       <label> Last name:
-      <input type = 'text' name='last_name' placeholder = 'Last name' onChange = {this.handleChange} />
+      <br />
+      <input className='input' type = 'text' name='last_name' placeholder = 'Last name' onChange = {this.handleChange} />
       </label>
       <br/>
       <label> Photo:
-      <input type = 'text' name='photo' placeholder = 'Photo URL' onChange = {this.handleChange} />
+      <br />
+      <input className='input' type = 'text' name='photo' placeholder = 'Photo URL' onChange = {this.handleChange} />
       </label>
       <br/>
       <label> Location:
-      <input type = 'text' name='location' placeholder = 'Location' onChange = {this.handleChange} />
+      <br />
+      <input className='input' type = 'text' name='location' placeholder = 'Location' onChange = {this.handleChange} />
       </label>
       <br/>
       <label> Email:
-      <input type = 'text' name='email' placeholder = 'Email' onChange = {this.handleChange} />
+      <br />
+      <input className='input' type = 'text' name='email' placeholder = 'Email' onChange = {this.handleChange} />
       </label>
       <br/>
       <br />
-      <input type="submit" value="Submit"  />
+      <input className='input' type="submit" value="Submit"  />
       </form>
     </div>
   )

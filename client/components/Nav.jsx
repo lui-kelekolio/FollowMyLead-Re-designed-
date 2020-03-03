@@ -24,7 +24,7 @@ function Nav() {
                 </IfNotAuthenticated>
 
                 <IfAuthenticated>
-                    <li><Link to='/' onClick={logOff}>Logout</Link></li>
+                    <li><Link className="nav-link" to='/' onClick={logOff}>Logout</Link></li>
 
                     <li><Link className="nav-link" to='/' >My Profile</Link></li>
                     <li><Link className="nav-link" to='/doglist' >Doglist</Link></li>
