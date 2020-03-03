@@ -46,7 +46,7 @@ class DogProfileEdit extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form className='form' onSubmit={this.handleSubmit}>
           <h1>Edit Dog Registration Form</h1>
           <br />
           <label>

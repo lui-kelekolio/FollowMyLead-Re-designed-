@@ -48,34 +48,41 @@ handleSubmit = (e) => {
             <div>
                 <ifAuthenticated>
                     <h1>Edit Walker Details</h1>
-                    <form onSubmit = {this.handleSubmit}>
+                    <form className='form' onSubmit = {this.handleSubmit}>
+                    <img className="logoform" src="/images/Logo2.png" alt="logo" />
                         <br />
                         <label> First name:
-            <input type='text' name='first_name' placeholder='First name' onChange={this.handleChange} />
+                            <br/>
+            <input className='input' type='text' name='first_name' placeholder='First name' onChange={this.handleChange} />
                         </label>
                         <br />
                         <label> Last name:
-            <input type='text' name='last_name' placeholder='Last name' onChange={this.handleChange} />
+                        <br/>
+            <input className='input' type='text' name='last_name' placeholder='Last name' onChange={this.handleChange} />
                         </label>
                         <br />
                         <label> email:
-            <input type='text' name='email' placeholder='email' onChange={this.handleChange} />
+                        <br/>
+            <input className='input' type='text' name='email' placeholder='email' onChange={this.handleChange} />
                         </label>
                         <br />
                         <label> Blurb:
-            <input type='text' name='blurb' placeholder='Blurb' onChange={this.handleChange} />
+                        <br/>
+            <input className='input' type='text' name='blurb' placeholder='Blurb' onChange={this.handleChange} />
                         </label>
                         <br />
                         <label> Location:
-            <input type='text' name='location' placeholder='Location' onChange={this.handleChange} />
+                        <br/>
+            <input className='input' type='text' name='location' placeholder='Location' onChange={this.handleChange} />
                         </label>
                         <br />
                         <label> Photo:
-            <input type='text' name='photo' placeholder='Image URL' onChange={this.handleChange} />
+                        <br/>
+            <input className='input' type='text' name='photo' placeholder='Image URL' onChange={this.handleChange} />
                         </label>
                         <br />
                         <br />
-                        <input type="submit" value="Submit"  />
+                        <input className='input' type="submit" value="Submit"  />
                     </form>
                 </ifAuthenticated>
             </div>

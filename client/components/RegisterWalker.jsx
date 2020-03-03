@@ -51,8 +51,8 @@ class RegisterWalker extends React.Component {
 
     render() {
         return (
-            <div>
-                 <h1>Walker form</h1>
+            <div className="form-container">
+                 <h1>Register to walk a dog!</h1>
                 <form className='form' onSubmit={this.handleSubmit}>
                 <img className="logoform" src="/images/Logo2.png" alt="logo" />
                     <br />
@@ -104,6 +104,23 @@ class RegisterWalker extends React.Component {
                             type='text' 
                             name='blurbgit ' 
                             onChange={this.handleChange} />
+                    <br />
+
+                    <label> Email: </label>
+                    <br />
+                        <input className='input'
+                            type='text' 
+                            name='email' 
+                            onChange={this.handleChange} />
+                    <br />
+
+                    <label> Photo: </label>
+                    <br />
+                        <input className='input'
+                            type='text' 
+                            name='photo' 
+                            onChange={this.handleChange} />
+                    <br />
                     <br />
 
                     <label> Location: </label>
@@ -280,22 +297,7 @@ class RegisterWalker extends React.Component {
                     </select>
                     <br />
 
-                    <label> Email: </label>
-                    <br />
-                        <input className='input'
-                            type='text' 
-                            name='email' 
-                            onChange={this.handleChange} />
-                    <br />
-
-                    <label> Photo: </label>
-                    <br />
-                        <input className='input'
-                            type='text' 
-                            name='photo' 
-                            onChange={this.handleChange} />
-                    <br />
-                    <br />
+                    
                     <input className='submit'
                         type="submit" 
                         value="Submit" />

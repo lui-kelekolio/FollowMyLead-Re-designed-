@@ -219,30 +219,49 @@ html {
 }
 
 
+.form-container {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius:5px;
+    margin-top: 1%;
+    padding: 1%;
+    background-color:#5BC4F1 ;
+}
 
+/* .profile-container {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(135, 250, 191);
+    border-radius:5px;
+    margin-top: 1%;
+    padding: 1%;
+
+} */
 
 
 
 .form {
-    background-color:#5BC4F1 ;
-    display: block;
-    text-align: center;
+    
+    /* display: block;
     margin-left: 22%;
-    margin-right: 22%;
+    margin-right: 22%; */
     color: white;
-    border-radius: 10px;
+    /* border-radius: 10px;
     padding-bottom: 2.5%;
-    padding-top: 1.5%;
+    padding-top: 1.5%; */
+
 }
 
 label {
-    font-size: xx-large;
+    font-size: medium;
     text-align: center;
 }
 
 .logoform {
-    height:150px;
-    width: 150px;
+    height:100px;
+    width: 100px;
     transition: transform .3s ease-in-out;
 }
 
