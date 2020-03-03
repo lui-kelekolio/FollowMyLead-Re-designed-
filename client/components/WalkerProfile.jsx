@@ -27,7 +27,7 @@ class WalkerProfile extends React.Component {
 
         return (
             <>
-            <h1 className="page-title">My Walker Profile</h1>
+            <h1 className="page-title">{this.state.walker.first_name}'s Profile</h1>
             <div className = "profile-container">
                 <img className="profile-picture" src={this.state.walker.photo} />
                 <p>Location: {this.state.walker.location}</p>
@@ -40,7 +40,7 @@ class WalkerProfile extends React.Component {
                         <p>{this.state.walker.first_name} {this.state.walker.last_name} </p>
                         
                         
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor veniam aperiam exercitationem distinctio maiores accusamus deserunt eum iure quod, sint nisi! Ipsam deleniti laboriosam, vitae eum placeat eaque maiores distinctio dolorum impedit sint tenetur accusamus libero necessitatibus neque cum officia laudantium beatae unde dolore deserunt ratione iusto. Quidem, temporibus obcaecati?</p>
+                        <p>{this.state.walker.blurb}</p>
                         
                     </>
                     
