@@ -109,7 +109,7 @@ class RegisterWalker extends React.Component {
                     <br />
                         <textarea className='input'
                             type='text' 
-                            name='blurbgit ' 
+                            name='blurb' 
                             onChange={this.handleChange}
                             autocomplete="off" />
                     <br />

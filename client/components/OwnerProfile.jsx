@@ -27,7 +27,7 @@ class OwnerProfile extends React.Component {
   render() {
     return (
       <>
-      <h1 className="page-title">My Owner Profile</h1>
+      <h1 className="page-title">{this.state.owner.first_name}'s Profile</h1>
       <div className="profile-container">
         
         <img className="profile-picture" src =  {this.state.owner.photo}/>
