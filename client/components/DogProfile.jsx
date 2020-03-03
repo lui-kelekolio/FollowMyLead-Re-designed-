@@ -46,7 +46,10 @@ class DogProfile extends React.Component {
         //get user details so we can set the walker_id
         getUserDetails(this.state.user_id)
             .then(user => {
-                this.setState({ walker_id: user.walker.id })
+                this.setState({
+                    walker_id: user.walker.id
+
+                })
             })
         //get dog using the current url params
         getDog(this.props.match.params.id)
@@ -151,9 +154,7 @@ class DogProfile extends React.Component {
                 
                 {this.state.walk_the_dog && <p>You would like to walk this dog. Click the request button to contact the owner</p>}
                 {this.state.request_sent && <p>Great, your request has been sent to this dog's owner. They should be in touch soon!</p>}
-                <Link className="button" to='/doglist'>Dog list</Link>
-                <br />
-                <Link className="button" to={'/walker/' + this.state.walker_id}>Profile</Link>
+
             </div>
         );
     }
