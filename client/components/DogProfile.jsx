@@ -43,39 +43,57 @@ class DogProfile extends React.Component {
     }
 
     componentDidMount() {
-        //get user details so we can set the walker_id
+        //get user details so we can determine the type of user
         getUserDetails(this.state.user_id)
             .then(user => {
-                this.setState({
-                    walker_id: user.walker.id
+                if (user.walker) {
+                    this.setState({ walker_id: user.walker.id })
+                    getDog(this.props.match.params.id)
+                        .then(dog => {
+                            //get the dogs owner using the id of the dog returned fro get dog
+                            getOwner(dog.owner_id)
+                                //set suburb state to this dog's owner's location
+                                .then(owner => {
+                                    console.log(owner)
+                                    this.setState({
+                                        photo: dog.photo,
+                                        name: dog.name,
+                                        feedback_id: dog.feedback_id,
+                                        breed: dog.breed,
+                                        sex: dog.sex,
+                                        size: dog.size,
+                                        activity_requirements: dog.activity_requirements,
+                                        good_with_other_dogs: dog.good_with_other_dogs,
+                                        special_requirements: dog.special_requirements,
+                                        vet_name: dog.vet_name,
+                                        vet_contact: dog.vet_contact,
+                                        owner_id: dog.owner_id,
+                                        suburb: owner.location
+                                    })
+                                }
 
-                })
+                                )
+                        })
+                } else {
+                    getDog(this.props.match.params.id)
+                        .then(dog => this.setState({
+                            photo: dog.photo,
+                            name: dog.name,
+                            feedback_id: dog.feedback_id,
+                            breed: dog.breed,
+                            sex: dog.sex,
+                            size: dog.size,
+                            activity_requirements: dog.activity_requirements,
+                            good_with_other_dogs: dog.good_with_other_dogs,
+                            special_requirements: dog.special_requirements,
+                            vet_name: dog.vet_name,
+                            vet_contact: dog.vet_contact,
+                            owner_id: dog.owner_id,
+                            suburb: user.owner.location
+                        }))
+                }
             })
         //get dog using the current url params
-        getDog(this.props.match.params.id)
-            .then(dog => {
-                //get the dogs owner using the id of the dog returned fro get dog
-                getOwner(dog.owner_id)
-                    //set suburb state to this dog's owner's location
-                    .then(owner => this.setState({
-                        suburb: owner.location
-                    }))
-                //set states to be rendered from returned dog
-                this.setState({
-                    photo: dog.photo,
-                    name: dog.name,
-                    feedback_id: dog.feedback_id,
-                    breed: dog.breed,
-                    sex: dog.sex,
-                    size: dog.size,
-                    activity_requirements: dog.activity_requirements,
-                    good_with_other_dogs: dog.good_with_other_dogs,
-                    special_requirements: dog.special_requirements,
-                    vet_name: dog.vet_name,
-                    vet_contact: dog.vet_contact,
-                    owner_id: dog.owner_id,
-                })
-            })
 
         returnFeedback(this.props.match.params.id)
             .then(feedbackInfo => {
