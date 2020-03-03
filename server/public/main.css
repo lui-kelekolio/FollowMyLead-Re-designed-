@@ -327,7 +327,21 @@ h1 {
 
 
 
+.move {
+    font-family: 'Montserrat Subrayada', sans-serif;
+    background-color: rgb(32, 40, 41);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
 
+}
 
   
 
