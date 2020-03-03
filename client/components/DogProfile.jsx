@@ -134,7 +134,7 @@ class DogProfile extends React.Component {
             <div className="profile-container">
                 
                 <img className="profile-picture" src={this.state.photo} />
-                <p>Suburb: {this.state.suburb}</p>
+                <p> <strong>Suburb: </strong> {this.state.suburb}</p>
                 <br />
 
                 <div className="profile-info">
