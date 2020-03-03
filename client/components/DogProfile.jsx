@@ -140,7 +140,7 @@ class DogProfile extends React.Component {
                 <div className="profile-info">
 
 
-                    <p>Name: {this.state.name}</p>
+                    <p>Name:{this.state.name}</p>
                     <p>Breed: {this.state.breed}</p>
                     <p>Sex: {this.state.sex}</p>
                     <p>Size: {this.state.size}</p>
