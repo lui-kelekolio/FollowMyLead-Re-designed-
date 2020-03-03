@@ -203,7 +203,7 @@ class RegisterDog extends React.Component {
 
                     <label> Special Requirements: </label>
                     <br />
-                    <input className='input'
+                    <textarea className='input'
                         type='text'
                         name='special_requirements'
                         onChange={this.handleChange} />

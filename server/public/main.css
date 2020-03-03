@@ -151,10 +151,11 @@ html {
         margin: 0 auto;
         text-align: center;
         background-color: rgba(151, 163, 142, 0.4);
-        border-radius:5px;
+        border-radius:3px;
         margin-top: 1%;
         padding: 1%;
         box-shadow: 5px 10px 18px grey;
+        
 
     }
 
@@ -230,10 +231,10 @@ html {
     margin: 0 auto;
     margin-bottom: 3%;
     text-align: center;
-    border-radius:5px;
     padding: 1%;
     background-color: rgba(151, 163, 142, 0.4);
     box-shadow: 5px 10px 18px grey;
+    border-radius: 3%;
 }
 
 
@@ -270,9 +271,9 @@ label {
     border: none;
     border-style: solid;
     border-color: white;
+    border-radius: 3%;
     transform: scale(1);
     transition: .3s ease-in-out;
-    /* border: 1px solid black; */
     box-shadow: 5px 5px 5px grey;
    
 }
