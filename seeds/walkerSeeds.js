@@ -38,6 +38,17 @@ exports.seed = function(knex) {
           photo: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
           user_id: 6,
         },
+        {
+          id: 4, 
+          feedback_id: 5, 
+          first_name: 'Phoebe', 
+          last_name: 'Wagner', 
+          blurb: 'Dog lover, any shape or size, age or breed', 
+          location: 'Island Bay', 
+          email: 'phoebewagner20@gmail.com', 
+          photo: 'https://images.pexels.com/photos/3351676/pexels-photo-3351676.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+          user_id: 5,
+        },
       ]);
     });
 };
