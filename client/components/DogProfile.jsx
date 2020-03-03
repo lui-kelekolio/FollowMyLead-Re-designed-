@@ -47,13 +47,14 @@ class DogProfile extends React.Component {
         getUserDetails(this.state.user_id)
             .then(user => {
                 if (user.walker) {
+                    this.setState({ walker_id: user.walker.id })
                     getDog(this.props.match.params.id)
                         .then(dog => {
                             //get the dogs owner using the id of the dog returned fro get dog
                             getOwner(dog.owner_id)
                                 //set suburb state to this dog's owner's location
                                 .then(owner => {
-
+                                    console.log(owner)
                                     this.setState({
                                         photo: dog.photo,
                                         name: dog.name,
