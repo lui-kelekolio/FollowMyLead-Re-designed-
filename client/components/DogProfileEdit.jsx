@@ -47,7 +47,7 @@ class DogProfileEdit extends React.Component {
     return (
       <div>
         <form className='form' onSubmit={this.handleSubmit}>
-          <h1>Edit Dog Registration Form</h1>
+          <h1 className="page-title">Edit Dog Registration Form</h1>
           <br />
           <label>
             {' '}

@@ -127,6 +127,7 @@ class DogProfile extends React.Component {
 
 
     render() {
+        console.log('id deets' + this.state.walker_id)
         return (
             <div className="profile-container">
                 <div className="profile-heading">My Dog Profile</div>
@@ -149,9 +150,8 @@ class DogProfile extends React.Component {
                     <p>Suburb: {this.state.suburb}</p>
 
                 </div>
-
-                <button className="button" name='sendButton' onClick={this.handleClick}>Send request to the dog's owner</button>
-
+                {this.state.walker_id !==0 ? <button className="button" name='sendButton' onClick={this.handleClick}>Send request to the dog's owner</button>: null}
+                
                 {this.state.walk_the_dog && <p>You would like to walk this dog. Click the request button to contact the owner</p>}
                 {this.state.request_sent && <p>Great, your request has been sent to this dog's owner. They should be in touch soon!</p>}
 
