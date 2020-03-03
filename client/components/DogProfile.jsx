@@ -52,21 +52,26 @@ class DogProfile extends React.Component {
                             //get the dogs owner using the id of the dog returned fro get dog
                             getOwner(dog.owner_id)
                                 //set suburb state to this dog's owner's location
-                                .then(owner => this.setState({
-                                    photo: dog.photo,
-                                    name: dog.name,
-                                    feedback_id: dog.feedback_id,
-                                    breed: dog.breed,
-                                    sex: dog.sex,
-                                    size: dog.size,
-                                    activity_requirements: dog.activity_requirements,
-                                    good_with_other_dogs: dog.good_with_other_dogs,
-                                    special_requirements: dog.special_requirements,
-                                    vet_name: dog.vet_name,
-                                    vet_contact: dog.vet_contact,
-                                    owner_id: dog.owner_id,
-                                    suburb: owner.location
-                                }))
+                                .then(owner => {
+
+                                    this.setState({
+                                        photo: dog.photo,
+                                        name: dog.name,
+                                        feedback_id: dog.feedback_id,
+                                        breed: dog.breed,
+                                        sex: dog.sex,
+                                        size: dog.size,
+                                        activity_requirements: dog.activity_requirements,
+                                        good_with_other_dogs: dog.good_with_other_dogs,
+                                        special_requirements: dog.special_requirements,
+                                        vet_name: dog.vet_name,
+                                        vet_contact: dog.vet_contact,
+                                        owner_id: dog.owner_id,
+                                        suburb: owner.location
+                                    })
+                                }
+
+                                )
                         })
                 } else {
                     getDog(this.props.match.params.id)
