@@ -30,7 +30,7 @@ class WalkerProfile extends React.Component {
             <h1 className="page-title">{this.state.walker.first_name}'s Profile</h1>
             <div className = "profile-container">
                 <img className="profile-picture" src={this.state.walker.photo} />
-                <p>Location: {this.state.walker.location}</p>
+                <p><strong>Location:</strong>{this.state.walker.location}</p>
                 <br/>
                 
                 
@@ -46,7 +46,7 @@ class WalkerProfile extends React.Component {
                     
                 } 
                 
-                <p>email:{this.state.walker.email}</p>
+                <p><strong>email:</strong>{this.state.walker.email}</p>
 
                 </div>
                 <Link className="button" to={`/walker/${this.state.walker.id}/edit`}>Edit Profile</Link>
