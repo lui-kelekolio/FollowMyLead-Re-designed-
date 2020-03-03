@@ -214,7 +214,8 @@ class RegisterDog extends React.Component {
                     <input className='input'
                         type='text'
                         name='vet_name'
-                        onChange={this.handleChange} />
+                        onChange={this.handleChange}
+                        autocomplete='off' />
                     <br />
 
                     <label> Vet Contact: </label>
@@ -222,7 +223,8 @@ class RegisterDog extends React.Component {
                     <input className='input'
                         type='text'
                         name='vet_contact'
-                        onChange={this.handleChange} />
+                        onChange={this.handleChange} 
+                        autocomplete='off'/>
                     <br />
                     <br />
                     <input className='button'
