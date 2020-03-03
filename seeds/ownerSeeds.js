@@ -32,7 +32,7 @@ exports.seed = function (knex) {
           last_name: 'Walker',
           photo: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
           location: 'Melrose',
-          email: 'tabbywalker@gmail.com',
+          email: 'sebastiankloogh@gmail.com',
           user_id: 3,
         },
       ]);
