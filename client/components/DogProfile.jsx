@@ -1,4 +1,6 @@
+//import React
 import React from 'react';
+//import dependencies
 import { getDog, returnFeedback } from '../api/dogApi';
 import { getOwner } from '../api/ownerApi';
 import { getDecodedToken } from 'authenticare/client';
@@ -6,10 +8,12 @@ import { getUserDetails } from '../api/walkerApi';
 import { Link } from 'react-router-dom';
 import { send } from 'emailjs-com';
 
+
+//add DogProfile as statefull component
 class DogProfile extends React.Component {
     constructor(props) {
         super(props)
-
+        //set initial state
         this.state = {
             photo: '',
             name: '',
@@ -25,6 +29,7 @@ class DogProfile extends React.Component {
             owner_id: 0,
             owner_name: '',
             owner_email: '',
+            // set user_id to the id stored in our auth token
             user_id: getDecodedToken().id,
             walker_email: '',
             walker_id: 0,
@@ -33,28 +38,26 @@ class DogProfile extends React.Component {
             suburb: '',
             feedback: '',
         }
+        // bind event handler
         this.handleClick = this.handleClick.bind(this);
-        // this.handleWalk = this.handleWalk.bind(this);
     }
 
-  componentDidMount() {
-    // console.log(this.state);
-    getUserDetails(this.state.user_id).then(user => {
-      this.setState({ walker_id: user.walker.id });
-    });
-
-        // console.log(this.state)
+    componentDidMount() {
+        //get user details so we can set the walker_id
         getUserDetails(this.state.user_id)
             .then(user => {
                 this.setState({ walker_id: user.walker.id })
             })
-
+        //get dog using the current url params
         getDog(this.props.match.params.id)
             .then(dog => {
+                //get the dogs owner using the id of the dog returned fro get dog
                 getOwner(dog.owner_id)
+                    //set suburb state to this dog's owner's location
                     .then(owner => this.setState({
                         suburb: owner.location
                     }))
+                //set states to be rendered from returned dog
                 this.setState({
                     photo: dog.photo,
                     name: dog.name,
@@ -83,15 +86,16 @@ class DogProfile extends React.Component {
 
     handleClick(e) {
         e.preventDefault()
+        //switch request_sent state so 
         this.setState({ request_sent: true })
-
+        //use Promise.all to return the promises inside as an array 
         Promise.all([
             getOwner(this.state.owner_id),
             getUserDetails(this.state.user_id),
         ])
             .then(([owner, user]) => {
 
-                //code snippet for emailjs
+                //code snippet for emailjs. Use inside .then and set variables directly from the promises. Don't set state.
                 const template_params = {
                     owner_email: owner.email,
                     owner_name: owner.first_name,
@@ -110,31 +114,46 @@ class DogProfile extends React.Component {
             .catch((error) => {
                 console.log('FAILED...', error)
             })
-            this.setState({
-              request_sent: true,
-              walk_the_dog: false
-            });
+        //code snippet ends 
+
+        // set state for sent notification
+        this.setState({
+            request_sent: true,
+        });
     }
 
 
     render() {
         return (
-            <div className="dogprofiledisplay">
-                <button
-                    className="sendMail"
-                    name="sendButton"
-                    onClick={this.handleClick}
-                >
-                    Send request to the dog's owner
-                </button>
-                <button>
-                    <Link to="/doglist">Dog list</Link>
-                </button>
+            <div className="profile-container">
+                <div className="profile-heading">My Dog Profile</div>
+                <img className="profile-picture" src={this.state.photo} />
+                <p>Suburb: {this.state.suburb}</p>
                 <br />
-                <button>
-                    <Link to={'/walker/' + this.state.walker_id}>Profile</Link>
-                </button>
+
+                <div className="profile-info">
+
+
+                    <p>Name: {this.state.name}</p>
+                    <p>Breed: {this.state.breed}</p>
+                    <p>Sex: {this.state.sex}</p>
+                    <p>Size: {this.state.size}</p>
+                    <p>Walk Length: {this.state.activity_requirements}</p>
+                    <p>Good with other dogs: {this.state.good_with_other_dogs}</p>
+                    <p>Special Requirements: {this.state.special_requirements}</p>
+                    <p>Vet Practice: {this.state.vet_name}</p>
+                    <p>Vet Contact: {this.state.vet_contact}</p>
+                    <p>Suburb: {this.state.suburb}</p>
+
+                </div>
+
+                <button className="button" name='sendButton' onClick={this.handleClick}>Send request to the dog's owner</button>
+                
+                {this.state.walk_the_dog && <p>You would like to walk this dog. Click the request button to contact the owner</p>}
+                {this.state.request_sent && <p>Great, your request has been sent to this dog's owner. They should be in touch soon!</p>}
+                <Link className="button" to='/doglist'>Dog list</Link>
                 <br />
+<<<<<<< HEAD
                 {this.state.request_sent && (
                     <p>
                         Great, your request has been sent to this dog's owner. They should
@@ -152,6 +171,9 @@ class DogProfile extends React.Component {
                 <h2>Special Requirements: {this.state.special_requirements}</h2>
                 <h2>Vet Practice: {this.state.vet_name}</h2>
                 <h2>Vet Contact: {this.state.vet_contact}</h2>
+=======
+                <Link className="button" to={'/walker/' + this.state.walker_id}>Profile</Link>
+>>>>>>> dev
             </div>
         );
     }
