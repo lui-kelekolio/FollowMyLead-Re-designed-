@@ -37,16 +37,16 @@ class WalkerProfile extends React.Component {
                 <div className="profile-info">
                 {this.state.walker && 
                     <>
-                        <p>{this.state.walker.first_name} {this.state.walker.last_name} </p>
+                        <p><strong>Name: </strong>{this.state.walker.first_name} {this.state.walker.last_name} </p>
                         
                         
-                        <p>{this.state.walker.blurb}</p>
+                        <p><strong>About: </strong>{this.state.walker.blurb}</p>
                         
                     </>
                     
                 } 
                 
-                <p><strong>email:</strong>{this.state.walker.email}</p>
+                <p><strong>Email: </strong>{this.state.walker.email}</p>
 
                 </div>
                 <Link className="button" to={`/walker/${this.state.walker.id}/edit`}>Edit Profile</Link>
