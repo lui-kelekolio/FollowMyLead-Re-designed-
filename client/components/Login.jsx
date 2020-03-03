@@ -41,25 +41,30 @@ class Login extends React.Component {
         return (
             <div>
 
-                <h1>Login</h1>
+                <h1 className="page-title">Login</h1>
+                <div className="form-container">
                 <form className='form' onSubmit={this.handleSubmit}>
                     
                 <img className="logoform" src="/images/Logo2.png" alt="logo" />
                   <br />
+                  <br/>
                     <label> Username:</label>
                     <br />
+                 
                     <input className='input' type='text' placeholder='username' name='username' onChange={this.handlChange} />
-                    
+                    <br/>
                     <br />
                     <label> Password: </label>
                     <br />
+                   
                     <input className='input' type='password' placeholder='password' name='password' onChange={this.handlChange} />
-                    
+                    <br/>
                     <br />
-                    <br />
-                    <input className='input' type="submit" value="Submit" />
+                  
+                    <input className='button' type="submit" value="Submit" />
                 </form>
                 <br />
+                </div>
             </div>
         )
     }

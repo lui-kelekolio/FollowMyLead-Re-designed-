@@ -51,8 +51,10 @@ class RegisterWalker extends React.Component {
 
     render() {
         return (
+            <>
+            <h1 className="page-title">Register to walk a dog</h1>
             <div className="form-container">
-                 <h1>Register to walk a dog!</h1>
+                 
                 <form className='form' onSubmit={this.handleSubmit}>
                 <img className="logoform" src="/images/Logo2.png" alt="logo" />
                     <br />
@@ -98,7 +100,7 @@ class RegisterWalker extends React.Component {
                             onChange={this.handleChange} />
                     <br />
 
-                    <label> Blurb: </label>
+                    <label> About: </label>
                     <br />
                         <input className='input'
                             type='text' 
@@ -119,8 +121,9 @@ class RegisterWalker extends React.Component {
                         <input className='input'
                             type='text' 
                             name='photo' 
-                            onChange={this.handleChange} />
-                    <br />
+                            onChange={this.handleChange}
+                            placeholder='add your image URL here...' />
+                    
                     <br />
 
                     <label> Location: </label>
@@ -298,11 +301,12 @@ class RegisterWalker extends React.Component {
                     <br />
 
                     
-                    <input className='submit'
+                    <input className='button'
                         type="submit" 
                         value="Submit" />
                 </form>
             </div>
+            </>
         )
     }
 

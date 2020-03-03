@@ -53,7 +53,8 @@ class RegisterOwner extends React.Component {
     render() {
         return (
             <div>
-                <h1>Owner form</h1>
+                <h1 className="page-title">Owner registration form</h1>
+                <div className="form-container">
                 <form className='form' onSubmit={this.handleSubmit}>
                 <img className="logoform" src="/images/Logo2.png" alt="logo" />
                     <br />
@@ -289,10 +290,11 @@ class RegisterOwner extends React.Component {
                             onChange={this.handleChange} />
                     <br />
                     <br />
-                    <input className='submit'
+                    <input className='button'
                         type="submit" 
                         value="Submit" />
                 </form>
+            </div>
             </div>
         )
     }

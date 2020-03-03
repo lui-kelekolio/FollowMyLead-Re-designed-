@@ -26,8 +26,9 @@ class WalkerProfile extends React.Component {
     render() {
 
         return (
+            <>
+            <h1 className="page-title">My Walker Profile</h1>
             <div className = "profile-container">
-                <div className="profile-heading">My Walker Profile</div>
                 <img className="profile-picture" src={this.state.walker.photo} />
                 <p>Location: {this.state.walker.location}</p>
                 <br/>
@@ -55,6 +56,7 @@ class WalkerProfile extends React.Component {
                 
                 
             </div>
+            </>
         )
 
     }
