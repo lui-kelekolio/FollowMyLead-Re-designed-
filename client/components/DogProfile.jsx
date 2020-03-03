@@ -151,7 +151,6 @@ class DogProfile extends React.Component {
                         <p><strong>Vet Practice: </strong>{this.state.vet_name}</p>
                         <p><strong>Vet Contact: </strong>{this.state.vet_contact}</p>
 
-
                     </div>
                     {this.state.walker_id !== 0 ? <button className="button" name='sendButton' onClick={this.handleClick}>Send request to the dog's owner</button> : null}
 
