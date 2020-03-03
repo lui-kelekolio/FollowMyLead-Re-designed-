@@ -107,7 +107,7 @@ class RegisterWalker extends React.Component {
 
                     <label> About: </label>
                     <br />
-                        <input className='input'
+                        <textarea className='input'
                             type='text' 
                             name='blurbgit ' 
                             onChange={this.handleChange}
