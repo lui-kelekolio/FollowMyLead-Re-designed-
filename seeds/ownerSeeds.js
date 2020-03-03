@@ -35,6 +35,16 @@ exports.seed = function (knex) {
           email: 'sebastiankloogh@gmail.com',
           user_id: 3,
         },
+        {
+          id: 4,
+          feedback_id: 4,
+          first_name: 'Riccardo',
+          last_name: 'Schofield',
+          photo: 'https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+          location: 'Island Bay',
+          email: 'riccardoschofield@gmail.com',
+          user_id: 4,
+        },
       ]);
     });
 };
