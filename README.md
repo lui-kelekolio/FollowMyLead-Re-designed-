@@ -20,13 +20,6 @@ The idea is to allow dog lovers to find a compatable dog via a list of profiles 
 * CSS
 * JWT Auth (Local) - Authenticare
 * Internal API
-* Mobile first
-
-## Stretch
-* Moment.js
-* React Native
-* Google external API for geolocational
-* CSS Tailwind framework
 
 ## User Stories & MVP
 
@@ -103,9 +96,9 @@ The idea is to allow dog lovers to find a compatable dog via a list of profiles 
 |------|--------------------------|---------------------------------------------------------------------------|
 | Post | /api/auth/login          | Login as a user using JWT Token                                           |
 |------|--------------------------|---------------------------------------------------------------------------|
-| Post | /api/auth/register	  | Register a user with JWT Token                                            |
+| Post | /api/auth/register	      | Register a user with JWT Token                                            |
 |------|--------------------------|---------------------------------------------------------------------------|
-| Get  | /api/walker/:id	  | Display the walker profile - returns a walker object                      |
+| Get  | /api/walker/:id	        | Display the walker profile - returns a walker object                      |
 |------|--------------------------|---------------------------------------------------------------------------|
 | Get  | /api/doglist             | Displays list of dogs - return and array of dog objects                   |
 |------|--------------------------|---------------------------------------------------------------------------|
@@ -117,11 +110,10 @@ The idea is to allow dog lovers to find a compatable dog via a list of profiles 
 |------|--------------------------|---------------------------------------------------------------------------|
 | Get  | /api/owner/:id/dogs.     | Return a list of the onwers dogs                                          |
 |------|--------------------------|---------------------------------------------------------------------------|
-| Post | /api/feedback/dog/:id    | Insert feedback comment and match to dog id using join table.       |
+| Post | /api/feedback/dog/:id    | Insert feedback comment and match to dog id using join table.             |
 |------|--------------------------|---------------------------------------------------------------------------|
 | Post | /api/feedback/walker/:id | (Yes) insert feedback comment and match to walker id using join table.    |
 |------|--------------------------|---------------------------------------------------------------------------|
-
 
 ## DB (Server Side)
 
