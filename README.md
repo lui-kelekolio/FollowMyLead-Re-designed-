@@ -38,7 +38,8 @@ The idea is to allow dog lovers to find a compatable dog via a list of profiles 
 
 * I want to be selective in my dog search by filtering location of available of dogs in the doglist
 * I want to be able to leave feedback on the pup on the puppy profile page
-* I want to be able to review, edit and delete my profile upon registration and for future purposes(eg update photo or contact details) 
+* I want to reset my password if I forget my password
+* I want to be able to review, edit and delete my profile upon registration and for future purposes(eg update photo or contact details)
 * I want to be able to view and leave feedback on the puppy's profile page
 * I want to be informed if declined
 
