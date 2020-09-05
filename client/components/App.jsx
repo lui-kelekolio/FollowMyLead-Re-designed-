@@ -18,6 +18,7 @@ import WalkerProfile from './WalkerProfile'
 import EditOwnerProfile from './EditOwnerProfile'
 import WalkerProfileEdit from './WalkerProfileEdit'
 import About from './About'
+import WhoAreWe from './WhoAreWe'
 import Contact from './Contact'
 import WorkInProgress from './WorkInProgress'
 
@@ -41,6 +42,7 @@ const App = () => {
         <Route path="/dog/:id" component={DogProfile} />
         <Route  path="/walker/:id/edit" component={WalkerProfileEdit} />
         <Route path='/dogEdit/' component={DogProfileEdit} />
+        <Route path="/WhoAreWe" component={WhoAreWe} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/social" component={WorkInProgress}/>
