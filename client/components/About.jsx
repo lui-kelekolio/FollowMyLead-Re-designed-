@@ -1,18 +1,10 @@
 import React from 'react';
 
-const imgStyle = {
-  height: '5%',
-  width: '40%',
-  display: 'block',
-  'margin-left': '-20%', // half the width (and negative)
-  'padding-left': '50%'
-};
-
 function About() {
   return (
     <div className="about">
-      <h1 className="page-title">Who are we? </h1>
-      <img style={imgStyle} src="images/Group_photo.jpg" />
+      <h1 className="page-title">About us! </h1>
+      <img className="group-photo" src="images/Group_photo.jpg" />
       <div className="blurb-container">
         <div className="blurb-text">
           <p>Rich, Izzy, Josh, Seb, Lui, Scott.</p>
