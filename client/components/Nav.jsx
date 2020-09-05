@@ -46,7 +46,6 @@ class Nav extends React.Component {
                     <IfNotAuthenticated>
 
                         <li><Link className="nav-link" to='/Login' >Login</Link></li>
-                        <li><Link className="nav-link" to='/About'>About</Link></li>
                         <li><Link className="nav-link" to='/Contact' >Contact</Link></li>
 
 
@@ -57,7 +56,6 @@ class Nav extends React.Component {
                         <li><Link className="nav-link" to='/' onClick={logOff}>Logout</Link></li>
                         <li><Link className="nav-link" to={this.state.profileUrl} >My Profile</Link></li>
                         <li><Link className="nav-link" to='/doglist' >Doglist</Link></li>
-                        <li><Link className="nav-link" to='/About'>About</Link></li>
                         <li><Link className="nav-link" to='/Contact' >Contact</Link></li>
 
 
