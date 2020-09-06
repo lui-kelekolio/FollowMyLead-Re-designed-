@@ -1,9 +1,19 @@
+/* @keyframes example {
+  from {opacity: 100%;}
+  to {opacity: 0%;}
+} */
+
+
+@keyframes reveal {
+  from {left: 0%;}
+  to {left: 100%;}
+  }
+
 html {
   box-sizing: border-box;
 }
 body {
-  margin: 0;
-  background-color: whitesmoke;
+  background-color: white;
   height: 100%;
   font-family: 'Spartan';
 }
@@ -13,8 +23,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(200deg,#5bc4f1 , #7bd8ff, #b9eaff ,#7bd8ff, #5bc4f1 90%);
+  background: #5bc4f1;
   padding: 5px 16px;
+  position: relative;
 }
 
 .nav ul {
@@ -36,23 +47,33 @@ body {
 }
 
 .nav-link {
-  color: white;
   text-decoration: none;
+  padding: 15px 25px;
+  font-size: 22px;
+  margin: 20px;
+  position: relative;
+  display: inline-block;
+  color: white;
   padding: 10px;
-  border-radius: 25px;
+  background-color: #5bc4f1;
+  border-bottom: 5px solid white;
 }
 
 .nav-link:hover {
   color: #5bc4f1;
   background-color: white;
-  transition: ease-in 0.1s;
+  transition: ease-out 0.1s;
 }
 
+.nav-link:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
 
 .logo {
   height: 140px;
   width: 140px;
-  display: flexbox;
 }
 
 .logo:hover {
@@ -61,7 +82,9 @@ body {
 }
 
 /* HomePage CSS */
-.home-image {
+
+.home-image{
+  top: 0;
   height: 40%;
   width: 100%;
   background-position: center;
@@ -69,6 +92,8 @@ body {
   background-size: cover;
   position: relative;
 }
+
+
 .home-page-headline {
   position: absolute;
   padding-bottom: 10%;
@@ -84,7 +109,6 @@ body {
   background: rgba(0, 0, 0, 0.425);
   position: absolute;
   z-index: 1;
-  margin: 0 auto;
   left: 0;
   right: 0;
   top: 25%;
@@ -132,6 +156,7 @@ body {
 .button:hover {
   background-color: white;
   color: black;
+
 }
 
 
@@ -154,23 +179,29 @@ body {
   font-size: 20px;
 }
 
+/* Who are we CSS */ 
+
+.whoarewe {
+  background: rgba(197, 197, 197, 0.425);
+}
+
+
 /* About CSS */
 
 .about {
   text-align: center;
-  background: rgba(218, 218, 218, 0.425);
+  background: rgba(197, 197, 197, 0.425);
 }
 
-.group-photo {
+.group-photo1 {
   display: block;
-  width: 70%;
-  max-width: 750px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 5px 10px 18px grey;
-  border-radius: 10px;
-  border-color: #5bc4f1;
+  width: 50%;
   border-style: solid;
+  border-color: #5bc4f1;
+  border-radius: 5px;
+  box-shadow: 5px 10px 18px grey;
 }
 
 .group-logo {
@@ -179,6 +210,10 @@ body {
   max-width: 350px;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 100%;
+  box-shadow: 5px 10px 18px grey;
+  border-color: #5bc4f1;
+  border-style: solid;
 }
 
 .whoarewe-blurb-text {
@@ -192,6 +227,68 @@ body {
   color: rgb(55, 53, 53);
   font-size: 30px;
   text-align: center;
+}
+
+
+/* Howitworks CSS */
+
+.Howitworks {
+  text-align: center;
+  
+}
+
+.hiw-main-container1 {
+  display: flex;
+  align-items: flex-start;
+}
+
+.hiw-container1 {
+  flex: 2;
+  
+}
+
+.hiw-container2 {
+  flex: 2;
+}
+
+
+.hiw-container3 {
+  flex: 2;
+}
+
+.hiw-main-container2 {
+  display: flex;
+}
+
+.hiw-container1 {
+  flex: 2;
+}
+
+.hiw-container2 {
+  flex: 2;
+}
+
+
+.hiw-container3 {
+  flex: 2;
+}
+
+
+.hiw-logo {
+  display: block;
+  width: 70%;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hiw-logo1 {
+  display: block;
+  width: 70%;
+  max-width: 350px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
