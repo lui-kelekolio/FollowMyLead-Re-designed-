@@ -1,10 +1,14 @@
 import React from 'react';
 
+
 function About() {
   return (
     <div className="about">
       <h1 className="page-title">About us! </h1>
-      <img className="group-photo" src="images/Group_photo.jpg" />
+      <div className="group-photo-container">
+      <img className="group-photo1" src="images/Group_photo.jpg" />
+      {/* <img className="group-photo" src="images/Group-photo-2.jpg" /> */}
+      </div>
       <div className="blurb-container">
         <div className="blurb-text">
           <p>Rich, Izzy, Josh, Seb, Lui, Scott.</p>
