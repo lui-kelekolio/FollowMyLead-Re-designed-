@@ -23,6 +23,7 @@ import HowItWorks from './HowItWorks'
 import Contact from './Contact'
 import WorkInProgress from './WorkInProgress'
 import AboutUs from './AboutUs'
+import WhyUs from './WhyUs'
 
 
 
@@ -46,6 +47,7 @@ const App = () => {
         <Route path='/dogEdit/' component={DogProfileEdit} />
         <Route path="/WhoAreWe" component={WhoAreWe} />
         <Route path="/about" component={About} />
+        <Route path="/WhyUs" component={WhyUs} />
         <Route path="/HowItWorks" component={HowItWorks} />
         <Route path="/contact" component={Contact} />
         <Route path="/social" component={WorkInProgress}/>
