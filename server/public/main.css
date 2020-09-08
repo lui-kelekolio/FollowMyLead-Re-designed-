@@ -215,7 +215,8 @@ a:hover {
   width: 100%;
   justify-content: left;
   text-decoration: none;
-  
+  margin-bottom: 10%;
+  margin-left: 3%;
 }
 
 .group-photo1 {
@@ -277,13 +278,11 @@ a:hover {
 }
 
 .blurb-text {
-  font-family: 'courgette';
-  font-size: 2em;
+  font-size: 1.5em;
   margin-top: 10%;
 }
 
 .whoarewe-blurb-text {
-  font-family: 'courgette';
   font-size: 1.5em;
   width: 100%;
 }
