@@ -4,6 +4,7 @@ import Footer from './Footer'
 import About from './About'
 import WhoAreWe from './WhoAreWe'
 import HowItWorks from "./HowItWorks"
+import WhyUs from "./WhyUs"
 
 
 
@@ -48,6 +49,7 @@ class Home extends React.Component {
 
                 <WhoAreWe />
                 <HowItWorks />
+                <WhyUs />
                 <About />
 
                 
