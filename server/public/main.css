@@ -1,20 +1,51 @@
+/* @keyframes example {
+  from {opacity: 100%;}
+  to {opacity: 0%;}
+} */
+
+
+@keyframes reveal {
+  from {left: 0%;}
+  to {left: 100%;}
+  }
+
 html {
   box-sizing: border-box;
 }
 body {
-  margin: 0;
-  background-color: whitesmoke;
+  background-color: white;
   height: 100%;
   font-family: 'Spartan';
 }
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 2em;
+}
+
+a:hover {
+  color: #5bc4f1;
+}
+
+.fml-link {
+  color: #5bc4f1;
+}
+
+.fml-link:hover {
+  color: #2c83a8;
+}
+
 
 /* Navigation CSS */
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #5bc4f1;
-  padding: 5px 16px;
+  background: #5bc4f1;
+  padding: 1px 12px;
+  position: relative;
+  height: 100px;
 }
 
 .nav ul {
@@ -35,42 +66,88 @@ body {
   font-size: 25px;
 }
 
-.nav li:hover {
-  background-color: #111;
-}
-
 .nav-link {
   text-decoration: none;
+  padding: 15px 25px;
+  font-size: 22px;
+  margin: 20px;
+  position: relative;
+  display: inline-block;
   color: white;
+  padding: 10px;
+  background-color: #5bc4f1;
+  border-bottom: 5px solid white;
+}
+
+.nav-link:hover {
+  color: #5bc4f1;
+  background-color: white;
+  transition: ease-out 0.1s;
+}
+
+.nav-link:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
 }
 
 .logo {
-  height: 140px;
-  width: 140px;
+  height: 100px;
+  width: 100px;
 }
 
 .logo:hover {
-  transform: scale(1.2);
+  transform: scale(1.05);
   transition: 0.1s ease-in-out;
 }
 
 /* HomePage CSS */
-.home-image {
-  height: 40%;
+
+.overlay-container {
+  position: relative;
+  width: 100%;
+
+}
+
+.hero-image-opactiy-bar {
+  display: flex;
+  width: 100%;
+}
+
+.home-image{
+  top: 0;
+  height: 10%;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
+
+.hero-page-headline {
+  background: rgba(0, 0, 0, 0.425);
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: -2%;
+  bottom: 80%;
+  padding-bottom: 30%;
+  margin-top: 10%;
+  flex: 1;
+}
+
+
 .home-page-headline {
   position: absolute;
+  padding-bottom: 10%;
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Love Ya Like A Sister';
   color: white;
-  font-size: 5em;
+  font-size: 3em;
+  flex: 2;
 }
 
 .home-page-ptag {
@@ -79,8 +156,9 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'courgette';
-  font-size: 3em;
+  font-size: 2em;
   color: white;
+  flex: 1;
 }
 
 .register-buttons {
@@ -88,7 +166,7 @@ body {
   justify-content: center;
   flex-wrap: nowrap;
   position: absolute;
-  top: 90%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -111,6 +189,77 @@ body {
 .button:hover {
   background-color: white;
   color: black;
+
+}
+
+
+
+
+/* Who are we CSS */ 
+
+.whoarewe {
+  background: white;
+}
+
+
+/* About CSS */
+
+.about {
+  text-align: center;
+  background: white;
+}
+
+.group-photo-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: left;
+  text-decoration: none;
+  
+}
+
+.group-photo1 {
+  width: 50%;
+  height: auto;
+  border-style: solid;
+  border-color: #5bc4f1;
+  border-radius: 5px;
+  box-shadow: 5px 10px 18px grey;
+}
+
+.overlay1 {
+  position: absolute; 
+  bottom: 0; 
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(0, 0, 0, 0.5);
+  width: 50%;
+  top: 0.5%;
+  bottom: 0.5%;
+  left: 0.2%;
+  transition: .5s ease;
+  opacity:0;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.overlay1:hover {
+  opacity: 1;
+}
+
+.group-logo {
+  display: block;
+  width: 70%;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100%;
+  box-shadow: 5px 10px 18px grey;
+  border-color: #5bc4f1;
+  border-style: solid;
 }
 
 .blurb-container {
@@ -128,9 +277,142 @@ body {
 }
 
 .blurb-text {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  font-family: 'courgette';
+  font-size: 2em;
+  margin-top: 10%;
 }
+
+.whoarewe-blurb-text {
+  font-family: 'courgette';
+  font-size: 1.5em;
+  width: 100%;
+}
+
+.whoarewe-page-title {
+  font-family: 'courgette';
+  color: rgb(55, 53, 53);
+  font-size: 30px;
+  text-align: center;
+}
+
+.link-to-about-us {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: #5bc4f1;
+  font-family: 'Courgette';
+  font-size: 1em;
+  margin-top: 20%;
+}
+
+.link-to-about-us:hover {
+  color: #5bc4f1;
+}
+
+
+/* Howitworks CSS */
+
+.Howitworks {
+  text-align: center;
+  background-color:rgba(187, 186, 186, 0.425) ;
+}
+
+.hiw-main-container1 {
+  display: flex;
+  align-items: flex-start;
+}
+
+.hiw-container1 {
+  flex: 2;
+  
+}
+
+.hiw-container2 {
+  flex: 2;
+}
+
+
+.hiw-container3 {
+  flex: 2;
+}
+
+.hiw-main-container2 {
+  display: flex;
+}
+
+.hiw-container1 {
+  flex: 2;
+}
+
+.hiw-container2 {
+  flex: 2;
+}
+
+
+.hiw-container3 {
+  flex: 2;
+}
+
+
+.hiw-logo {
+  display: block;
+  width: 70%;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hiw-logo1 {
+  display: block;
+  width: 70%;
+  max-width: 350px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* MoreAboutUs CSS */
+
+.about-group-photo-container {
+
+}
+
+.about-group-photo1 {
+  display: block;
+  width: 50%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-color: #5bc4f1;
+  border-radius: 5px;
+  box-shadow: 5px 10px 18px grey;
+}
+
+
+.group-overlay:hover {
+  opacity: 1;
+}
+/* Login CSS */
+
+.sign-up-links {
+  text-align: center;
+}
+
+.sign-up-button {
+  margin: 15px;
+  text-decoration: none;
+  color: #5bc4f1;
+  font-size: 1em;
+}
+
+.sign-up-button:hover {
+  margin: 15px;
+  text-decoration: none;
+  color: #2c83a8;
+}
+
 
 /* Profile CSS */
 
@@ -139,6 +421,7 @@ body {
   margin: 3%;
   color: rgb(55, 53, 53);
   font-size: 50px;
+  text-align: center;
 }
 
 .profile-container {
