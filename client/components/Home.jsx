@@ -20,21 +20,29 @@ class Home extends React.Component {
             <>
                 <main>
 
-               
-                    <img className="home-image" src="/images/ice-dog.jpg"
+                <div className="overlay-container">
+                    <img className="home-image" src="/images/ice-dog2.jpg"
                             alt="hero-dog-image"/>
-                        
-                        <div className="hero-page-headline">
-                            <div className="home-page-headline">Follow My Lead!</div>
-                            <div className="home-page-ptag">Partnering People and Pooches!</div>
+                       
+                        <div className="hero-image-opactiy-bar">
+                            <div className="hero-page-headline">
+                                
+                                <div className="home-page-headline">
+                                    <h1>Follow My Lead!</h1>
+                                </div>
 
-                            <div className="register-buttons">
-                            <Link className="button" to='/Register/Owner' >Register to have your dog walked</Link>
-                            <Link className="button" to='/Register/Walker' >Register to walk a dog</Link>
+                                <div className="home-page-ptag">
+                                    <h2>Partnering People and Pooches!</h2>
+                                </div>
+
+                                <div className="register-buttons">
+                                <Link className="button" to='/Register/Owner' >Register to have your dog walked</Link>
+                                <Link className="button" to='/Register/Walker' >Register to walk a dog</Link>
+                                </div>
+
                             </div>
-
                         </div>
-
+            </div>
                  
 
 
