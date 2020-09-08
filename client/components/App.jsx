@@ -22,6 +22,7 @@ import WhoAreWe from './WhoAreWe'
 import HowItWorks from './HowItWorks'
 import Contact from './Contact'
 import WorkInProgress from './WorkInProgress'
+import AboutUs from './AboutUs'
 
 
 
@@ -48,6 +49,7 @@ const App = () => {
         <Route path="/HowItWorks" component={HowItWorks} />
         <Route path="/contact" component={Contact} />
         <Route path="/social" component={WorkInProgress}/>
+        <Route path="/About-Us" component={AboutUs} />
         {/* <Route path="/" component={Footer} /> */}
       </React.Fragment>
     </Router>
