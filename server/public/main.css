@@ -279,7 +279,7 @@ a:hover {
 
 .blurb-text {
   font-size: 1.5em;
-  margin-top: 10%;
+  margin-top: 15%;
 }
 
 .whoarewe-blurb-text {
@@ -306,6 +306,10 @@ a:hover {
 
 .link-to-about-us:hover {
   color: #5bc4f1;
+}
+
+.body-content {
+  font-size: 20px;
 }
 
 
