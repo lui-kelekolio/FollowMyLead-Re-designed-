@@ -18,6 +18,25 @@ body {
   font-family: 'Spartan';
 }
 
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 2em;
+}
+
+a:hover {
+  color: #5bc4f1;
+}
+
+.fml-link {
+  color: #5bc4f1;
+}
+
+.fml-link:hover {
+  color: #2c83a8;
+}
+
+
 /* Navigation CSS */
 .nav {
   display: flex;
@@ -260,6 +279,7 @@ body {
 .blurb-text {
   font-family: 'courgette';
   font-size: 2em;
+  margin-top: 10%;
 }
 
 .whoarewe-blurb-text {
@@ -281,10 +301,12 @@ body {
   text-decoration: none;
   color: #5bc4f1;
   font-family: 'Courgette';
+  font-size: 1em;
+  margin-top: 20%;
 }
 
 .link-to-about-us:hover {
-  color: #2c83a8;
+  color: #5bc4f1;
 }
 
 
@@ -362,6 +384,10 @@ body {
   height: auto;
   margin-left: auto;
   margin-right: auto;
+  border-style: solid;
+  border-color: #5bc4f1;
+  border-radius: 5px;
+  box-shadow: 5px 10px 18px grey;
 }
 
 
@@ -378,6 +404,7 @@ body {
   margin: 15px;
   text-decoration: none;
   color: #5bc4f1;
+  font-size: 1em;
 }
 
 .sign-up-button:hover {
