@@ -15,6 +15,7 @@ exports.up = function(knex) {
     table.string('photo')
     table.string('vet_name')
     table.string('vet_contact')
+    table.string('bio')
   })
 };
 
