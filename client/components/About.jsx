@@ -14,19 +14,6 @@ function About() {
         </div>
       </div>
 
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-
         <div className="blurb-container">
           <div className="blurb-text">
     
