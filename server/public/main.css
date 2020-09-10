@@ -205,7 +205,7 @@ a:hover {
 /* About CSS */
 
 .about {
-  text-align: center;
+  text-align: left;
   background: white;
 }
 
@@ -216,7 +216,6 @@ a:hover {
   justify-content: left;
   text-decoration: none;
   margin-bottom: 10%;
-  margin-left: 3%;
 }
 
 .group-photo1 {
@@ -226,6 +225,7 @@ a:hover {
   border-color: #5bc4f1;
   border-radius: 5px;
   box-shadow: 5px 10px 18px grey;
+  margin-left: 3%;
 }
 
 .overlay1 {
@@ -245,6 +245,7 @@ a:hover {
   border-radius: 5px;
   text-decoration: none;
   color: white;
+  margin-left: 3%;
 }
 
 .overlay1:hover {
@@ -268,7 +269,7 @@ a:hover {
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
-  padding: 2%;
+  /* padding: 2%; */
 }
 
 .blurb-headline {
@@ -405,6 +406,48 @@ a:hover {
 .some-dogs {
   text-align: center;
   /* background-color:rgba(187, 186, 186, 0.425) ; */
+}
+
+.dog-customers {
+  display: flex;
+  flex-direction: column;
+}
+
+.dog-customer-photo {
+  flex: 2; 
+}
+
+.dog-customer {
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  box-shadow: 5px 10px 18px grey;
+}
+
+.dog-customer-content {
+  align-items: flex-start;
+}
+
+
+.dog-customer-ptag-title {
+  text-align: center;
+  font-family: 'courgette';
+  font-size: 2em;
+}
+
+.dog-customer-bio {
+  align-items: flex-start;
+}
+.dog-customer-ptag {
+  text-align: center;
+  max-width: 250px;
+  align-items: flex-start;
+}
+
+.dog-customer-ptag-owner{
+  text-align: center;
+  max-width: 250px;
+  align-items: flex-start;
 }
 /* Login CSS */
 
