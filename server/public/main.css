@@ -378,7 +378,8 @@ a:hover {
 /* MoreAboutUs CSS */
 
 .about-group-photo-container {
-
+  margin: auto  ;
+  
 }
 
 .about-group-photo1 {
@@ -396,6 +397,14 @@ a:hover {
 
 .group-overlay:hover {
   opacity: 1;
+}
+
+
+/* Some dogs CSS */
+
+.some-dogs {
+  text-align: center;
+  /* background-color:rgba(187, 186, 186, 0.425) ; */
 }
 /* Login CSS */
 
