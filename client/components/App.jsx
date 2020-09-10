@@ -24,6 +24,7 @@ import Contact from './Contact'
 import WorkInProgress from './WorkInProgress'
 import AboutUs from './AboutUs'
 import WhyUs from './WhyUs'
+import SomeDogs from './SomeDogs'
 
 
 
@@ -43,7 +44,7 @@ const App = () => {
         <Route path="/doglist" component={DogList} />
         <Route exact path="/walker/:id" component={WalkerProfile} />
         <Route path="/dog/:id" component={DogProfile} />
-        <Route  path="/walker/:id/edit" component={WalkerProfileEdit} />
+        <Route path="/walker/:id/edit" component={WalkerProfileEdit} />
         <Route path='/dogEdit/' component={DogProfileEdit} />
         <Route path="/WhoAreWe" component={WhoAreWe} />
         <Route path="/about" component={About} />
@@ -51,7 +52,8 @@ const App = () => {
         <Route path="/HowItWorks" component={HowItWorks} />
         <Route path="/contact" component={Contact} />
         <Route path="/social" component={WorkInProgress}/>
-        <Route path="/About-Us" component={AboutUs} />
+        <Route path="/SomeDogs" component={SomeDogs}/>
+        <Route exact path="/About-Us" component={AboutUs} />
         {/* <Route path="/" component={Footer} /> */}
       </React.Fragment>
     </Router>
