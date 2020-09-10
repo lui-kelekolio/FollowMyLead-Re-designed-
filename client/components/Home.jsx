@@ -5,6 +5,7 @@ import About from './About'
 import WhoAreWe from './WhoAreWe'
 import HowItWorks from "./HowItWorks"
 import WhyUs from "./WhyUs"
+import SomeDogs from "./SomeDogs"
 
 
 
@@ -46,9 +47,10 @@ class Home extends React.Component {
             </div>
                  
 
-
+                
                 <WhoAreWe />
                 <HowItWorks />
+                <SomeDogs />
                 <WhyUs />
                 <About />
 
